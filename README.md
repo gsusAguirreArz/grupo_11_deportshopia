@@ -1,10 +1,8 @@
 # DeportShopia
 
-*DeportShopia* es una pagina (E-commerce) que se enfoca en la venta de articulso deportivos.
+*DeportShopia* es una pagina (E-commerce) que se enfoca en la venta de articulos deportivos.
 
 ## Contribuidores
-
----
 
 Somos el **Grupo 11** conformado por:
 
@@ -15,4 +13,4 @@ Somos el **Grupo 11** conformado por:
 
 ### Referencias
 
-- Para el Wireframe [Marti](https://www.marti.mx/)
+- Para el Wireframe: [Marti](https://www.marti.mx/)
