@@ -35,8 +35,10 @@ Página web para comprar productos deportivos en línea. Utiliza imágenes grand
 ∫
 ### Referencias
 
+Link con el board de trello: https://trello.com/b/Y2H4VXMC/digitalhouse
 [Marti](https://www.marti.mx/)
 [Adidas](https://adidas.mx)
 [Decathlon](https://decathlon.com.mx)
 [Nike](https://nike.com/mx)
 [InnovaSport](https://innovasport.com)
+
