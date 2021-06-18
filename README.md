@@ -11,7 +11,7 @@ Somos el **Grupo 11** conformado por:
 
 - Jose de Jesus Aguirre Arzate [gsusAguirreArz](https://github.com/gsusAguirreArz)
 - Carlos Rodríguez Tenorio [carlostnorio](https://github.com/carlostnorio)
-- Alejandro Ucan []()
+<!-- - Alejandro Ucan []() -->
 
 
 ## Benchmarking de páginas similares
@@ -44,4 +44,4 @@ Página web para comprar productos deportivos en línea. Utiliza imágenes grand
 
 1. Los wireframes se crearon en: [Figma](https://www.figma.com/)
 
-2. Link con el board de trello: [Trello](https://trello.com/b/Y2H4VXMC/digitalhouse)
+2. Link con el board de trello: [Trello](https://trello.com/b/Y2H4VXMC)

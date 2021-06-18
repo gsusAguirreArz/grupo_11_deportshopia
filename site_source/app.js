@@ -1,5 +1,9 @@
-var express = require('express');
+const express = require('express');
 var path = require('path');
+
+var porductsController = require("./controllers/products")
+var product = require("./models/product")
+
 var app = express();
 
 const PORT = process.env.PORT || 8080;
