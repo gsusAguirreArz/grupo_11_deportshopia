@@ -24,7 +24,7 @@ app.get('/login', (req,res) => {
 });
 
 app.get('/cart', (req,res) => {
-    let file4 = path.join(__dirname, './views/productCart.html');
+    let file4 = path.join(__dirname, './views/cart.html');
     res.sendFile(file4);
 });
 
