@@ -1,3 +1,7 @@
+:root{
+    --primario:#fff;
+    --secundario:#000;
+}
 *{
     margin: 0px;
     padding: 0px;    

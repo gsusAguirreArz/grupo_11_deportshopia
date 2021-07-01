@@ -1,12 +1,18 @@
 const express = require('express');
 const app = express();
 var path = require('path');
-app.use(express.static('public'));
 
-app.listen(3000, () => {
-    console.log('Servidor funcionando');
+PORT = process.env.PORT || 8080;
+
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+
+app.listen(PORT, () => {
+    console.log('Servidor corriendo en http://localhost:'+PORT);
 });
 
+const mainRoutes = require('./routes/mainRoutes');
+app.use('/', mainRoutes);
 
 app.get('/', (req,res) => {
     let file1 = path.join(__dirname, './views/index.html');
