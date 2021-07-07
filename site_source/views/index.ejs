@@ -1,103 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeportShopia</title>
-    <link rel="preload" href="/css/normalize.css" as="style">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
-    <link rel="preload" href="/css/Styles.css" as="style">
-    <link rel="stylesheet" href="/css/Styles.css">
-</head>
+    <%- include('./partials/head') %>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="/">
-                <img class="navbar__logo" src="/images/logo.png" alt="logo DeportShopia">
-            </a>
-            <a class="navbar__link navbar__link--active" href="#">Nuevo!</a>
-            <a class="navbar__link" href="#">Hombre</a>
-            <a class="navbar__link" href="#">Mujer</a>
-            <a class="navbar__link" href="#">Infantil</a>
-            <a class="navbar__link" href="/register">Registrate</a>
-            <form  class="navbar__form" action="" method="post">
-                <input class="navbar__form__text" type="text" name="" id="">
-                <button class="navbar__form__btn"><a href="/cart">C</a></button>
-                <button class="navbar__form__btn"><a href="/login">L</a></button>
-            </form>
-        </nav>
-    </header>
+    <%- include('./partials/header') %>
 
-    <footer>
-        <div class="newsblock">
-            <div class="newsblock__content">
-                <h3 class="newsblock__content__title">Newsletter</h3>
-                <p class="newsblock__content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quas minima facere explicabo corporis amet officia.</p>
-                <button class="newsblock__content__btn">Suscribirme</button>
-            </div>
-
+    <main class="contenedor">
+        <h1>Nosotros</h1>
+        <div class="grid">
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">Playera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">sudadera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/tenis.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">tenis</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/bolsa.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">Bolsa</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">Playera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">sudadera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/tenis.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">tenis</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/bolsa.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">Bolsa</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">Playera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">sudadera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/tenis.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">tenis</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/bolsa.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">Bolsa</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">Playera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
+                    <div class="producto_informacion">
+                        <p class="producto__nombre">sudadera</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div> <!-- .producto -->
+            <div class="grafico grafico--camisas"></div>
+            <div class="grafico grafico--node"></div>
         </div>
-        <div class="linksblock">
-            <div class="linksblock__links">
-                <div class="linksblock__links__company">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                    </ul>
-                </div>
-                <div class="linksblock__links__contact">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                    </ul>
-                </div>
-                <div class="linksblock__links__about">
-                    <h4>Nosotros</h4>
-                    <ul>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                        <li><a href="#">Enlace</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="linksblock__icons">
-                <div class="linksblock__icons__social">
-                    <button class="linksblock__icons__social__btn"></button>
-                    <button class="linksblock__icons__social__btn"></button>
-                    <button class="linksblock__icons__social__btn"></button>
-                    <button class="linksblock__icons__social__btn"></button>
-                    <button class="linksblock__icons__social__btn"></button>
-                </div>
-                <div class="linksblock__icons__cert">
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                    <div class="linksblock__icons__cert__logo">LOGO</div>
-                </div>
+    </main>
 
-            </div>
-
-        </div>
-        <div class="footnoteblock">
-            <p>Horarios de atencion XX:XX</p>
-            <p>Todos los derechos reservados 2022</p>
-        </div>
-    </footer>
+    <%- include('./partials/footer') %>
 </body>
 </html>

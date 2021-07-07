@@ -151,3 +151,48 @@ header{
     justify-content: space-between;
     text-align: center;
 }
+
+
+/* Extra */
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* column-gap: 2rem;
+    row-gap: 2rem; */
+    gap: 2rem;
+}
+.producto{
+    background-color: var(--prin);
+    padding: 1rem;
+}
+.producto__nombre{
+    font-size: 4rem;
+}
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secon);
+}
+.producto__nombre,.producto__precio{
+    font-family: var(--prin-fnt);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1/3;
+}
+.grafico--camisas{
+    grid-row: 2 / 3;
+    background-image: url(../images/img_placeholder.jpg);
+}
+.grafico--node{
+    background-image: url(../images/img_placeholder.jpg);
+    grid-row: 8/9;
+}
