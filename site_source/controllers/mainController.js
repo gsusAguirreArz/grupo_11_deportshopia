@@ -8,6 +8,9 @@ var controller = {
     register: (req,res) => {
         res.render('register');
     },
+    shopcart: (req,res) => {
+        res.render('cart');
+    },
 };
 
 module.exports = controller;
