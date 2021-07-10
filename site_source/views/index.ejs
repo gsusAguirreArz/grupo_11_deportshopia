@@ -4,137 +4,156 @@
 <body>
     <%- include('./partials/header') %>
 
-    <main class="contenedor">
-        <h1>Nosotros</h1>
-        <div class="grid">
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">Playera</p>
-                        <p class="producto__precio">$25</p>
+    <main>
+        <div class="container bg">
+            <div class="carousel">
+                <div class="carousel__images">
+                    Images
+                </div>
+                <div class="carousel__indicators">
+                    <input type="radio" name="images-carousel">
+                    <input type="radio" name="images-carousel">
+                    <input type="radio" name="images-carousel">
+                    <input type="radio" name="images-carousel">
+                    <input type="radio" name="images-carousel">
+                </div>
+            </div>
+            <div class="leftarrow">
+                <button>L</button>
+            </div>
+            <div class="rightarrow">
+                <button>R</button>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="fastnews">
+                <p> Compras mas rapidas/12msi/medidas covid</Compras></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="discounts">
+                <div class="discount">
+                    <div class="discount__logo">Logo X marca</div>
+                    <div class="discount__text">
+                        <p>Hasta un x% de descuento</p>
                     </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">sudadera</p>
-                        <p class="producto__precio">$25</p>
+                </div> <!--.discount-->
+                <div class="discount">
+                    <div class="discount__logo">Logo X marca</div>
+                    <div class="discount__text">
+                        <p>Hasta un x% de descuento</p>
                     </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/tenis.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">tenis</p>
-                        <p class="producto__precio">$25</p>
+                </div> <!--.discount-->
+                <div class="discount">
+                    <div class="discount__logo">Logo X marca</div>
+                    <div class="discount__text">
+                        <p>Hasta un x% de descuento</p>
                     </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/bolsa.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">Bolsa</p>
-                        <p class="producto__precio">$25</p>
+                </div> <!--.discount-->
+            </div>
+        </div>
+        <div class="container">
+            <div class="banners">
+                <div class="banner">
+                    <div class="banner__icon">Icon</div>
+                    <h4 class="banner__title">Envio gratis</h4>
+                    <p class="banner__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut rerum iste.</p>
+                </div> <!--.banner-->
+                <div class="banner">
+                    <div class="banner__icon">Icon</div>
+                    <h4 class="banner__title">Envio gratis</h4>
+                    <p class="banner__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut rerum iste.</p>
+                </div> <!--.banner-->
+                <div class="banner">
+                    <div class="banner__icon">Icon</div>
+                    <h4 class="banner__title">Envio gratis</h4>
+                    <p class="banner__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut rerum iste.</p>
+                </div> <!--.banner-->
+            </div>
+        </div>
+        <div class="container">
+            <div class="catCards">
+                <div class="catCard">
+                    <div class="catCard__image">Image</div>
+                    <h3 class="catCard__title">Class Title</h3>
+                    <ul class="catCard__sections">
+                        <li><a href="#" class="catCard__sections__link">SubClass1</a></li>
+                        <li><a href="#" class="catCard__sections__link">SubClass2</a></li>
+                        <li><a href="#" class="catCard__sections__link">SubClass3</a></li>
+                        <li><a href="#" class="catCard__sections__link">SubClass4</a></li>
+                        <li><a href="#" class="catCard__sections__link">SubClass5</a></li>
+                    </ul>
+                    <a href="#" class="catCard__expand">Ver Todo</a>
+                </div> <!--.catCard-->
+                <div class="catCard">
+                    <div class="catCard__image">Image</div>
+                    <h3 class="catCard__title">Class Title</h3>
+                    <div class="catCard__sections">
+                        <a href="#" class="catCard__sections__link">SubClass1</a>
+                        <a href="#" class="catCard__sections__link">SubClass2</a>
+                        <a href="#" class="catCard__sections__link">SubClass3</a>
+                        <a href="#" class="catCard__sections__link">SubClass4</a>
+                        <a href="#" class="catCard__sections__link">SubClass5</a>
                     </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">Playera</p>
-                        <p class="producto__precio">$25</p>
+                    <a href="#" class="catCard__expand">Ver Todo</a>
+                </div> <!--.catCard-->
+                <div class="catCard">
+                    <div class="catCard__image">Image</div>
+                    <h3 class="catCard__title">Class Title</h3>
+                    <div class="catCard__sections">
+                        <a href="#" class="catCard__sections__link">SubClass1</a>
+                        <a href="#" class="catCard__sections__link">SubClass2</a>
+                        <a href="#" class="catCard__sections__link">SubClass3</a>
+                        <a href="#" class="catCard__sections__link">SubClass4</a>
+                        <a href="#" class="catCard__sections__link">SubClass5</a>
                     </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">sudadera</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/tenis.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">tenis</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/bolsa.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">Bolsa</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">Playera</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">sudadera</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/tenis.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">tenis</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/bolsa.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">Bolsa</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/playera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">Playera</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__imagen" src="images/sudadera.jpeg" alt="imagen camisa">
-                    <div class="producto_informacion">
-                        <p class="producto__nombre">sudadera</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div> <!-- .producto -->
-            <div class="grafico grafico--camisas"></div>
-            <div class="grafico grafico--node"></div>
+                    <a href="#" class="catCard__expand">Ver Todo</a>
+                </div> <!--.catCard-->
+            </div>
+        </div>
+        <div class="container">
+            <div class="prodsReel">
+                <h3 class="prodsReel__title">Special Offers</h3>
+                <div class="prodsReel__carousel">
+                    <div class="product">
+                        <a href="#">
+                            <img src="images/playera.jpeg" alt="Imagen Playera" class="product__im">
+                            <div class="product__info">
+                                <p class="product__name">Playera</p>
+                                <p class="product__price">$25</p>
+                            </div>
+                        </a>
+                    </div> <!--.product-->
+                    <div class="product">
+                        <a href="#">
+                            <img src="images/sudadera.jpeg" alt="Imagen Sudadera" class="product__im">
+                            <div class="product__info">
+                                <p class="product__name">Sudadera</p>
+                                <p class="product__price">$25</p>
+                            </div>
+                        </a>
+                    </div> <!--.product-->
+                    <div class="product">
+                        <a href="#">
+                            <img src="images/tenis.jpeg" alt="Imagen Tenis" class="product__im">
+                            <div class="product__info">
+                                <p class="product__name">Tenis</p>
+                                <p class="product__price">$25</p>
+                            </div>
+                        </a>
+                    </div> <!--.product-->
+                    <div class="product">
+                        <a href="#">
+                            <img src="images/bolsa.jpeg" alt="Imagen Bolsa" class="product__im">
+                            <div class="product__info">
+                                <p class="product__name">Bolsa</p>
+                                <p class="product__price">$25</p>
+                            </div>
+                        </a>
+                    </div> <!--.product-->
+                </div>
+            </div>
         </div>
     </main>
 
