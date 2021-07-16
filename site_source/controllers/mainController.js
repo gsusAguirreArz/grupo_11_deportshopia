@@ -11,6 +11,10 @@ var controller = {
     shopcart: (req,res) => {
         res.render('cart');
     },
+    details: (req,res) => {
+        res.render('detalles');
+
+    },
 };
 
 module.exports = controller;
