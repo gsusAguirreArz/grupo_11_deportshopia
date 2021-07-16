@@ -1,40 +1,39 @@
+// ------------------- Import's -------------------
 const express = require('express');
+const path = require('path');
+const methodOverride = require('method-override');
+
+// ------------------- APP -------------------
 const app = express();
-var path = require('path');
 
-PORT = process.env.PORT || 8080;
-
+// ------------------- Middlewares -------------------
 app.use(express.static('public'));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+app.use(methodOverride('_method'));
+
+// ------------------- Template Engine -------------------
 app.set('view engine', 'ejs');
+// app.set('views', __PATHVIEWS__);
+
+// ------------------- Main CODE -------------------
+
+// **** Server Settings ****
+const PORT = process.env.PORT || 8080;
+var template = (prt) => { return "\\*-------------------------*\\ \n Server running in " + prt + " port \n Now, you can open http://localhost:" + prt + " in your favorite browser \n \\*-------------------------*\\ \n"};
 
 app.listen(PORT, () => {
-    console.log('Servidor corriendo en http://localhost:'+PORT);
+    console.log(template(PORT));
 });
 
+// **** Routes Handler ****
 const mainRoutes = require('./routes/mainRoutes');
+const productsRoutes = require('./routes/products');
+const usersRoutes = require('./routes/users');
+
+
 app.use('/', mainRoutes);
+// app.use('/products', productsRoutes);
+// app.use('/users', usersRoutes);
 
-app.get('/', (req,res) => {
-    let file1 = path.join(__dirname, './views/index.html');
-    res.sendFile(file1);
-});
-
-app.get('/product', (req,res) => {
-    let file2 = path.join(__dirname, './views/productDetail.html');
-    res.sendFile(file2);
-});
-
-app.get('/login', (req,res) => {
-    let file3 = path.join(__dirname, './views/login.html');
-    res.sendFile(file3);
-});
-
-app.get('/cart', (req,res) => {
-    let file4 = path.join(__dirname, './views/cart.html');
-    res.sendFile(file4);
-});
-
-app.get('/register', (req,res) => {
-    let file5 = path.join(__dirname, './views/register.html');
-    res.sendFile(file5);
-});
+// **** Error Handler ****
