@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <div>
+        <h2>MI CARRITO</h2>
+
+        <h3> MIS PRODUCTOS DE COMPRA</h3>
+    </div>
+
+    <div class = 'general'> 
+        
+        <div class="producto"> 
+            <div class = 'imagenProducto'> 
+                <img src="images/tenis.jpeg" alt="TENNIS NIKE" width="300px">
+            </div>
+            <div class= 'descripcion'> 
+                <h4> Tennis Nike 24 1/2</h4> 
+                <h4> $1499.00</h4> 
+                <h4>  </h4> 
+                <h4><a href="/cart">Eliminar del carrito </a></h4> 
+            </div>
+        
+        </div>
+
+        <div class="producto"> 
+            <div class = 'imagenProducto'> 
+                <img src="images/sudadera.jpeg" alt="SUDADERA NIKE" width="300px">
+            </div>
+            <div class= 'descripcion'> 
+                <h4> Sudadera NIKE M</h4> 
+                <h4> $2499.00</h4> 
+                <h4>  </h4> 
+                <h4><a href="/cart">Eliminar del carrito </a></h4> 
+            </div>
+        
+        </div>
+
+        <div class="producto"> 
+            <div class = 'imagenProducto'> 
+                <img src="images/playera.jpeg" alt="PLAYERA NIKE" width="300px">
+            </div>
+            <div class= 'descripcion'> 
+                <h4> Playera NIKE CH</h4> 
+                <h4> $1200.00</h4> 
+                <h4>  </h4> 
+                <h4><a href="/cart">Eliminar del carrito </a></h4> 
+            </div>
+        
+        </div>
+        
+        <div class="producto"> 
+            <div class = 'imagenProducto'> 
+                <img src="images/bolsa.jpeg" alt="BOLSA NIKE" width="300px">
+            </div>
+            <div class= 'descripcion'> 
+                <h4> BOLSA NIKE UNITALLA</h4> 
+                <h4> $1700.00</h4> 
+                <h4>  </h4> 
+                <h4><a href="/cart">Eliminar del carrito </a></h4> 
+            </div>
+        
+        </div>
+        
+        <div class = "Pago">
+            <h4> TOTAL </h4>
+            <h5> $4890.00 </h5>
+            <div class='boton'>
+                <label name="boton" ></label>
+                <button type="submit" name="boton" >CONTINUAR A FORMA DE PAGO
+            </div>
+
+        </div>
+
+
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

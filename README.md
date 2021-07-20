@@ -10,7 +10,7 @@ Somos el **Grupo 11** conformado por:
 
 
 - Jose de Jesus Aguirre Arzate [gsusAguirreArz](https://github.com/gsusAguirreArz)
-- Carlos Rodríguez Tenorio [carlostnorio](https://github.com/carlostnorio)
+<!-- - Carlos Rodríguez Tenorio [carlostnorio](https://github.com/carlostnorio) -->
 <!-- - Alejandro Ucan []() -->
 
 

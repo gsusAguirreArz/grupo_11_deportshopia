@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    <form action="/" method = "GET">
+        <div class=boton>
+            <label for = "nombre" name="nombre" >Nombre </label>
+                <input type="text" name="nombre" id="nombre" placeholder="Coloca tu nombre">
+        </div>
+        <div class=boton>
+            <label for = "apellido" name="apellido" >Apellido </label>
+                <input type="text" name="apellido" id="apellido" placeholder="Coloca tu apellido">
+        </div>
+        <div class=boton>
+            <label for = "usuario" name="usuario" >Nombre de usuario</label>
+                <input type="text" name="usuario" id="usuario" placeholder="Crea un nombre de usuario">
+        </div>
+        <div class=boton>
+            <label for = "fecha" name="fecha" >Fecha de nacimiento</label>
+                <input type="date" name="fecha" id="fecha" value="1990-12-10">
+        </div>
+        
+
+    
+        <div class='boton'>
+            <label for = "contrasena" name="contrasena" >Contraseña</label>
+                <input type="password" name="contrasena" id="contrasena">
+        </div>
+    
+        <div class='boton'>
+            <label for = "contrasena2" name="contrasena2" >Confirmar contraseña</label>
+                <input type="password" name="contrasena2" id="contrasena2">
+        </div>
+
+        <div class='boton'>
+            <label  name="acepto" ></label>
+                <input type="checkbox" name="acepto">Acepto términos y condiciones del sitio.
+        </div>
+
+        <div class='boton'>
+            <label  name="aceptopropaganda" ></label>
+                <input type="checkbox" name="aceptopropaganda">Acepto recibir propaganda y promociones en mi mail.
+        </div>
+        <div class='boton'>
+            <label name="boton" ></label>
+                <button type="submit" name="boton" >ENVIAR
+                <button type="reset" name="boton2" >BORRAR FORM
+        </div>
+    </form>
+
+    <%- include('../partials/footer') %>
+
+</body>
+</html>
