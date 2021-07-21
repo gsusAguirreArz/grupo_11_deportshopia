@@ -31,14 +31,18 @@
                 <label for="category">Elige tipo de usuario:</label>
                 <select name="category" id="category" class="form-input">
                     <option value="" disabled>--Selecciona--</option>
-                    <option value="vendor">Vendedor</option>
-                    <option value="customer">Comprador</option>
-                    <option value="both">Ambos</option>
+                    <% if (user.category == 'user') { %> 
+                        <option value="user" selected>Usuario</option>
+                        <option value="admin">Administrador</option>
+                    <% }else{ %>
+                        <option value="user" >Usuario</option>
+                        <option value="admin" selected>Administrador</option>
+                    <% } %> 
                 </select>
             </div>
             <div>
                 <label for="birthday">Fecha de nacimiento:</label>
-                <input type="date" name="birthday" id="birthday" value="<%= user.birthday %>">
+                <input type="date" name="birthday" id="birthday">
             </div>
             <div>
                 <label for="email">Correo:</label>

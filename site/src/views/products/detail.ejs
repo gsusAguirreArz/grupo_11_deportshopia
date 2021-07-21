@@ -7,27 +7,37 @@
     <main>
         <h1>Detalle del producto <%= product.name %> </h1>
         <div>
-            <img src="/images/products/<%= producto.image %>" alt="product image">
+            <img src="/images/products/<%= product.image %>" alt="product image">
         </div>
         <div>
-            <p><%= producto.description %></p>
+            <p><%= product.description %></p>
         </div>
         <div>
-            <h2><%= producto.name %></h2>
+            <h2><%= product.name %></h2>
         </div>
         <div>
-            <p>$<%= f(producto.price) %></p>
+            <p>$<%= f(product.price) %></p>
         </div>
         <div>
-            <p><%= producto.discount %> % OFF</p>
+            <p><%= product.discount %> % OFF</p>
+        </div>
+        <div>
+            <p>Categoria: <%= product.thematic %></p>
+        </div>
+        <div>
+            <% let x = ''; %>
+                <% for (let i in product.keywords) { %>
+                <% x += i + ', '; %> 
+            <% } %>
+            <p>Palabras clave: <%= x %></p>
         </div>
         <div>
             <a href="#">COMPRAR AHORA</a>
         </div>
         <div>
-            <a href="/products/<%= producto.id %>/edit">Editar</a>
+            <a href="/products/<%= product.id %>/edit">Editar</a>
         </div>
-        <form action="/products/<%= producto.id %>?_method=DELETE" method="POST">
+        <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
             <button type="submit">ELIMINAR</button>
         </form>
     </main>

@@ -20,12 +20,18 @@
                 <input type="number" id="discount" name="discount" placeholder="Ej: 15">
             </div>
             <div>
-                <label for="category">Categoría:</label>
-                <select name="category" id="category">
-                    <option value="" disabled>Elegí</option>
-                    <option value="in-sale">En oferta</option>
-                    <option value="visited">Últimos agregados</option>
-                </select>
+                <h3>Categoria del producto:</h3>
+                <% let array  = ['Music', 'Kids', 'Computers', 'Home','Grosery','Health','Movies','Electronics','Shoes','Books','Toys','Industrial','Games','Jewelry','Beauty','Baby','Garden','Sports','Outdoors']; %> 
+                <% for (let i of array) { %>
+                    <p>
+                        <input type="radio" name="thematic" value="<%= i %>" id="<%= i %>">
+                        <label for="<%= i %>"><%= i %></label>
+                    </p>
+                <% } %>  
+            </div>
+            <div>
+                <label for="keywords">Palabras clave:</label>
+                <input type="text" id="keywords" name="keywords" placeholder="Ej: zapato, marca, preciobajo, palabraclave">
             </div>
             <div>
                 <label for="description">Descipción:</label>
