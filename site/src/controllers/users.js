@@ -4,26 +4,59 @@ const usersModel = model('users');
 
 // ------------------- Controller CODE -------------------
 const controller = {
-    index: (req,res,next) => {
-        res.send('Pagina de todos los usuarios');
+    index: (req,res) => {
+        let users = usersModel.data();
+
+        res.render('users/index', {users:users});
     },
-    detail: (req,res,next) => {
-        res.send('Pagina de detalle de usuario i');
+    login: (req,res) => {
+        let form = req.body;
+
+        // CODE to check if user is registered
+
+        if ( userisregistered ){
+            res.redirect('/users/'+ userId);
+        }
+        res.redirect('/login');
     },
-    create: (req,res,next) => {
-        res.send('Pagina de creacion de un nuevo usuario');
+    detail: (req,res) => {
+        let ID = req.params.id;
+        let user = usersModel.find(ID);
+
+        res.render('users/detail', {user:user});
     },
-    store: (req,res,next) => {
-        res.send('Guardar el nuevo usuario creado');
+    create: (req,res) => {
+        res.render('users/register');
     },
-    edit: (req,res,next) => {
-        res.send('Pagina de edicion de usuario existente');
+    store: (req,res) => {
+        let form = req.body;
+
+        // Code of new user
+
+        usersModel.create(newUser);
+
+        res.redirect('/users/' + newUser.id);
     },
-    update: (req,res,next) => {
-        res.send('Guardar el usuario existente editado');
+    edit: (req,res) => {
+        let ID = req.params.id;
+        let user = usersModel.find(ID);
+
+        res.render('users/edit', {user:user});
     },
-    destroy: (req,res,next) => {
-        res.send('ELiminar el usuario i');
+    update: (req,res) => {
+        let ID = req.params.ID;
+        let form = req.body;
+
+        // Code for user update
+        usersModel.update(updatedUser);
+
+        res.redirect('/users/'+ID);
+    },
+    destroy: (req,res) => {
+        let ID = req.params.id;
+        usersModel.delete(ID);
+
+        res.redirect('/');
     },
 };
 

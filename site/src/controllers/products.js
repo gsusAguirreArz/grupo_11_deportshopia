@@ -7,25 +7,50 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 // ------------------- Controller CODE -------------------
 const controller = {
     index: (req,res) => {
-        res.send('Pagina de todos los productos');
+        let products = prodsModel.data();
+
+        res.render('products/index', {f:toThousand, products:products});
     },
-    detail: (req,res,next) => {
-        res.send('Pagina de detalle de producto i');
+    detail: (req,res) => {
+        let ID = req.params.id;
+        let product = prodsModel.find(ID);
+
+        res.render('products/detail', {f:toThousand, product:product});
     },
-    create: (req,res,next) => {
-        res.send('Pagina de creacion de un nuevo producto');
+    create: (req,res) => {
+        res.render('products/create');
     },
-    store: (req,res,next) => {
-        res.send('Guardar el nuevo producto creado');
+    store: (req,res) => {
+        let form = req.body;
+
+        // Code of new product
+
+        prodsModel.create(newProd);
+
+        res.redirect('/products/'+newProd.id);
+
     },
-    edit: (req,res,next) => {
-        res.send('Pagina de edicion de producto existente');
+    edit: (req,res) => {
+        let ID = req.params.id;
+        let product = prodsModel.find(ID);
+
+        res.render('products/edit', {product:product});
     },
-    update: (req,res,next) => {
-        res.send('Guardar el producto existente editado');
+    update: (req,res) => {
+        let ID = req.params.ID;
+        let form = req.body;
+
+        // Code for product update
+        prodsModel.update(updatedProduct);
+
+        res.redirect('/products/'+ID);
     },
-    destroy: (req,res,next) => {
-        res.send('ELiminar el producto i');
+    destroy: (req,res) => {
+        let ID = req.params.id;
+
+        prodsModel.delete(ID);
+
+        res.redirect('/products');
     },
 };
 

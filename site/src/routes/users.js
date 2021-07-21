@@ -25,16 +25,19 @@ const usersController = require('../controllers/users');
 // Show all users
 router.get('/', usersController.index);
 
+// User login
+router.post('/',usersController.login);
+
 // Show one user
 router.get('/:id', usersController.detail);
 
 // Create a user
 router.get('/register', usersController.create);
-router.post('/', upload.single('user_image'), usersController.store);
+router.post('/', upload.single('userAvatar'), usersController.store);
 
 // Edit a user
 router.get('/:id/edit', usersController.edit);
-router.put('/:id', upload.single('user_image'), usersController.update);
+router.put('/:id', upload.single('userAvatar'), usersController.update);
 
 // Delete a user
 router.delete('/:id', usersController.destroy);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <h1>Edita el producto <%= product.name %> </h1>
+        <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="name">Nombre del producto:</label>
+                <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" value="<%= product.name %>">
+            </div>
+            <div>
+                <label for="price">Precio del producto:</label>
+                <input type="number" id="price" name="price" placeholder="Ej: 5678" value="<%= product.price %>">
+            </div>
+            <div>
+                <label for="discount">Descuento:</label>
+                <input type="number" id="discount" name="discount" placeholder="Ej: 15" value="<%= product.discount %>">
+            </div>
+            <div>
+                <label for="category">Categoría:</label>
+                <select name="category" id="category">
+                    <option value="" disabled>Elegí</option>
+                    <% if (product.category == 'in-sale') { %>
+                        <option value="in-sale" selected>En oferta</option>
+                        <option value="visited">Últimos agregados</option>
+                    <% }else{ %>
+                        <option value="in-sale">En oferta</option>
+                        <option value="visited" selected>Últimos agregados</option>
+                    <% } %> 
+                </select>
+            </div>
+            <div>
+                <label for="description">Descipción:</label>
+                <textarea name="description" id="description" placeholder="Eg: Bonitos zapatos" value="<%= product.description %>"></textarea>
+            </div>
+            <div>
+                <label for="prodImg">Imagen del producto:</label>
+                <input type="file" name="prodImg" id="prodImg" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*" value="<%= product.image %>">
+            </div>
+            <div>
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

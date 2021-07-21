@@ -30,11 +30,11 @@ router.get('/:id', productsController.detail);
 
 // Create a product
 router.get('/create', productsController.create);
-router.post('/', upload.single('product_image'), productsController.store);
+router.post('/', upload.single('prodImg'), productsController.store);
 
 // Edit a product
 router.get('/:id/edit', productsController.edit);
-router.put('/:id', upload.single('product_image'), productsController.update);
+router.put('/:id', upload.single('prodImg'), productsController.update);
 
 // Delete a product
 router.delete('/:id', productsController.destroy);

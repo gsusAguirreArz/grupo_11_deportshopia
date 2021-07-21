@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <h1>Formulario de creacion de productos</h1>
+        <form action="/products" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="name">Nombre del producto:</label>
+                <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok">
+            </div>
+            <div>
+                <label for="price">Precio del producto:</label>
+                <input type="number" id="price" name="price" placeholder="Ej: 5678">
+            </div>
+            <div>
+                <label for="discount">Descuento:</label>
+                <input type="number" id="discount" name="discount" placeholder="Ej: 15">
+            </div>
+            <div>
+                <label for="category">Categoría:</label>
+                <select name="category" id="category">
+                    <option value="" disabled>Elegí</option>
+                    <option value="in-sale">En oferta</option>
+                    <option value="visited">Últimos agregados</option>
+                </select>
+            </div>
+            <div>
+                <label for="description">Descipción:</label>
+                <textarea name="description" id="description" placeholder="Eg: Bonitos zapatos"></textarea>
+            </div>
+            <div>
+                <label for="prodImg">Imagen del producto:</label>
+                <input type="file" name="prodImg" id="prodImg" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
+            </div>
+            <div>
+                <button type="submit">Guardar producto</button>
+            </div>
+        </form>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,67 +1,38 @@
 <!DOCTYPE html>
 <html>
     <%- include('../partials/head') %>
-<!-- <head>
-    <meta charset="UTF-8">
-    <title>INGRESA A TU CUENTA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">  
-</head> -->
 
 <body>
     <%- include('../partials/header') %>
-    <!-- <header>
-        <div class="top-header">
-            <div class="logo"> 
-                <img src="images/logo.png" alt="LOGO DEPORTSHOPIA">
+    <main>
+        <h1>Inicia Sesion</h1>
+        <form action="/users" method="POST">
+            <div>
+                <label for="email">Correo electronico:</label>
+                <input type="email" name="email" id="email" placeholder="Eg. user@mail.com" required>
+                <span class="feedback"></span>
             </div>
-            <div class="form" action="#" method="GET">
-                <div class="input">Buscar un producto en la tienda</div>
-                <div class="submit"><i class="fa fa-search"></i></div>
-            
-        <nav class='barraNavegacion'>
-            <ul>
-                <li><a href="#">NEW</a></li>
-                <li><a href="#">HOMBRE</a></li>
-                <li><a href="#">MUJER</a></li>
-                <li><a href="#">INFANTIL</a></li>
-                <li><a href="#">SALE</a></li>
-            </ul>
-            <ul>
-                <li><a href="/register">CREA UNA CUENTA <i class="far fa-id-card"></i></a></li>
-                <li><a href="/login">INGRESAR <i class="fas fa-sign-in-alt"></i></a></li>
-                <li><a href="/cart">MI CARRITO<i class="fas fa-shopping-basket"></i></a></li>
-            </ul>
-        </nav>
-        
-    </header> -->
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div>
+                <input type="submit" value="Enviar">
+                <!-- <button type="submit">Enviar</button> -->
+            </div>
+            <!-- <div>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Recuerda mis datos</label>
+            </div> -->
+        </form>
+        <div>
+            <a href="#">Olvide mi Contraseña</a>
+        </div>
+        <div>
+            <a href="/users/register">Registrate ahora</a>
+        </div>
+    </main>
 
-
-<form action="/" method = "GET">
-    </div>
-    <div class='usuario'>
-        <label for = "usuario" name="usuario" >Nombre de usuario</label>
-            <input type="text" name="usuario" id="usuario" placeholder="Coloca tu usuario">
-    </div>
-
-    <div class = 'contrasena'>
-        <label for = "contrasena" name="contrasena" >Contraseña</label>
-            <input type="password" name="contrasena" id="contrasena" placeholder = "Ingresa tu contraseña">
-    </div>
-
-    <div class='boton'>
-        <label name="boton"></label>
-            <button class= "boton" type="submit" name="boton" placeholder="Escribe tu contraseña">ENVIAR
-    </div>
-    <div class='boton'>
-        <label  name="recordarDatos" ></label>
-            <input type="checkbox" name="recordarDatos">Recuerda mis datos la próxima ocasión.
-    </div>
-    <div class = 'boton'>
-    <a href="#">Olvidé mi contraseña</a>
-    </div>
-</form>
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
 </body>
 </html>
