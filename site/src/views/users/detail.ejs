@@ -5,32 +5,33 @@
 <body>
     <%- include('../partials/header') %>
 <main>
-    <h1>Pagina principal del usuario <%= user.username %> </h1>
     <div>
-        <img src="/images/users/<%= user.image %>" alt="avatar">
+        <h1>Pagina principal del usuario <%= user.username %> </h1>
+        <div>
+            <img src="/images/users/<%= user.image %>" alt="avatar">
+        </div>
+        <div>
+            <p>Nombre: <span><%= user.name %> </span></p>
+        </div>
+        <div>
+            <p>Apellido: <span><%= user.surname %> </span></p>
+        </div>
+        <div>
+            <p>Fecha de nacimiento: <span><%= user.birthday %> </span></p>
+        </div>
+        <div>
+            <p>Correo: <span><%= user.email %> </span></p>
+        </div>
+        <div>
+            <p>Categoria: <span><%= user.category %> </span></p>
+        </div>
+        <div>
+            <a href="/users/<%= user.id %>/edit">Editar</a>
+        </div>
+        <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+            <button type="submit"> Eliminar</button>
+        </form>
     </div>
-    <div>
-        <p>Nombre: <span><%= user.name %> </span></p>
-    </div>
-    <div>
-        <p>Apellido: <span><%= user.surname %> </span></p>
-    </div>
-    <div>
-        <p>Fecha de nacimiento: <span><%= user.birthday %> </span></p>
-    </div>
-    <div>
-        <p>Correo: <span><%= user.email %> </span></p>
-    </div>
-    <div>
-        <p>Categoria: <span><%= user.category %> </span></p>
-    </div>
-    <div>
-        <a href="/users/<%= user.id %>/edit">Editar</a>
-    </div>
-    <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-        <button type="submit"> Eliminar</button>
-    </form>
-
 </main>
 
 <%- include('../partials/footer') %>

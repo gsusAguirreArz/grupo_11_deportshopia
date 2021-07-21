@@ -6,63 +6,65 @@
     <%- include('../partials/header') %>
 
     <main>
-        <h1>Registrate</h1>
-        <form action="/users" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="userAvatar">Imagen de usuario:</label>
-                <input type="file" name="userAvatar" id="userAvatar" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
-            </div>
-            <div>
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" placeholder="Eg. Jesus" required>
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="surname">Apellido:</label>
-                <input type="text" name="surname" id="surname" placeholder="Eg. Aguirre" required>
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="username">Nombre de usuario:</label>
-                <input type="text" name="username" id="username" placeholder="Eg. Susej">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="category">Elige tipo de usuario:</label>
-                <select name="category" id="category" class="form-input">
-                    <option value="" disabled>--Selecciona--</option>
-                    <option value="user">Usuario</option>
-                    <option value="admin">Administrador</option>
-                </select>
-            </div>
-            <div>
-                <label for="birthday">Fecha de nacimiento:</label>
-                <input type="date" name="birthday" id="birthday">
-            </div>
-            <div>
-                <label for="email">Correo:</label>
-                <input type="email" name="email" id="email" placeholder="user@email.com" required>
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="password">Contraseña:</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <div>
-                <label for="rpass">Confirmar contraseña:</label>
-                <input type="password" name="rpass" id="rpass" required>
-            </div>
-            <div>
-                <input type="checkbox" name="terms" id="terms">
-                <label for="terms">Acepto terminos y condiciones</label>
-            </div>
-            <div>
-                <button type="submit">Enviar</button>
-            </div>
-            <div>
-                <button type="reset">Borrar Formulario</button>
-            </div>
-        </form>
+        <div>
+            <h1>Registrate</h1>
+            <form action="/users" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="userAvatar">Imagen de usuario:</label>
+                    <input type="file" name="userAvatar" id="userAvatar" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
+                </div>
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" placeholder="Eg. Jesus" required>
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="surname">Apellido:</label>
+                    <input type="text" name="surname" id="surname" placeholder="Eg. Aguirre" required>
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" name="username" id="username" placeholder="Eg. Susej">
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="category">Elige tipo de usuario:</label>
+                    <select name="category" id="category" class="form-input">
+                        <option value="" disabled>--Selecciona--</option>
+                        <option value="user">Usuario</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="birthday">Fecha de nacimiento:</label>
+                    <input type="date" name="birthday" id="birthday">
+                </div>
+                <div>
+                    <label for="email">Correo:</label>
+                    <input type="email" name="email" id="email" placeholder="user@email.com" required>
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div>
+                    <label for="rpass">Confirmar contraseña:</label>
+                    <input type="password" name="rpass" id="rpass" required>
+                </div>
+                <div>
+                    <input type="checkbox" name="terms" id="terms">
+                    <label for="terms">Acepto terminos y condiciones</label>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+                <div>
+                    <button type="reset">Borrar Formulario</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <%- include('../partials/footer') %>

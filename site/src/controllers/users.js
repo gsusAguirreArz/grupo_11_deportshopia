@@ -37,7 +37,15 @@ const controller = {
         let form = req.body;
         let img = req.file;
         
-        // Code of newUser
+        let newUser = {
+            username: form.username,
+            name: form.name,
+            surname: form.surname,
+            birthday: form.birthday,
+            email: form.email,
+            password: form.password,
+            category: form.category,
+        };
 
         if (img) {
             newUser.image = img.filename;
@@ -62,7 +70,16 @@ const controller = {
         let form = req.body;
         let img = req.file;
 
-        // Code for editedUser
+        let editedUser = {
+            username: form.username,
+            name: form.name,
+            surname: form.surname,
+            birthday: form.birthday,
+            email: form.email,
+            password: form.password,
+            category: form.category,
+        };
+
         editedUser.id = ID;
 
         if (img){

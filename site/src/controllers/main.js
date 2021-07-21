@@ -10,7 +10,7 @@ const controller = {
     index: (req,res) => {
         let products = prodsModel.data();
         
-        res.render('main/index', {products:products});
+        res.render('main/index', {products:products, f: toThousand});
     },
     // '/search' - Show search results
     search: (req,res) => {

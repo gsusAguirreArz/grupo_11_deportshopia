@@ -5,46 +5,48 @@
     <%- include('../partials/header') %>
 
     <main>
-        <h1>Formulario de creacion de productos</h1>
-        <form action="/products" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="name">Nombre del producto:</label>
-                <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok">
-            </div>
-            <div>
-                <label for="price">Precio del producto:</label>
-                <input type="number" id="price" name="price" placeholder="Ej: 5678">
-            </div>
-            <div>
-                <label for="discount">Descuento:</label>
-                <input type="number" id="discount" name="discount" placeholder="Ej: 15">
-            </div>
-            <div>
-                <h3>Categoria del producto:</h3>
-                <% let array  = ['Music', 'Kids', 'Computers', 'Home','Grosery','Health','Movies','Electronics','Shoes','Books','Toys','Industrial','Games','Jewelry','Beauty','Baby','Garden','Sports','Outdoors']; %> 
-                <% for (let i of array) { %>
-                    <p>
-                        <input type="radio" name="thematic" value="<%= i %>" id="<%= i %>">
-                        <label for="<%= i %>"><%= i %></label>
-                    </p>
-                <% } %>  
-            </div>
-            <div>
-                <label for="keywords">Palabras clave:</label>
-                <input type="text" id="keywords" name="keywords" placeholder="Ej: zapato, marca, preciobajo, palabraclave">
-            </div>
-            <div>
-                <label for="description">Descipción:</label>
-                <textarea name="description" id="description" placeholder="Eg: Bonitos zapatos"></textarea>
-            </div>
-            <div>
-                <label for="prodImg">Imagen del producto:</label>
-                <input type="file" name="prodImg" id="prodImg" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
-            </div>
-            <div>
-                <button type="submit">Guardar producto</button>
-            </div>
-        </form>
+        <div>
+            <h1>Formulario de creacion de productos</h1>
+            <form action="/products" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Nombre del producto:</label>
+                    <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok">
+                </div>
+                <div>
+                    <label for="price">Precio del producto:</label>
+                    <input type="number" id="price" name="price" placeholder="Ej: 5678">
+                </div>
+                <div>
+                    <label for="discount">Descuento:</label>
+                    <input type="number" id="discount" name="discount" placeholder="Ej: 15">
+                </div>
+                <div>
+                    <h3>Categoria del producto:</h3>
+                    <% let array  = ['Music', 'Kids', 'Computers', 'Home','Grosery','Health','Movies','Electronics','Shoes','Books','Toys','Industrial','Games','Jewelry','Beauty','Baby','Garden','Sports','Outdoors']; %> 
+                    <% for (let i of array) { %>
+                        <p>
+                            <input type="radio" name="thematic" value="<%= i %>" id="<%= i %>">
+                            <label for="<%= i %>"><%= i %></label>
+                        </p>
+                    <% } %>  
+                </div>
+                <div>
+                    <label for="keywords">Palabras clave:</label>
+                    <input type="text" id="keywords" name="keywords" placeholder="Ej: zapato, marca, preciobajo, palabraclave">
+                </div>
+                <div>
+                    <label for="description">Descipción:</label>
+                    <textarea name="description" id="description" placeholder="Eg: Bonitos zapatos"></textarea>
+                </div>
+                <div>
+                    <label for="prodImg">Imagen del producto:</label>
+                    <input type="file" name="prodImg" id="prodImg" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
+                </div>
+                <div>
+                    <button type="submit">Guardar producto</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <%- include('../partials/footer') %>

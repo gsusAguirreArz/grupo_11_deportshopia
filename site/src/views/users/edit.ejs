@@ -6,53 +6,55 @@
     <%- include('../partials/header') %>
 
     <main>
-        <h1>Edita tu informacion personal <%= user.username %> </h1>
-        <form action="/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div>
-                <label for="userAvatar">Imagen de usuario:</label>
-                <input type="file" name="userAvatar" id="userAvatar" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*" value="<%= user.image %>">
-            </div>
-            <div>
-                <label for="name">Nombre:</label>
-                <input type="text" name="name" id="name" value="<%= user.name %>">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="surname">Apellido:</label>
-                <input type="text" name="surname" id="surname" value="<%= user.surname %>">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="username">Nombre de usuario:</label>
-                <input type="text" name="username" id="username" value="<%= user.username %>">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="category">Elige tipo de usuario:</label>
-                <select name="category" id="category" class="form-input">
-                    <option value="" disabled>--Selecciona--</option>
-                    <% if (user.category == 'user') { %> 
-                        <option value="user" selected>Usuario</option>
-                        <option value="admin">Administrador</option>
-                    <% }else{ %>
-                        <option value="user" >Usuario</option>
-                        <option value="admin" selected>Administrador</option>
-                    <% } %> 
-                </select>
-            </div>
-            <div>
-                <label for="birthday">Fecha de nacimiento:</label>
-                <input type="date" name="birthday" id="birthday">
-            </div>
-            <div>
-                <label for="email">Correo:</label>
-                <input type="email" name="email" id="email" value="<%= user.email %>">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <button type="submit">Enviar</button>
-            </div>
-        </form>
+        <div>
+            <h1>Edita tu informacion personal <%= user.username %> </h1>
+            <form action="/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="userAvatar">Imagen de usuario:</label>
+                    <input type="file" name="userAvatar" id="userAvatar" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*" value="<%= user.image %>">
+                </div>
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" value="<%= user.name %>">
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="surname">Apellido:</label>
+                    <input type="text" name="surname" id="surname" value="<%= user.surname %>">
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" name="username" id="username" value="<%= user.username %>">
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="category">Elige tipo de usuario:</label>
+                    <select name="category" id="category" class="form-input">
+                        <option value="" disabled>--Selecciona--</option>
+                        <% if (user.category == 'user') { %> 
+                            <option value="user" selected>Usuario</option>
+                            <option value="admin">Administrador</option>
+                        <% }else{ %>
+                            <option value="user" >Usuario</option>
+                            <option value="admin" selected>Administrador</option>
+                        <% } %> 
+                    </select>
+                </div>
+                <div>
+                    <label for="birthday">Fecha de nacimiento:</label>
+                    <input type="date" name="birthday" id="birthday">
+                </div>
+                <div>
+                    <label for="email">Correo:</label>
+                    <input type="email" name="email" id="email" value="<%= user.email %>">
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <%- include('../partials/footer') %>

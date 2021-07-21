@@ -5,31 +5,33 @@
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h1>Inicia Sesion</h1>
-        <form action="/users" method="POST">
-            <div>
-                <label for="email">Correo electronico:</label>
-                <input type="email" name="email" id="email" placeholder="Eg. user@mail.com" required>
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="password">Contraseña:</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <div>
-                <input type="submit" value="Enviar">
-                <!-- <button type="submit">Enviar</button> -->
-            </div>
-            <!-- <div>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Recuerda mis datos</label>
-            </div> -->
-        </form>
         <div>
-            <a href="#">Olvide mi Contraseña</a>
-        </div>
-        <div>
-            <a href="/users/register">Registrate ahora</a>
+            <h1>Inicia Sesion</h1>
+            <form action="/users" method="POST">
+                <div>
+                    <label for="email">Correo electronico:</label>
+                    <input type="email" name="email" id="email" placeholder="Eg. user@mail.com" required>
+                    <span class="feedback"></span>
+                </div>
+                <div>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar">
+                    <!-- <button type="submit">Enviar</button> -->
+                </div>
+                <!-- <div>
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Recuerda mis datos</label>
+                </div> -->
+            </form>
+            <div>
+                <a href="#">Olvide mi Contraseña</a>
+            </div>
+            <div>
+                <a href="/users/register">Registrate ahora</a>
+            </div>
         </div>
     </main>
 

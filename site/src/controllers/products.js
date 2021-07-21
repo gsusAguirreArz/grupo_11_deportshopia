@@ -25,10 +25,12 @@ const controller = {
     },
     // '/products/' - Method for saving the new product
     store: (req,res) => {
-        let form = req.body;
+        let newProd = req.body;
         let img = req.file;
 
-        // Code of newProd
+        let keywordsArr = newProd.keywords.split(',');
+
+        newProd.keywords = keywordsArr;
 
         if (img) {
             newProd.image = img.filename;
@@ -51,8 +53,12 @@ const controller = {
     // '/products/i' - Method to save changes of product i
     update: (req,res) => {
         let ID = req.params.ID;
-        let form = req.body;
+        let editedProduct = req.body;
         let img = req.file;
+
+        let kwArr = editedProduct.keywords.split(",");
+
+        editedProduct.keywords = kwArr;
 
         // Code for editedProduct
         editedProduct.id = ID

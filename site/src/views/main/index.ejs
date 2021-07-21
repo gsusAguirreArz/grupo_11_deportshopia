@@ -116,42 +116,17 @@
             <div class="prodsReel">
                 <h3 class="prodsReel__title">Special Offers</h3>
                 <div class="prodsReel__carousel">
+                    <% for (let i = 0; i<5; i++ ) { %> 
                     <div class="product">
-                        <a href="#">
-                            <img src="images/playera.jpeg" alt="Imagen Playera" class="product__im">
+                        <a href="/products/<%= products[i].id %>">
+                            <img src="/images/products/<%= products[i].image %>" alt="Imagen Playera" class="product__im">
                             <div class="product__info">
-                                <p class="product__name">Playera</p>
-                                <p class="product__price">$25</p>
+                                <p class="product__name"><%= products[i].name %></p>
+                                <p class="product__price">$<%= f(products[i].price) %></p>
                             </div>
                         </a>
                     </div> <!--.product-->
-                    <div class="product">
-                        <a href="#">
-                            <img src="images/sudadera.jpeg" alt="Imagen Sudadera" class="product__im">
-                            <div class="product__info">
-                                <p class="product__name">Sudadera</p>
-                                <p class="product__price">$25</p>
-                            </div>
-                        </a>
-                    </div> <!--.product-->
-                    <div class="product">
-                        <a href="#">
-                            <img src="images/tenis.jpeg" alt="Imagen Tenis" class="product__im">
-                            <div class="product__info">
-                                <p class="product__name">Tenis</p>
-                                <p class="product__price">$25</p>
-                            </div>
-                        </a>
-                    </div> <!--.product-->
-                    <div class="product">
-                        <a href="#">
-                            <img src="images/bolsa.jpeg" alt="Imagen Bolsa" class="product__im">
-                            <div class="product__info">
-                                <p class="product__name">Bolsa</p>
-                                <p class="product__price">$25</p>
-                            </div>
-                        </a>
-                    </div> <!--.product-->
+                    <% } %> 
                 </div>
             </div>
         </div>
