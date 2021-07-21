@@ -28,12 +28,12 @@ router.get('/', usersController.index);
 // User login
 router.post('/',usersController.login);
 
-// Show one user
-router.get('/:id', usersController.detail);
-
 // Create a user
 router.get('/register', usersController.create);
 router.post('/', upload.single('userAvatar'), usersController.store);
+
+// Show one user
+router.get('/:id', usersController.detail);
 
 // Edit a user
 router.get('/:id/edit', usersController.edit);

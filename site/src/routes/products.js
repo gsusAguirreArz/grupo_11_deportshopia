@@ -25,12 +25,12 @@ const productsController = require('../controllers/products');
 // Show all products
 router.get('/', productsController.index);
 
-// Show one product
-router.get('/:id', productsController.detail);
-
 // Create a product
 router.get('/create', productsController.create);
 router.post('/', upload.single('prodImg'), productsController.store);
+
+// Show one product
+router.get('/:id', productsController.detail);
 
 // Edit a product
 router.get('/:id/edit', productsController.edit);
