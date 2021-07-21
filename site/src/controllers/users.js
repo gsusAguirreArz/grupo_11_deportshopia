@@ -15,9 +15,9 @@ const controller = {
         let form = req.body;
 
         // CODE to check if user is registered
-
-        if ( userisregistered ){
-            res.redirect('/users/'+ userId);
+        let user = usersModel.data().find( i => i.email == form.email && i.password == form.password);
+        if (user){
+            res.redirect('/users/'+ user.id);
         }
         res.redirect('/login');
     },
