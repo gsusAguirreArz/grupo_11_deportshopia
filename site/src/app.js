@@ -2,6 +2,8 @@
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 // ------------------- APP -------------------
 const app = express();
@@ -11,6 +13,12 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(session({
+    secret:"Nombre del sitio",
+    resave: false,
+    saveUninitialized: true,
+}));
+app.use(cookieParser);
 
 // ------------------- Template Engine -------------------
 app.set('view engine', 'ejs');
