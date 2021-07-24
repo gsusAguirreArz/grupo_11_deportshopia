@@ -1,6 +1,6 @@
 # Conclusiones y retrospectiva (Inicio del Sprint2)
 
-- **Fecha:** 17/16/21
+- **Fecha:** 20/06/21
 - **Participantes:** 
     * Jesús Aguirre
     * Carlos Rodríguez Tenorio
@@ -14,5 +14,5 @@ Por otro lado, se utilizó la dinámica de estrella de mar para resaltar aquello
 - **Observaciones finales:**
     * Se consolidó un buen equipo con una dinámica de trabajo basada en la división de tareas.
     * El Trello funcionó para gestionar tiempos y tareas por integrante del equipo.
-    * Se retiró un integrante del equipo.
+    * Se retiró un integrante del equipo (el cual no nos aviso nada acerca de su ausencia).
     * Se realizó la división de tareas para el siguiente Sprint.

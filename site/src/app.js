@@ -18,7 +18,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }));
-app.use(cookieParser);
+app.use(cookieParser());
 
 // ------------------- Template Engine -------------------
 app.set('view engine', 'ejs');
@@ -28,7 +28,7 @@ app.set('views', path.join(__dirname, './views'));
 
 // **** Server Settings ****
 const PORT = process.env.PORT || 3000;
-var template = (prt) => { return "\\*-------------------------*\\\nServer running in " + prt + " port.\nNow, you can open http://localhost:" + prt + " in your browser\n\\*-------------------------*\\"};
+const template = (prt) => { return "\\*-------------------------*\\\nServer running in " + prt + " port.\nNow, you can open http://localhost:" + prt + " in your browser\n\\*-------------------------*\\"};
 
 app.listen(PORT, () => {
     console.log(template(PORT));
