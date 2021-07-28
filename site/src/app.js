@@ -46,7 +46,7 @@ app.use('/users', usersRoutes);
 // **** Error Handler ****
 app.use((req,res,next) => {
     // res.status(404).render('not-found');
-    res.status(404).send('No encontrado');
+    res.status(404).render('error');
 });
 
 
