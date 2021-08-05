@@ -27,7 +27,7 @@
             </div>
             <div>
                 <% let x = ''; %>
-                    <% for (let i in product.keywords) { %>
+                    <% for (let i of product.keywords) { %>
                     <% x += i + ', '; %> 
                 <% } %>
                 <p>Palabras clave: <%= x %></p>

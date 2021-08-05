@@ -61,7 +61,7 @@ const controller = {
         editedProduct.keywords = kwArr;
 
         // Code for editedProduct
-        editedProduct.id = ID
+        editedProduct.id = ID;
 
         if (img) {
             editedProduct.image = img.filename;
@@ -71,7 +71,7 @@ const controller = {
 
         let pId = prodsModel.update(editedProduct);
 
-        res.redirect('/products/'+ID);
+        res.redirect('/products/'+pId);
     },
     // '/products/' - Method to delete the product i from DB
     destroy: (req,res) => {
