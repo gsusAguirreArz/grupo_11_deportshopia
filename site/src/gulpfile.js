@@ -31,18 +31,18 @@ const rename = require('gulp-rename');
 
 // Source PATHS
 const sourcePATHS = {
-    sass: path.join(__dirname, ''),
-    images: path.join(__dirname, ''),
-    wp: path.join(__dirname, ''),
-    js: path.join(__dirname, '')
+    sass: path.join(__dirname, './scss/styles.scss'),
+    images: path.join(__dirname, '../media/**/*'),
+    wp: path.join(__dirname, '../public/images/min/**/*'),
+    js: path.join(__dirname, './js/**/*.js')
 };
 
 // Dest PATHS
 const destPATHS = {
-    sass: path.join(__dirname, ''),
-    images: path.join(__dirname, ''),
-    wp: path.join(__dirname, ''),
-    js: path.join(__dirname, '')
+    sass: path.join(__dirname, '../public/css'),
+    images: path.join(__dirname, '../public/images/min'),
+    wp: path.join(__dirname, '../public/images/webp'),
+    js: path.join(__dirname, '../public/js')
 };
 
 /**
@@ -64,7 +64,7 @@ function compileCSS (){
 
 // Watch function
 function watchFiles() {
-    const SCSS_DIRPATH = '';
+    const SCSS_DIRPATH = path.join(__dirname, './scss/**/*.scss');
     watch(SCSS_DIRPATH, compileCSS);
 }
 
@@ -78,9 +78,9 @@ function images(){
 
 // Create WEBP image version
 function imgWebp() {
-    return src( sourcePaths.wp )
+    return src( sourcePATHS.wp )
             .pipe( webp() )
-            .pipe( dest(destPaths.wp) )
+            .pipe( dest(destPATHS.wp) )
             .pipe( notify({message:"Version webp lista"}) );
 }
 

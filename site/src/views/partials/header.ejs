@@ -2,7 +2,10 @@
 <header>
     <nav class="navbar">
         <a href="/">
-            <img class="navbar__logo" src="/images/logos/main-logo.png" alt="logo DeportShopia">
+            <picture>
+                <source class="navbar__logo" loading="lazy" srcset="/images/webp/logos/main-logo.webp" type="image/webp">
+                <img class="navbar__logo" loading="lazy" src="/images/min/logos/main-logo.png" alt="logo DeportShopia">
+            </picture>
         </a>
         <a class="navbar__link navbar__link--active" href="#">Ofertas!</a>
         <a class="navbar__link" href="/products">Productos</a>

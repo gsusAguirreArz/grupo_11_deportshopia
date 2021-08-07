@@ -11,7 +11,7 @@
                 <% for (let i of products ) { %> 
                 <div class="product">
                     <a href="/products/<%= i.id %>">
-                        <img src="/images/products/<%= i.image %>" alt="Imagen Playera" class="product__im">
+                        <img src="/images/min/products/<%= i.image %>" alt="Imagen Playera" class="product__im">
                         <div class="product__info">
                             <p class="product__name"><%= i.name %></p>
                             <p class="product__price">$<%= f(i.price) %></p>
