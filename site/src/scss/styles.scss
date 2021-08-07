@@ -1,0 +1,10 @@
+@import 'base/normalize';
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/globales';
+@import 'base/utilities';
+
+@import 'layout/partials/header';
+@import 'layout/partials/footer';
+@import 'layout/main/index';
