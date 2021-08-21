@@ -1,6 +1,9 @@
 // ------------------- Imports -------------------
 const model = require('../models/model');
 const prodsModel = model('products');
+const prodsMenModel = model('productsMen');
+const prodsWomenModel = model('productsWomen');
+const prodsKidsModel = model('productsKids');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
@@ -11,6 +14,21 @@ const controller = {
         let products = prodsModel.data();
 
         res.render('products/index', {f:toThousand, products:products});
+    },
+    men: (req,res) => {
+        let products = prodsMenModel.data();
+
+        res.render('products/men', {f:toThousand, products:products});
+    },
+    women: (req,res) => {
+        let products = prodsWomenModel.data();
+
+        res.render('products/women', {f:toThousand, products:products});
+    },
+    kids: (req,res) => {
+        let products = prodsKidsModel.data();
+
+        res.render('products/kids', {f:toThousand, products:products});
     },
     // '/products/i' - Detail show the detail of the product i
     detail: (req,res) => {
