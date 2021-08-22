@@ -4,43 +4,38 @@
 <body>
     <%- include('../partials/header') %>
 
-    <main>
-        <div>
-            <h1>Detalle del producto <%= product.name %> </h1>
-            <div>
-                <img src="/images/min/products/<%= product.image %>" alt="product image">
+    <main class="detailsPage">
+        <h1 class="productName"><%= product.name %></h1>
+        <div class="detailsContent">
+            <div class="detailsProduct">
+                <img src="/images/min/products/<%= product.image %>" alt="product image" class="product__img">
+            
+                <div>
+                    <a href="/products/<%= product.id %>/edit">Editar</a>
+                </div>
+                <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="submit">ELIMINAR</button>
+                </form>
             </div>
-            <div>
+            <div class="detailsInfo">
                 <p><%= product.description %></p>
-            </div>
-            <div>
-                <h2><%= product.name %></h2>
-            </div>
-            <div>
+            
+            
                 <p>$<%= f(product.price) %></p>
-            </div>
-            <div>
+            
                 <p><%= product.discount %> % OFF</p>
-            </div>
-            <div>
-                <p>Categoria: <%= product.thematic %></p>
-            </div>
-            <div>
+            
+                <p><b>Categoría:</b> <%= product.thematic %></p>
+            
                 <% let x = ''; %>
                     <% for (let i of product.keywords) { %>
                     <% x += i + ', '; %> 
                 <% } %>
-                <p>Palabras clave: <%= x %></p>
-            </div>
+                <p><b>Palabras clave:</b> <%= x %></p>
+            
             <div>
                 <a href="#">COMPRAR AHORA</a>
             </div>
-            <div>
-                <a href="/products/<%= product.id %>/edit">Editar</a>
-            </div>
-            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                <button type="submit">ELIMINAR</button>
-            </form>
         </div>
     </main>
 

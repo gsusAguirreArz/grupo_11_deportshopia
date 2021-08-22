@@ -14,12 +14,13 @@ const controller = {
     },
     // '/search' - Show search results
     search: (req,res) => {
-        let products = prodsModel.data();
+        /*let products = prodsModel.data();
         let kw = req.query.keywords;
 
         let searchRes = products.filter(product => product.name.toLowerCase().includes(kw.toLowerCase()) || product.description.toLowerCase().includes(kw.toLowerCase()));
 
-        res.render('main/results', {products:searchRes, keywords: kw, f:toThousand});
+        res.render('main/search', {products:searchRes, keywords: kw, f:toThousand});*/
+        res.render('/search');
     },
     // '/login' - Show login page
     login: (req,res) => {

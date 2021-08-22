@@ -5,7 +5,82 @@
     <%- include('../partials/header') %>
 
     <main>
-        <div class="container bg">
+        <div class="container multi__banner">
+            <div>
+                <img class="img__individual" src="images/cruzazul_camiseta.jpg" alt="CAZ_Camiseta">
+                <h4>1ª CAMISETA CRUZ AZUL ROYAL M/C</h4>
+            </div>
+            <div>
+                <img class="img__individual" src="images/cruzazul_mangacorta.jpg" alt="logoUmbro">
+                <h4>CAMISETA MANGA CORTA CRUZ AZUL CELESTE</h4>
+            </div>
+            <div>
+                <img class="img__individual" src="images/min/products/product_6.jpg" alt="logoUmbro">
+                <h4>SUDADERA CON CAPUCHA CRUZ AZUL ROYAL</h4>
+            </div>    
+            <div>
+                <img class="img__individual" src="images/min/products/product_4.jpg" alt="logoUmbro">
+                <h4>MASCARILLA HIGIENICA CRUZ AZUL</h4>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="banners">
+                <div class="banner">
+                    <div class="banner__icon"><img src="/images/jerseyTitularMexicoNegro.jpg" alt="logoAdidas"></div>
+                </div> <!--.banner-->
+                <div class="banner">
+                    <div class="banner__icon"><img src="/images/atletica_sports.jpg" alt="logoAtletica"></div>
+                </div> <!--.banner-->
+                <div class="banner">
+                    <div class="banner__icon"><img src="/images/UA_Train.jpg" alt="logoUnderArmour"></div>
+                </div> <!--.banner-->
+            </div>
+        </div>
+
+        <div class="container multi__banner">
+            <div>
+                <img class="img__duo" src="images/chivas.jpg" alt="logoUmbro">
+            </div>
+            <div>
+                <img class="img__duo" src="images/rayados.jpg" alt="logoUmbro">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="banners">
+                <div class="banner">
+                    <div class="banner__icon"><img src="/images/converse_Train.jpg" alt="logoUmbro"></div>
+                </div> <!--.banner-->
+                <div class="banner">
+                    <div class="banner__icon"><img src="/images/vans_sudadera.jpg" alt="logoPirma"></div>
+                </div> <!--.banner-->
+                <div class="banner">
+                    <div class="banner__icon"><img src="/images/playeraGraphicSeries.jpg" alt="logoReebok"></div>
+                </div> <!--.banner-->
+            </div>
+        </div>
+
+        <div class="container multi__banner">
+            <div>
+                <img class="img__individual" src="images/playeranecaxa.jpg" alt="logoUmbro">
+                <h4>JERSEY VISITANTE NECAXA 2020-2021</h4>           
+            </div>
+            <div>
+                <img class="img__individual" src="images/playeraleonverde.jpg" alt="logoUmbro">
+                <h4>Jersey Local Leon FC temporada 2020-2021</h4>
+            </div>
+            <div>
+                <img class="img__individual" src="images/playeramazatlan.jpg" alt="logoUmbro">
+                <h4>JERSEY DE GALA MAZATLAN FC 2020-2021</h4>
+            </div>
+            <div>
+                <img class="img__individual" src="images/playerasanluis.jpg" alt="logoUmbro">
+                <h4>JERSEY DE GALA ATLETICO SAN LUIS 2020-2021</h4>
+            </div>
+        </div>
+       
+        <!--<div class="container bg">
             <div class="carousel">
                 <div class="carousel__images">
                     Images
@@ -18,80 +93,8 @@
                     <input type="radio" name="images-carousel">
                 </div>
             </div>
-            <div class="leftarrow">
-                <button>L</button>
-            </div>
-            <div class="rightarrow">
-                <button>R</button>
-            </div>
-
-        </div>
-        <div class="container">
-            <div class="fastnews">
-                <p> Compras mas rapidas/12msi/medidas covid</Compras></p>
-            </div>
-        </div>
-        <div class="container">
-            <div class="discounts">
-                <div class="discount">
-                    <div class="discount__logo">Logo X marca</div>
-                    <div class="discount__text">
-                        <p>Hasta un x% de descuento</p>
-                    </div>
-                </div> <!--.discount-->
-                <div class="discount">
-                    <div class="discount__logo">Logo X marca</div>
-                    <div class="discount__text">
-                        <p>Hasta un x% de descuento</p>
-                    </div>
-                </div> <!--.discount-->
-                <div class="discount">
-                    <div class="discount__logo">Logo X marca</div>
-                    <div class="discount__text">
-                        <p>Hasta un x% de descuento</p>
-                    </div>
-                </div> <!--.discount-->
-            </div>
-        </div>
-        <div class="container">
-            <div class="banners">
-                <div class="banner">
-                    <div class="banner__icon">Icon</div>
-                    <h4 class="banner__title">Envio gratis</h4>
-                    <p class="banner__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut rerum iste.</p>
-                </div> <!--.banner-->
-                <div class="banner">
-                    <div class="banner__icon">Icon</div>
-                    <h4 class="banner__title">Envio gratis</h4>
-                    <p class="banner__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut rerum iste.</p>
-                </div> <!--.banner-->
-                <div class="banner">
-                    <div class="banner__icon">Icon</div>
-                    <h4 class="banner__title">Envio gratis</h4>
-                    <p class="banner__texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut rerum iste.</p>
-                </div> <!--.banner-->
-            </div>
-        </div>
-        <div class="container">
-            <div class="prodsReel">
-                <h3 class="prodsReel__title">Special Offers</h3>
-                <div class="prodsReel__carousel">
-                    <% for (let i = 0; i<9; i++ ) { %> 
-                    <div class="product">
-                        <a href="/products/<%= products[i].id %>">
-                            <img src="/images/min/products/<%= products[i].image %>" alt="Imagen Playera" class="product__im">
-                            <div class="product__info">
-                                <p class="product__name"><%= products[i].name %></p>
-                                <p class="product__price">$<%= f(products[i].price) %></p>
-                            </div>
-                        </a>
-                    </div> <!--.product-->
-                    <% } %> 
-                </div>
-            </div>
         </div>
     </main>
-
-    <%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>-->
 </body>
 </html>

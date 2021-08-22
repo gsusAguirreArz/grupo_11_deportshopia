@@ -5,12 +5,12 @@
     <%- include('../partials/header'); %>
 
     <main class="product">
-        <h2>Women</h2>
         <% for (let product of products) { %>             
         <div class="product__info">
             <a href="/products/<%= product.id %>">
                 <img src="/images/min/products/<%= product.image %> " alt="imagen de <%= product.name %>" class="product__im">
                 <p class="product__name"><%= product.name %></p>
+                <p class="product__name"><%= product.id %></p>
                 <p class="product__price">$<%= f(product.price) %></p>
             </a>
         </div> <!--.product-->

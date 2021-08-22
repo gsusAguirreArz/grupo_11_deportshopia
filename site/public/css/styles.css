@@ -1,135 +1,4 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
-html{
-    -webkit-text-size-adjust:100%;
-    line-height:1.15
-}
-
-body{margin:0}
-
-main{display:block}h1{font-size:2em;margin:.67em}
-
-
-hr{box-sizing:content-box;height:0;overflow:visible}
-
-
-pre{font-family:monospace,monospace;font-size:1em}
-
-
-a{background-color:transparent}
-
-abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}
-
-b,strong{font-weight:bolder}
-
-code,kbd,samp{font-family:monospace,monospace;font-size:1em}
-
-small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
-
-sub{bottom:-.25em}
-
-sup{top:-.5em}
-
-img{border-style:none}
-
-button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}
-
-button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}
-
-legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
-
-progress{vertical-align:baseline}
-
-textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
-
-details{display:block}
-summary{display:list-item}[hidden],template{display:none}
-
-html{box-sizing:border-box;font-size:62.5%}*,
-
-:after,:before{box-sizing:inherit}
-
-body{font-family:Trebuchet MS, Arial, Helvetica, sans-serif,cursive;font-size:16px;line-height:1.5}
-
-p{font-family:Arial,Helvetica,sans-serif;font-size:2rem}
-
-a{cursor:pointer;text-decoration:none}
-
-img{width:100%}h1,h2,h3{font-family:Staatliches,cursive;text-align:center}
-
-h1{font-size:4rem}h2{font-size:3.6rem}
-
-h3{font-size:3rem}button,input[type=button]{cursor:pointer}
-
-ul{padding:0}ul li{list-style-type:none}
-
-.margin-zero{margin:0}
-header{
-    padding:2rem 0
-}
-/*----------------------------------------------------------------------------------------------------------*/
-
-.navbar {
-    background-color:#3dcf11;
-    gap:2rem;
-    padding:1rem 0;
-    width:100%
-}
-
-.navbar__logo{
-    margin-top:.7rem;
-    max-width:10rem
-}
-
-.navbar__link {
-    color:#fff;
-    font-family:Staatliches,cursive;
-    font-size:3rem
-}
-
-.navbar__link--active,.navbar__link:hover{color:#b11b23}
-
-.navbar__form {
-    display:flex;
-    gap:2rem;
-    justify-content:center;
-    padding:1rem 0
-}
-
-.navbar__form__btn{border-radius:50%;width:2.8rem}
-
-/*---------------------------------------------------------------------------------------------------------*/
-.navbar,header{display:flex;justify-content:center}
-
-
-
-
-
-.linksblock__social__btn,.navbar__form__btn,.navbar__form__text, .newsblock__content__btn{background-color:#fff;border:none;border-radius:.5rem}
-
-
-.newsblock__content__btn{border:.1rem solid #a15b3d;color:#a15b3d;height:5rem;width:15rem}
-
-.linksblock{display:grid;gap:2rem;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(1,1fr)}
-
-.linksblock__links{align-self:center;display:grid;gap:1rem;grid-template-columns:repeat(3,1fr);justify-items:center;padding-left:16rem}
-
-/*--------------------------------------------------------------------------------------------------------------*/
-
-.footer {
-    background-color: #3dcf11;
-}
-
-.newsblock {
-    justify-content:center;
-    margin-top:2rem;
-    padding:2rem 16rem;
-    text-align:center
-}
-
-.newsblock, .newsblock__content{align-items:center;display:flex}
-
-.newsblock__content{flex-direction:column;height:20rem;justify-content:space-evenly;width:100%}
-
+html { font-family:Trebuchet MS, Arial, Helvetica, sans-serif;background-color:rgb(236, 228, 228); }
 
 .linksblock__icons {
     align-items:center;
@@ -150,33 +19,125 @@ header{
     border-radius:40%;
     height:5rem;
     margin:0 1rem;
-    width:5rem
+    width:5rem;
 }
 
+/*-------------------------------     src/views/partials/head.ejs     --------------------------------------*/
+
+/*-------------------------------   src/views/partials/header.ejs   ----------------------------------------*/
+header { padding:2rem 0; }
+
+.navbar { background-color:#3dcf11;gap:2rem;padding:1rem 0;width:100%; }
+
+.navbar, header{ display:flex;justify-content:center; }
+
+.navbar a { font-size:xx-large; }
+
+.navbar__logo { margin-top:.7rem;max-width:12rem; }
+
+.navbar__link { color:#fff;font-size:3rem; }
+
+.navbar__link--active { color:#b11b23; } 
+
+.navbar__link:hover {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #100722;
+    font-weight: bold;
+    padding: 4px;
+}
+
+/*-------------------------------   src/views/partials/footer.ejs   ----------------------------------------*/
+footer { background-color: #258807; }
+
+.newsblock {
+    background-color: #0e2c05;
+    color: white;
+    justify-content:center;
+    margin-top:2rem;
+    padding:2rem 16rem;
+    text-align:center;
+    align-items:center;
+    display:flex;
+}
+
+.margin-zero { margin:0; }
+
 .linksblock__icons__cert {
+    margin: 8px;
+    padding: 12px;
     align-items:center;
     display:grid;
     gap:2rem;
     grid-template-columns:repeat(6,1fr);
     grid-template-rows:repeat(2,1fr);
-    justify-items:center
+    justify-items:center;
 }
 
-.linksblock__icons__cert__logo{
-    height:c 10rem;
+.linksblock__icons__cert__logo {
+    height: 9rem;
     width: 12rem;
 }
-.item7{grid-column:1/3}
-.item8{grid-column:3/5}
-.item9{grid-column:5/7}
+.item7 { grid-column:1/3; }
+.item8 { grid-column:3/5; } 
+.item9 { grid-column:5/7; }
 
-.footnoteblock{
-    border-top:900 solid;
-    display:flex;
-    justify-content:space-between;
-    padding:0 16rem;
-    text-align:center
+/*------------------------------------    src/views/main/index.ejs    ------------------------------------*/
+.container { height:auto;margin:0 auto;max-width:120rem }
+
+.multi__banner {
+    background-color:aliceblue;
+    border:.1rem solid #3dcf11;
+    display: flex;
+    justify-content: center;
 }
+
+.img__individual {
+    height:340px;
+    width:299px;
+}
+
+.img__duo {
+    height:400px;
+    width:599px;
+}
+
+.banner {
+    background-color:aliceblue;
+    border:.1rem solid #3dcf11;
+    display: table-cell;
+    vertical-align: middle;
+}
+.banners{gap:.5rem;grid-template-columns:repeat(3,1fr);margin:1rem 0}
+.banner,.banners{display:grid;grid-template-rows:1fr}
+.banner__icon{grid-row:1/3;margin:auto 0;text-align:center}
+.banner__button{background-color: #b11b23;margin: 5px;padding: 3px;}
+.banner__mark { 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    grid-column:2/3;
+    font-weight: bolder;
+}
+
+
+.bg{background-image:url(../images/min/stills/background-mountain.png);background-repeat:no-repeat;background-size:cover;height:45rem;position:relative;width:100%}
+
+.carousel{
+    background-color:rgba(0,0,0,.65);
+    flex-direction:column;
+    height:100%;
+    position:absolute;
+    width:100%;
+    align-items:center;
+    display:flex;
+    justify-content:center;
+}
+
+.prodsReel__title {font-size:xx-large;background-color: #258807;}
+
+.prodsReel__carousel{display:grid;gap:5rem;grid-template-columns:repeat(4,1fr)}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+
 
 /*--------------------------------------------------------------------------------------------------------------*/
 
@@ -244,20 +205,22 @@ header{
 }
 
 .product__info {
-    background-color: #3dcf11;
-    height: 320px;
+    background-color: #aeb6ac;
+    height: 420px;
     width: 260px;
 
     margin-top: 20px;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 20px;
-    border: 3px solid rgb(199, 147, 22);
+    border: 3px solid rgb(223, 8, 26);
     padding: 2px;
     margin: 30px;
 }
 
-.product__name {font-size:4rem}
+.product__name {
+    background-color: #ace721;
+    font-size:4rem}
 
 .product__price{
     color:#b11b23;
@@ -271,21 +234,133 @@ header{
     text-align:center
 }
 
+.product__img {
+    border: 2px solid #b60808;
+    height: 400px;
+    width: 400px;  
+    margin: 5px;
+    padding: 5px;  
+}
+
 /*------------------------------------------------------------------------------------------------------------*/
-.container{height:auto;margin:0 auto;max-width:120rem}
 
-.bg{background-image:url(../images/min/stills/background-mountain.png);background-repeat:no-repeat;background-size:cover;height:45rem;position:relative;width:100%}
+.detailsPage {
+    border: 5px solid #b60808;
+    height: 115vh;
+    width: 80vw;
+    margin-left: 160px;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px
+}
 
-.carousel{background-color:rgba(0,0,0,.65);flex-direction:column;height:100%;position:absolute;width:100%}
-.carousel,.fastnews{align-items:center;display:flex;justify-content:center}
+.detailsContent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
 
-.fastnews{background-color:#a15b3d;margin:1rem 0}.fastnews p{font:Staatliches,cursive}ç
-.discount,.discounts{align-items:center;display:flex;justify-content:space-around}
+.detailsProduct {
+    width: 40%;
+}
 
-.discount{background-color:rgba(230,99,99,.322);border:.1rem solid red;border-radius:.5rem;height:auto;width:22rem}.banners{gap:.5rem;grid-template-columns:repeat(3,1fr);margin:1rem 0}.banner,.banners{display:grid;grid-template-rows:1fr}
-.banner{border:.1rem solid blue;border-radius:.5rem;grid-template-columns:repeat(2,1fr)}.banner__icon{grid-row:1/3;margin:auto 0;text-align:center}.banner__texto{grid-column:2/3}.catCards{align-items:center;display:flex;justify-content:space-between;margin:1rem 0}
-.catCard{border:900 solid;display:grid;gap:.5rem;grid-template-columns:repeat(2,12rem);grid-template-rows:repeat(6,6rem)}.catCard__image{grid-column:1/3;grid-row:1/4}.catCard__title{grid-column:1/3;grid-row:4/5}
-.catCard__sections{grid-column:1/2;grid-row:5/7}.catCard__expand{grid-column:2/3;grid-row:5/6}
-.prodsReel__carousel{display:grid;gap:5rem;grid-template-columns:repeat(4,1fr)}
+.detailsInfo {
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+}
+
+.detailsInfo p {
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-size:larger;
+}
+
+.productName {
+    color: #100722;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+.createProductForm {
+    border: 3px solid #b60808;
+    height: 105vh;
+    width: 70vw;
+    margin-left: 230px;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+html{
+    -webkit-text-size-adjust:100%;
+    line-height:1.15
+}
+
+body{margin:0}
+
+main{display:block}h1{font-size:2em;margin:.67em}
+
+
+hr{box-sizing:content-box;height:0;overflow:visible}
+
+
+pre{font-family:monospace,monospace;font-size:1em}
+
+
+a{background-color:transparent}
+
+abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}
+
+b,strong{font-weight:bolder}
+
+code,kbd,samp{font-family:monospace,monospace;font-size:1em}
+
+small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+
+sub{bottom:-.25em}
+
+sup{top:-.5em}
+
+img{border-style:none}
+
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}
+
+button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}
+
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
+
+progress{vertical-align:baseline}
+
+textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+
+details{display:block}
+summary{display:list-item}[hidden],template{display:none}
+
+html{box-sizing:border-box;font-size:62.5%}*,
+
+:after,:before{box-sizing:inherit}
+
+body{font-family:Trebuchet MS, Arial, Helvetica, sans-serif,cursive;font-size:16px;line-height:1.5}
+
+p{font-family:Arial,Helvetica,sans-serif;font-size:2rem}
+
+a{cursor:pointer;text-decoration:none}
+
+img{width:100%}h1,h2,h3{font-family:Staatliches,cursive;text-align:center}
+
+h1{font-size:4rem}h2{font-size:3.6rem}
+
+h3{font-size:3rem}button,input[type=button]{cursor:pointer}
+
+ul{padding:0}ul li{list-style-type:none}
+
+
+
 
 /*# sourceMappingURL=styles.css.map */
