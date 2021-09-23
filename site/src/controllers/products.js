@@ -27,7 +27,7 @@ const controller = {
     store: (req,res) => {
         let newProd = req.body;
         let img = req.file;
-
+        
         let keywordsArr = newProd.keywords.split(',');
 
         newProd.keywords = keywordsArr;

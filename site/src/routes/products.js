@@ -27,7 +27,7 @@ router.get('/', productsController.index);
 
 // Create a product
 router.get('/create', productsController.create);
-router.post('/', upload.single('prodImg'), productsController.store);
+router.post('/',upload.single('prodImg'), productsController.store);
 
 // Show one product
 router.get('/:id', productsController.detail);
