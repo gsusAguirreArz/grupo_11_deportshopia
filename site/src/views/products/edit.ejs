@@ -4,9 +4,9 @@
 <body>
     <%- include('../partials/header') %>
 
-    <main>
+    <main class="createProductForm">
         <div>
-            <h1>Edita el producto <%= product.name %> </h1>
+            <h1>Edición de Producto <%= product.name %> </h1>
             <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div>
                     <label for="name">Nombre del producto:</label>
@@ -22,7 +22,7 @@
                 </div>
                 <div>
                     <h3>Categoria del producto:</h3>
-                    <% let array  = ["Music", "Kids", "Computers", "Home","Grosery","Health","Movies","Electronics","Shoes","Books","Toys","Industrial","Games","Jewelry","Beauty","Baby","Garden","Sports","Outdoors"]; %> 
+                    <% let array  = ['Hombre','Mujer','Kids']; %> 
                     <% for (let i of array) { %>
                         <% if (i === product.thematic ) { %>
                             <p>

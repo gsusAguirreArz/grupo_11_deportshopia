@@ -24,6 +24,10 @@ const productsController = require('../controllers/products');
 // **** Routes ****
 // Show all products
 router.get('/', productsController.index);
+router.get('/men', productsController.men);
+router.get('/women', productsController.women);
+router.get('/kids', productsController.kids);
+router.get('/offers', productsController.offers);
 
 // Create a product
 router.get('/create', productsController.create);

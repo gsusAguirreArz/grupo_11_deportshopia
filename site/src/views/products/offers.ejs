@@ -10,6 +10,7 @@
             <a href="/products/<%= product.id %>">
                 <img src="/images/min/products/<%= product.image %> " alt="imagen de <%= product.name %>" class="product__im">
                 <p class="product__name"><%= product.name %></p>
+                <p class="product__name"><%= product.thematic %></p>
                 <p class="product__price">$<%= f(product.price) %></p>
             </a>
         </div> <!--.product-->

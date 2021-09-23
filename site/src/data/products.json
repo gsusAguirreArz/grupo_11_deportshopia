@@ -1,27 +1,26 @@
 [
  {
   "id": 1,
-  "name": "Paraxerus cepapi",
-  "description": "in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum",
-  "price": 722.94,
+  "name": "JERSEY TITULAR MÉXICO",
+  "description": "Todo es mejor en rosa. De todos los colores que pintan el paisaje mexicano, el rosa es el que más sobresale. Demuestra tu pasión por la Selección Nacional de México con este jersey de fútbol adidas. Rinde homenaje a la tradición y está hecho de tejido absorbente AEROREADY que se encarga de mantener tu piel seca en todo momento y lugar.",
+  "price": 1499,
   "discount": 0,
   "image": "product_1.jpg",
-  "thematic": "Kids",
+  "thematic": "Oferta",
   "keywords": [
-   "Echo",
-   "Alfa",
-   "Foxtrot",
+   "Primavera",
+   "Mujer",
    "Quebec"
   ]
  },
  {
   "id": 2,
-  "name": "Kobus defassa",
-  "description": "tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa",
+  "name": "PLAYERA LOGO PLAY",
+  "description": "Haz lo que quieras, cuando quieras. Para nosotros los límites no existen. Atrévete a ir más allá con esta playera adidas. Está lista para dominar las calles y también para disfrutar del sofá o hacerte notar en las videollamadas. Los colores en contraste y los Trifolios extragrandes se combinan para crear un look muy llamativo.",
   "price": 2260.37,
   "discount": 0,
   "image": "product_2.jpg",
-  "thematic": "Computers",
+  "thematic": "Hombre",
   "keywords": [
    "Golf",
    "Lima",
@@ -36,7 +35,7 @@
   "price": 1461.65,
   "discount": 0,
   "image": "product_3.jpg",
-  "thematic": "Home",
+  "thematic": "Hombre",
   "keywords": [
    "Foxtrot",
    "India",
@@ -47,12 +46,12 @@
  },
  {
   "id": 4,
-  "name": "Lorythaixoides concolor",
-  "description": "fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi",
-  "price": 4496.5,
+  "name": "MASCARILLA HIGIENICA CRUZ AZUL",
+  "description": "Edición limitada",
+  "price": 299.00,
   "discount": 0,
   "image": "product_4.jpg",
-  "thematic": "Music",
+  "thematic": "Kids",
   "keywords": [
    "India",
    "Bravo"
@@ -60,12 +59,12 @@
  },
  {
   "id": 5,
-  "name": "Felis wiedi or Leopardus weidi",
-  "description": "nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat",
-  "price": 1417.61,
+  "name": "Run Star Hike Hi",
+  "description": "El diseño relajado del icónico calzado de perfil alto Chuck Taylor All Star, el Run Star Hike, cuenta con un estilo que se inspira en las actividades de senderismo. El icónico calzado de lona con cordones viene con el clásico parche de estrella en el tobillo y una raya de cinta foxing que dirige la atención a la suela con relieve de la plataforma. Sal.",
+  "price": 2199,
   "discount": 0,
   "image": "product_5.jpg",
-  "thematic": "Grocery",
+  "thematic": "Oferta",
   "keywords": [
    "Delta",
    "November",
@@ -75,18 +74,16 @@
  },
  {
   "id": 6,
-  "name": "Macropus rufus",
-  "description": "turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet",
-  "price": 4334.85,
+  "name": "SUDADERA CON CAPUCHA CRUZ AZUL ROYAL",
+  "description": "Sudadera con capucha ajustable mediante cordones y bolsillo canguro. Los puños y el bajo están confeccionados en tejido rib.",
+  "price": 999.00,
   "discount": 0,
   "image": "product_6.jpg",
-  "thematic": "Health",
+  "thematic": "Hombre",
   "keywords": [
-   "Echo",
-   "Yankee",
-   "Golf",
-   "Uniform",
-   "Juliett"
+   "Sudadera",
+   "Fombre",
+   "Fútbol"
   ]
  },
  {
@@ -96,7 +93,7 @@
   "price": 1807.15,
   "discount": 0,
   "image": "product_7.jpg",
-  "thematic": "Music",
+  "thematic": "Oferta",
   "keywords": [
    "Mike",
    "X-ray"
@@ -109,7 +106,7 @@
   "price": 3763.8,
   "discount": 0,
   "image": "product_8.jpg",
-  "thematic": "Movies",
+  "thematic": "Mujer",
   "keywords": [
    "Alfa",
    "Sierra",
@@ -125,7 +122,7 @@
   "price": 3585.76,
   "discount": 0,
   "image": "product_9.jpg",
-  "thematic": "Electronics",
+  "thematic": "Kids",
   "keywords": [
    "Oscar",
    "Kilo",
@@ -139,7 +136,7 @@
   "price": 4688.36,
   "discount": 0,
   "image": "product_10.jpg",
-  "thematic": "Shoes",
+  "thematic": "Mujer",
   "keywords": [
    "India",
    "Zulu",
@@ -154,7 +151,7 @@
   "price": 1447.51,
   "discount": 0,
   "image": "product_11.jpg",
-  "thematic": "Books",
+  "thematic": "Hombre",
   "keywords": [
    "Lima",
    "Oscar",
@@ -168,7 +165,7 @@
   "price": 4965.06,
   "discount": 0,
   "image": "product_12.jpg",
-  "thematic": "Toys",
+  "thematic": "Kids",
   "keywords": [
    "November",
    "Sierra"
@@ -181,7 +178,7 @@
   "price": 2490.59,
   "discount": 0,
   "image": "product_13.jpg",
-  "thematic": "Industrial",
+  "thematic": "Kids",
   "keywords": [
    "Zulu",
    "Zulu"
@@ -210,7 +207,7 @@
   "price": 4723.49,
   "discount": 0,
   "image": "product_15.jpg",
-  "thematic": "Games",
+  "thematic": "Hombre",
   "keywords": [
    "Whiskey",
    "Tango"
@@ -238,7 +235,7 @@
   "price": 1143.52,
   "discount": 0,
   "image": "product_17.jpg",
-  "thematic": "Jewelry",
+  "thematic": "Mujer",
   "keywords": [
    "Charlie",
    "Uniform",
@@ -253,7 +250,7 @@
   "price": 2797.64,
   "discount": 0,
   "image": "product_18.jpg",
-  "thematic": "Jewelry",
+  "thematic": "Mujer",
   "keywords": [
    "Papa",
    "Golf",
@@ -268,7 +265,7 @@
   "price": 4582.24,
   "discount": 0,
   "image": "product_19.jpg",
-  "thematic": "Beauty",
+  "thematic": "Kids",
   "keywords": [
    "Sierra",
    "Golf",
@@ -283,7 +280,7 @@
   "price": 2996.68,
   "discount": 0,
   "image": "product_20.jpg",
-  "thematic": "Baby",
+  "thematic": "Oferta",
   "keywords": [
    "Zulu",
    "Tango"
@@ -296,7 +293,7 @@
   "price": 3378.65,
   "discount": 0,
   "image": "product_21.jpg",
-  "thematic": "Garden",
+  "thematic": "Hombre",
   "keywords": [
    "Victor",
    "Zulu",
@@ -312,7 +309,7 @@
   "price": 3756.47,
   "discount": 0,
   "image": "product_22.jpg",
-  "thematic": "Industrial",
+  "thematic": "Oferta",
   "keywords": [
    "Hotel",
    "Juliett",
@@ -328,7 +325,7 @@
   "price": 4664.3,
   "discount": 0,
   "image": "product_23.jpg",
-  "thematic": "Sports",
+  "thematic": "Hombre",
   "keywords": [
    "Oscar",
    "Juliett"
@@ -341,7 +338,7 @@
   "price": 1284.07,
   "discount": 0,
   "image": "product_24.jpg",
-  "thematic": "Outdoors",
+  "thematic": "Hombre",
   "keywords": [
    "Bravo",
    "Tango"
@@ -354,7 +351,7 @@
   "price": 2736.07,
   "discount": 0,
   "image": "product_25.jpg",
-  "thematic": "Games",
+  "thematic": "Kids",
   "keywords": [
    "Mike",
    "Golf",
@@ -368,7 +365,7 @@
   "price": 3445.52,
   "discount": 0,
   "image": "product_26.jpg",
-  "thematic": "Electronics",
+  "thematic": "Hombre",
   "keywords": [
    "Echo",
    "Yankee"
@@ -381,7 +378,7 @@
   "price": 4449.08,
   "discount": 0,
   "image": "product_27.jpg",
-  "thematic": "Electronics",
+  "thematic": "Hombre",
   "keywords": [
    "Uniform",
    "Charlie"
@@ -394,7 +391,7 @@
   "price": 3046.57,
   "discount": 0,
   "image": "product_28.jpg",
-  "thematic": "Sports",
+  "thematic": "Mujer",
   "keywords": [
    "Uniform",
    "Bravo"
@@ -407,7 +404,7 @@
   "price": 3391.61,
   "discount": 0,
   "image": "product_29.jpg",
-  "thematic": "Grocery",
+  "thematic": "Mujer",
   "keywords": [
    "Whiskey",
    "X-ray",
@@ -417,41 +414,25 @@
  },
  {
   "id": 30,
-  "name": "Canis mesomelas",
-  "description": "proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante",
-  "price": 1230.03,
-  "discount": 0,
-  "image": "product_30.jpg",
-  "thematic": "Industrial",
-  "keywords": [
-   "Bravo",
-   "Alfa",
-   "Delta",
-   "Hotel",
-   "Foxtrot"
-  ]
- },
- {
-  "id": 31,
   "name": "Felis yagouaroundi",
   "description": "ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus",
   "price": 1259.91,
   "discount": 0,
   "image": "product_31.jpg",
-  "thematic": "Jewelry",
+  "thematic": "Mujer",
   "keywords": [
    "Romeo",
    "Foxtrot"
   ]
  },
  {
-  "id": 32,
+  "id": 31,
   "name": "Bos frontalis",
   "description": "congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque",
   "price": 863.81,
   "discount": 0,
   "image": "product_32.jpg",
-  "thematic": "Toys",
+  "thematic": "Kids",
   "keywords": [
    "X-ray",
    "Yankee",
@@ -460,171 +441,13 @@
   ]
  },
  {
-  "id": 33,
-  "name": "Choloepus hoffmani",
-  "description": "nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget",
-  "price": 3046.43,
-  "discount": 0,
-  "image": "product_33.jpg",
-  "thematic": "Outdoors",
-  "keywords": [
-   "Tango",
-   "Papa",
-   "Quebec",
-   "Hotel",
-   "Yankee"
-  ]
- },
- {
-  "id": 34,
-  "name": "Bucephala clangula",
-  "description": "pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in",
-  "price": 2163.49,
-  "discount": 0,
-  "image": "product_34.jpg",
-  "thematic": "Kids",
-  "keywords": [
-   "Delta",
-   "Lima"
-  ]
- },
- {
-  "id": 35,
-  "name": "Felis concolor",
-  "description": "non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque",
-  "price": 3892.39,
-  "discount": 0,
-  "image": "product_35.jpg",
-  "thematic": "Shoes",
-  "keywords": [
-   "X-ray",
-   "Kilo",
-   "Hotel",
-   "Sierra",
-   "Zulu"
-  ]
- },
- {
-  "id": 36,
-  "name": "Larus dominicanus",
-  "description": "non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere",
-  "price": 3928.37,
-  "discount": 0,
-  "image": "product_36.jpg",
-  "thematic": "Games",
-  "keywords": [
-   "Echo",
-   "Hotel",
-   "Lima",
-   "Bravo",
-   "Tango"
-  ]
- },
- {
-  "id": 37,
-  "name": "Elephas maximus bengalensis",
-  "description": "luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed",
-  "price": 3866.49,
-  "discount": 0,
-  "image": "product_37.jpg",
-  "thematic": "Grocery",
-  "keywords": [
-   "Hotel",
-   "Tango",
-   "November",
-   "Whiskey",
-   "Alfa"
-  ]
- },
- {
-  "id": 38,
-  "name": "Mycteria leucocephala",
-  "description": "posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non",
-  "price": 4768,
-  "discount": 0,
-  "image": "product_38.jpg",
-  "thematic": "Computers",
-  "keywords": [
-   "X-ray",
-   "Whiskey",
-   "Foxtrot"
-  ]
- },
- {
-  "id": 39,
-  "name": "Ara macao",
-  "description": "justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue",
-  "price": 3346.59,
-  "discount": 0,
-  "image": "product_39.jpg",
-  "thematic": "Grocery",
-  "keywords": [
-   "Zulu",
-   "Mike"
-  ]
- },
- {
-  "id": 40,
-  "name": "Mycteria leucocephala",
-  "description": "cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula",
-  "price": 3887.86,
-  "discount": 0,
-  "image": "product_40.jpg",
-  "thematic": "Movies",
-  "keywords": [
-   "Delta",
-   "Papa"
-  ]
- },
- {
-  "id": 41,
-  "name": "Sagittarius serpentarius",
-  "description": "ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat",
-  "price": 2984.54,
-  "discount": 0,
-  "image": "product_41.jpg",
-  "thematic": "Home",
-  "keywords": [
-   "Romeo",
-   "Juliett"
-  ]
- },
- {
-  "id": 42,
-  "name": "Alopex lagopus",
-  "description": "integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus",
-  "price": 2272.57,
-  "discount": 0,
-  "image": "product_42.jpg",
-  "thematic": "Music",
-  "keywords": [
-   "Uniform",
-   "Whiskey"
-  ]
- },
- {
-  "id": 43,
-  "name": "Uraeginthus angolensis",
-  "description": "orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui",
-  "price": 3653.14,
-  "discount": 0,
-  "image": "product_43.jpg",
-  "thematic": "Electronics",
-  "keywords": [
-   "Bravo",
-   "India",
-   "Delta",
-   "Yankee"
-  ]
- },
- {
-  "id": 44,
+  "id": 32,
   "name": "Perameles nasuta",
   "description": "risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor",
   "price": 584.27,
   "discount": 0,
   "image": "product_44.jpg",
-  "thematic": "Movies",
+  "thematic": "Oferta",
   "keywords": [
    "November",
    "Zulu",
@@ -634,13 +457,13 @@
   ]
  },
  {
-  "id": 45,
+  "id": 33,
   "name": "Varanus salvator",
-  "description": "donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor",
+  "description": "1981. Una leyenda del fútbol hace su debut en Boca Juniors con un uniforme que se convertiría en uno de los más preciados del club. Cuarenta años después, este jersey adidas le rinde homenaje a esa memorable unión, trayendo de vuelta el clásico escudo del club de cuatro estrellas en tejido flock suave. Diseñada para aficionados, este jersey brinda comodidad en todo momento gracias a su tejido suave con tecnología de absorción AEROREADY.",
   "price": 1872.21,
   "discount": 0,
   "image": "product_45.jpg",
-  "thematic": "Baby",
+  "thematic": "Kids",
   "keywords": [
    "Alfa",
    "Lima",
@@ -650,74 +473,29 @@
   ]
  },
  {
-  "id": 46,
+  "id": 34,
   "name": "Echimys chrysurus",
   "description": "amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo",
   "price": 3248.47,
   "discount": 0,
   "image": "product_46.jpg",
-  "thematic": "Industrial",
+  "thematic": "Hombre",
   "keywords": [
    "Uniform",
    "Sierra"
   ]
  },
  {
-  "id": 47,
+  "id": 35,
   "name": "Anathana ellioti",
   "description": "nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa",
   "price": 1060.76,
   "discount": 0,
   "image": "product_47.jpg",
-  "thematic": "Home",
+  "thematic": "Mujer",
   "keywords": [
    "X-ray",
    "Zulu"
-  ]
- },
- {
-  "id": 48,
-  "name": "Connochaetus taurinus",
-  "description": "cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu felis",
-  "price": 3557.86,
-  "discount": 0,
-  "image": "product_48.jpg",
-  "thematic": "Computers",
-  "keywords": [
-   "Sierra",
-   "Whiskey",
-   "Romeo",
-   "Sierra"
-  ]
- },
- {
-  "id": 49,
-  "name": "Cacatua tenuirostris",
-  "description": "condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus",
-  "price": 2041.23,
-  "discount": 0,
-  "image": "product_49.jpg",
-  "thematic": "Sports",
-  "keywords": [
-   "Romeo",
-   "India",
-   "Mike",
-   "Zulu",
-   "Quebec"
-  ]
- },
- {
-  "id": 50,
-  "name": "Zenaida asiatica",
-  "description": "posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel",
-  "price": 3173.93,
-  "discount": 0,
-  "image": "product_50.jpg",
-  "thematic": "Sports",
-  "keywords": [
-   "Alfa",
-   "Sierra",
-   "Lima"
   ]
  }
 ]
