@@ -1,0 +1,55 @@
+.product{
+    background-color: $prin;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height:auto;
+
+    align-content: center;
+    place-items: center;
+    justify-items: center;
+    align-items: center;
+    margin: 20px;
+
+    .info{
+
+        background-color: $secon;
+        height: 420px;
+        width: 260px;
+
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 20px;
+        border: 3px solid $secon;
+        padding: 2px;
+        margin: 30px;
+
+        .name{
+            background-color: $aux;
+            font-size: 4rem;
+        }
+
+        .price{
+            font-size: 2.8rem;
+            color: $secon;
+        }
+
+        .name,
+        .price{
+            font-family: $prin-fnt;
+            margin: 1rem 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+    }
+
+    .image{
+        border: 2px solid $secon;
+        height: 400px;
+        width: 400px;  
+        margin: 5px;
+        padding: 5px;
+    }
+}

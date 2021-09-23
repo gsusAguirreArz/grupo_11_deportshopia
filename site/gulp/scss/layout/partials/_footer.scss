@@ -1,0 +1,77 @@
+.footer{
+    background-color: $prin;
+    padding: 1rem;
+
+    .footer__contents{
+        height: 7 * $separation;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 40% 30% auto;
+        grid-template-areas: 
+            "links links pay"
+            "ship ship contact"
+            "bot bot bot";
+        column-gap: $separation;
+        row-gap: $separation - 2;
+
+        p{
+            margin: 0;
+            font-family: $prin-fnt;
+            font-size: 2rem;
+        }
+
+        svg{
+            height: 4rem;
+        }
+    }
+    .links{
+        grid-area: links;
+        display: flex;
+        justify-content: center;
+        gap: $separation / 2;
+    }
+    .sM{
+        grid-area: ship;
+        display: flex;
+        gap: $separation;
+        align-items: center;
+
+        .smTitle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shipMethods{
+            display: flex;
+            gap: $separation;
+        }
+    }
+    .pM{
+        grid-area: pay;
+        display: flex;
+        flex-direction: column;
+
+        .pmTitle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payMethods{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+        }
+    }
+    .contact{
+        grid-area: contact;
+    }
+    .bottom{
+        grid-area: bot;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

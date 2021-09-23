@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head', {title: "Agrega un producto"}) %>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <main class="createProductForm">
+        <h1>Formulario de creacion de un producto</h1>
+            <form action="/products/create" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Nombre del producto:</label>
+                    <input type="text" id="name" name="name" placeholder="Eg. GTX 3090" value="<%= locals.old && old.name %>"> 
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="feedback"><%= errors.name.msg %> </p>
+                    <% } %>
+                </div>
+                <div>
+                    <label for="description">Descripcion:</label>
+                    <textarea name="description" id="description" placeholder="nice gpu"><% if (locals.old && old.description) {%><%= locals.old && old.description %><% } %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="feedback"><%= errors.description.msg %> </p>
+                    <% } %>
+                </div>
+                <div>
+                    <label for="category">Categoria:</label>
+                    <select name="categorie_id" id="category">
+                        <option value="NaN" selected disabled>--Selecciona--</option>
+                        <% for (let i of categories) { %>
+                            <option value="<%= i.id %>" <% if (locals.errors && old.categorie_id == i.id) { %><%= 'selected' %><% } %> > <%= i.name %> </option>
+                        <% } %>  
+                    </select>
+                    <% if (locals.errors && errors.categorie_id) { %>
+                        <p class="feedback"><%= errors.categorie_id.msg %> </p>
+                    <% } %>
+                </div>
+                <div>
+                    <label for="brand">Selecciona la marca:</label>
+                    <select name="brand_id" id="brand">
+                        <option value="NaN" selected disabled>--Selecciona--</option>
+                        <% for (let i of brands) { %>
+                            <option value="<%= i.id %>" <% if (locals.errors && old.brand_id == i.id) { %><%= 'selected' %><% } %> > <%= i.name %> </option>
+                        <% } %> 
+                    </select>
+                    <% if (locals.errors && errors.brand_id) { %>
+                        <p class="feedback"><%= errors.brand_id.msg %> </p>
+                    <% } %>
+                </div>
+                <div>
+                    <label for="price">Precio:</label>
+                    <input type="number" id="price" name="price" min="0" placeholder="1800.5" step="any" value="<%= locals.old && old.price %>" >
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="feedback"><%= errors.price.msg %> </p>
+                    <% } %>
+                </div>
+                <div>
+                    <label for="image">Imagen del producto:</label>
+                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
+                </div>
+                <div>
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

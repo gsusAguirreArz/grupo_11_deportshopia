@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head', {title: `Detalle de producto: ${product.name}`}) %>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <main class="detailsPage">
+            <h1 class="productName">Detalle del producto: <%= product.name %> </h1>
+            <div class="detailsContent">
+                <div class="detailsInfo">
+                    <div>
+                        <p><%= product.description %></p>
+                    </div>
+                    <div>
+                        <h2><%= product.name %></h2>
+                    </div>
+                    <div>
+                        <p>$<%= product.price %></p>
+                    </div>
+                    <!-- <div>
+                        <p>product.discount % OFF</p>
+                    </div> -->
+                    <div>
+                        <p>Categorias:</p>
+                        <ul>
+                            <% for (let category of product.categories) { %>
+                                <li> <%= category.name %> </li>
+                            <% } %>  
+                        </ul>
+                    </div>
+                    <div>
+                        <p>Marca del producto:<%= product.brand.name %> </p>
+                    </div>
+                </div>
+                <div class="detailsProduct">
+                    <div>
+                        <img src="/images/min/products/<%= product.image %>" alt="product image">
+                    </div>
+                    <div>
+                        <a href="/products/<%= product.id %>/edit">Editar</a>
+                    </div>
+                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+                <form action="#" method="POST">
+                    <button type="submit">Agregar al Carito</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.loginForm {
+    border: 3px solid #b60808;
+    height: 80vh;
+    width: 70vw;
+    font-size: x-large;
+    margin-left: 230px;
+    padding: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.loginForm input {
+    font-size:large;
+}
+
+.loginForm label {
+    font-size:x-large;
+}

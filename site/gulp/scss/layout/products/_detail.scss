@@ -1,0 +1,33 @@
+.detailsPage {
+    border: 5px solid #b60808;
+    height: 115vh;
+    width: 80vw;
+    margin-left: 160px;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px
+}
+
+.detailsContent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.detailsProduct {
+    width: 40%;
+}
+
+.detailsInfo {
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+}
+
+.detailsInfo p {
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-size:larger;
+}
+
+.productName {
+    color: #100722;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head', {title: "Edita tu usuario"}) %>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <main>
+        <h1>Formulario para la edicion del usuario: usuario.name</h1>
+            <form action="/users/user.id?_method=PUT" method="POST">
+                <div>
+                    <label for="first_name">Nombre:</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="Ej. Jose de jesus">
+                </div>
+                <div>
+                    <label for="second_name">Apellido:</label>
+                    <input type="text" id="second_name" name="second_name" placeholder="Ej. Aguirre Arzate">
+                </div>
+                <div>
+                    <label for="email">Correo electronico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ej. jaguirre@email.com">
+                </div>
+                <div>
+                    <label for="password">Contrasena:</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div>
+                    <label for="category">Categoria:</label>
+                    <select name="category" id="category">
+                        <option value="NaN" selected disabled>--Selecciona--</option>
+                        <option value="0">admin</option>
+                        <option value="1">user</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="image">Avatar:</label>
+                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
+                </div>
+                <div>
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>

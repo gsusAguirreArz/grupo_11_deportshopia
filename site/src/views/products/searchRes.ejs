@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head', {title: `REsultados de tu busqueda: ${keywords}`}) %>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <main>
+            <h1>Resultados de la busqueda: <%= keywords %> </h1>
+            <% if (products.length == 0) { %>
+                <p>No hubo resultados de tu busqueda</p>
+            <% } %>  
+            <% for (let product of products) { %> 
+                <div class="product">
+                    <a href="/products/<%= product.id %>">
+                        <img src="/images/min/products/<%= product.image %> " alt="imagen de <%= product.name %>" class="image">
+                        <div class="info">
+                            <p class="name"><%= product.name %></p>
+                            <p class="price">$<%= product.price %></p>
+                        </div>
+                    </a>
+                </div> <!--.product-->
+            <% } %> 
+        </main>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
