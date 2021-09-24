@@ -75,19 +75,81 @@ const controller = {
     // '/products/i/edit' - Show page to edit the product i
     edit: (req,res) => {
         const ID = req.params.id;
-        res.render('products/edit');
+        // return res.send(`Pagina para editar el producto: ${ID}`);
+        const obtainProduct = db.Product.findByPk(ID);
+        const obtainCategories = db.Category.findAll();
+        const obtainBrands = db.Brand.findAll();
+
+        Promise.all([obtainProduct,obtainCategories,obtainBrands])
+            .then( ([product,categories,brands]) => {
+                return res.render('products/edit', {product, categories, brands});
+            } )
+            .catch( e => res.send(e) );
     },
     // '/products/i' - Method to save changes of product i
     update: (req,res) => {
         const ID = req.params.ID;
+        const errors = validationResult(req);
         const form = req.body;
-        const img = req.file;
-        res.redirect('/products/');
+        const file = req.file;
+        if ( errors.isEmpty()) {
+            const editedProduct = {
+                name: form.name,
+                description: form.description,
+                price: form.price,
+                image: file.filename,
+                brand_id: form.brand_id,
+                cart_id: null
+            };
+            res.send(editedProduct);
+            // db.Product.update(editedProduct, {
+            //     where: {id:ID},
+            //     include: [{association: "brand"}]
+            // })
+            //     .then( response => {
+            //         return res.redirect('/products');
+            //     })
+            //     .catch( e => res.send(e) );
+        } else {
+            const obtainCategories = db.Category.findAll();
+            const obtainBrands = db.Brand.findAll();
+            const obtainProduct = db.Product.findByPk(ID,{
+                include: [
+                    {association: 'brand'},
+                    {association: 'categories'}
+                ]
+            });
+    
+            Promise.all([obtainProduct,obtainCategories,obtainBrands])
+                .then( ([product,categories,brands]) => {
+                    return res.render('products/edit', {
+                        product: product,
+                        brands :brands,
+                        categories: categories,
+                        errors:errors.mapped(),
+                        old:form
+                    });
+                } )
+                .catch( e => res.send(e) );
+        }
+    },
+    delete:(req,res) =>{
+        const ID = req.params.id;
+        db.Product.findByPk(ID)
+            .then( product => {
+                return res.render('products/delete', {product});
+            })
+            .catch( e => res.send(e) );
     },
     // '/products/' - Method to delete the product i from DB
     destroy: (req,res) => {
         const ID = req.params.id;
-        res.redirect('/products');
+        res.send(`se elimino el producto con id: ${ID}`);
+        // db.Product.destroy({
+        //     where: {id:ID}
+        // })
+        //     .then( response => res.redirect('/products') )
+        //     .catch( e => res.send(e) );
     },
 };
 

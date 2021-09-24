@@ -27,7 +27,7 @@
                     <select name="categorie_id" id="category">
                         <option value="NaN" selected disabled>--Selecciona--</option>
                         <% for (let i of categories) { %>
-                            <option value="<%= i.id %>" <% if (locals.errors && old.categorie_id == i.id) { %><%= 'selected' %><% } %> > <%= i.name %> </option>
+                            <option value="<%= i.id %>" <% if (locals.errors && old.categorie_id == i.id) { %><%= ' selected' %><% } %> > <%= i.name %> </option>
                         <% } %>  
                     </select>
                     <% if (locals.errors && errors.categorie_id) { %>
@@ -39,7 +39,7 @@
                     <select name="brand_id" id="brand">
                         <option value="NaN" selected disabled>--Selecciona--</option>
                         <% for (let i of brands) { %>
-                            <option value="<%= i.id %>" <% if (locals.errors && old.brand_id == i.id) { %><%= 'selected' %><% } %> > <%= i.name %> </option>
+                            <option value="<%= i.id %>" <% if (locals.errors && old.brand_id == i.id) { %><%= ' selected' %><% } %> > <%= i.name %></option>
                         <% } %> 
                     </select>
                     <% if (locals.errors && errors.brand_id) { %>

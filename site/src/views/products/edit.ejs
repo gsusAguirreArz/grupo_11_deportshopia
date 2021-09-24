@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head', {title: "Edita un producto"}) %>
+    <%- include('../partials/head', {title: `Edita el producto: ${product.name}`) %>
     <body>
     <%- include('../partials/header') %>
 
     <div class="container">
         <main>
-            <h1>Formulario de edicion del producto: producto.name</h1>
-            <form action="/products/porducto.id?_method=PUT" method="POST">
+            <h1>Formulario de edicion del producto: <%= product.name %> </h1>
+            <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div>
-                    <label for="title">Titulo del producto:</label>
-                    <input type="text" id="title" name="title" placeholder="Eg. GTX 3090"> 
+                    <label for="name">Nombre del producto:</label> 
+                    <input type="text" id="name" name="name" placeholder="Eg. GTX 3090" value="<% if (locals.errors && errors.name) { %><%= old.name %><% } else { %><%= product.name %><% } %>"> 
+                    <% if (locals.errors && errors.name) { %>
+                        <p class="feedback"><%= errors.name.msg %> </p>
+                    <% } %> 
                 </div>
                 <div>
                     <label for="description">Descripcion:</label>
-                    <textarea name="description" id="description" cols="30" rows="10" placeholder="nice gpu"></textarea>
+                    <textarea name="description" id="description" placeholder="nice gpu"><% if (locals.errors && errors.description) { %><%= old.description %><% } else { %><%= product.description %><% } %></textarea>
+                    <% if (locals.errors && errors.description) { %>
+                        <p class="feedback"><%= errors.description.msg %> </p>
+                    <% } %>
                 </div>
                 <div>
                     <label for="category">Categoria:</label>
-                    <select name="category" id="category">
-                        <option value="NaN" selected disabled>--Selecciona--</option>
-                        <option value="0">CPU</option>
-                        <option value="1">GPU</option>
-                        <option value="2">Aqui va un for</option>
+                    <select name="categorie_id" id="category">
+                        <option value="NaN" disabled>--Selecciona--</option>
+                        <% for (let i of categories) { %>
+                            <option value="<%= i.id %>" <% if ( (locals.errors && (old.categorie_id == i.id) ) { %><%= ' selected' %><% } %>><%= i.name %></option>
+                        <% } %>  
                     </select>
+                    <p><%= product.categories %> </p>
+                    <% if (locals.errors && errors.categorie_id) { %>
+                        <p class="feedback"><%= errors.categorie_id.msg %> </p>
+                    <% } %>
                 </div>
                 <div>
                     <label for="brand">Selecciona la marca:</label>
-                    <select name="brand" id="brand">
-                        <option value="NaN" selected disabled>--Selecciona--</option>
-                        <option value="0">AMD</option>
-                        <option value="1">NVIDIA</option>
+                    <select name="brand_id" id="brand">
+                        <option value="NaN" disabled>--Selecciona--</option>
+                        <% for (let i of brands) { %>
+                            <option value="<%= i.id %>" <% if ( (locals.errors && (old.brand_id == i.id)) || (product.brand_id == i.id) ) { %><%= ' selected' %><% } %>><%= i.name %></option>
+                        <% } %>
                     </select>
+                    <% if (locals.errors && errors.brand_id) { %>
+                        <p class="feedback"><%= errors.brand_id.msg %> </p>
+                    <% } %>
                 </div>
                 <div>
                     <label for="price">Precio:</label>
-                    <input type="number" id="price" name="price" min="0" placeholder="1800.5" step="any">
+                    <input type="number" id="price" name="price" min="0" placeholder="1800.5" step="any" value="<% if (locals.errors && errors.price) { %><%= old.price %><% } else{ %><%= product.price %><% } %>">
+                    <% if (locals.errors && errors.price) { %>
+                        <p class="feedback"><%= errors.price.msg %> </p>
+                    <% } %>
                 </div>
                 <div>
                     <label for="image">Imagen del producto:</label>

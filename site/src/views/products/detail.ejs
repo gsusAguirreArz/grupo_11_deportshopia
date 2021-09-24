@@ -38,13 +38,17 @@
                         <img src="/images/min/products/<%= product.image %>" alt="product image">
                     </div>
                     <div>
-                        <a href="/products/<%= product.id %>/edit">Editar</a>
+                        <a href="/products/<%= product.id %>/edit">
+                            <button>Editar</button>
+                        </a>
                     </div>
-                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                        <button type="submit">Eliminar</button>
-                    </form>
+                    <div>
+                        <a href="/products/<%= product.id %>/delete">
+                            <button>Eliminar</button>
+                        </a>
+                    </div>
                 </div>
-                <form action="#" method="POST">
+                <form action="/#" method="POST">
                     <button type="submit">Agregar al Carito</button>
                 </form>
             </div>
