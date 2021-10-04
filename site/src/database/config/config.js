@@ -1,6 +1,6 @@
 module.exports = {
   "development": {
-    "username": "root",
+    "username": "gsus",
     "password": "password",
     "database": "laniak_db",
     "host": "127.0.0.1",
@@ -8,7 +8,7 @@ module.exports = {
     "operatorsAliases" : "false"
   },
   "test": {
-    "username": "root",
+    "username": "gsus",
     "password": "password",
     "database": "laniak_db",
     "host": "127.0.0.1",
@@ -16,7 +16,7 @@ module.exports = {
     "operatorsAliases" : "false"
   },
   "production": {
-    "username": "root",
+    "username": "gsus",
     "password": "password",
     "database": "laniak_db",
     "host": "127.0.0.1",

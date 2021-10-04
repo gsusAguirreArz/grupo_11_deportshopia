@@ -1,19 +1,18 @@
 const  {check} = require('express-validator');
 
 const validateForm = [
-    check("name")
-        .notEmpty().withMessage("Agrega un nombre").bail()
+    check("first_name")
+        .notEmpty().withMessage("Agrega un nombre valido").bail()
         .matches(/^[A-Za-z0-9 '!&]+$/).withMessage('Debes usar caracteres alfanumericos').bail(),
-    check("description")
-        .notEmpty().withMessage("Agrega una descripcion").bail()
+    check("last_name")
+        .notEmpty().withMessage("Agrega apellido valido").bail()
         .matches(/^[A-Za-z0-9 '!&]+$/).withMessage('Debes usar caracteres alfanumericos').bail(),
-    check("brand_id")
+    check("email")
         .notEmpty().withMessage("ELige una marca").bail()
-        .isInt().withMessage('Debe ser un numero entero positivo').bail(),
-    check("price")
+        .isEmail().withMessage('Ingresa un correo valido!').bail(),
+    check("password")
         .notEmpty().withMessage("Agrega el precio de tu producto").bail()
-        .isDecimal().withMessage("Tiene que ser un valor numerico").bail()
+        .isLength({min:8}).withMessage('La contrasena debe tener minimo 8 chars').bail()
 ];
-// function validateForm(req,res,next) {}
 
 module.exports = validateForm;

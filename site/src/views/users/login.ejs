@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head', {title: "LogIn"}) %>
+    <%- include('../partials/head', {title: "Login"}) %>
 <body>
     <%- include('../partials/header') %>
 
@@ -11,10 +11,16 @@
                 <div>
                     <label for="email">Ingresa tu correo:</label>
                     <input type="email" name="email" id="email">
+                    <% if (locals.errors && errors.email) { %>
+                        <p class="feedback"><%= errors.email.msg %> </p>
+                    <% } %>
                 </div>
                 <div>
                     <label for="password">Ingresa tu contrasena:</label>
                     <input type="password" name="password" id="password">
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="feedback"><%= errors.password.msg %> </p>
+                    <% } %>
                 </div>
                 <div>
                     <button type="submit">Enviar</button>

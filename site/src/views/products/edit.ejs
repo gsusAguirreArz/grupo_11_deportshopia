@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head', {title: `Edita el producto: ${product.name}`) %>
-    <body>
+<%- include('../partials/head', {title: `Edita el producto: ${product.name}`} ) %>
+<body>
     <%- include('../partials/header') %>
 
     <div class="container">
@@ -10,10 +10,10 @@
             <form action="/products/<%= product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div>
                     <label for="name">Nombre del producto:</label> 
-                    <input type="text" id="name" name="name" placeholder="Eg. GTX 3090" value="<% if (locals.errors && errors.name) { %><%= old.name %><% } else { %><%= product.name %><% } %>"> 
+                    <input type="text" id="name" name="name" placeholder="Eg. GTX 3090" value="<% if ( locals.errors && errors.name) { %> <%= old.name %> <% } else { %><%= product.name %><% } %>"> 
                     <% if (locals.errors && errors.name) { %>
                         <p class="feedback"><%= errors.name.msg %> </p>
-                    <% } %> 
+                    <% } %>
                 </div>
                 <div>
                     <label for="description">Descripcion:</label>
@@ -23,24 +23,19 @@
                     <% } %>
                 </div>
                 <div>
-                    <label for="category">Categoria:</label>
-                    <select name="categorie_id" id="category">
-                        <option value="NaN" disabled>--Selecciona--</option>
-                        <% for (let i of categories) { %>
-                            <option value="<%= i.id %>" <% if ( (locals.errors && (old.categorie_id == i.id) ) { %><%= ' selected' %><% } %>><%= i.name %></option>
-                        <% } %>  
-                    </select>
-                    <p><%= product.categories %> </p>
-                    <% if (locals.errors && errors.categorie_id) { %>
-                        <p class="feedback"><%= errors.categorie_id.msg %> </p>
-                    <% } %>
+                    <label>Categorias:</label>
+                    <% for (let i of categories) { %>
+                        <input type="checkbox" name="categories_ids" value="<%= i.id %>" id="<%= i.name %>">
+                        <label for="<%= i.name %>"><%= i.name %></label>
+                        <br/>
+                    <% } %>  
                 </div>
                 <div>
                     <label for="brand">Selecciona la marca:</label>
                     <select name="brand_id" id="brand">
                         <option value="NaN" disabled>--Selecciona--</option>
                         <% for (let i of brands) { %>
-                            <option value="<%= i.id %>" <% if ( (locals.errors && (old.brand_id == i.id)) || (product.brand_id == i.id) ) { %><%= ' selected' %><% } %>><%= i.name %></option>
+                            <option value="<%= i.id %>" <% if ( ( locals.errors && ( old.brand_id == i.id ) ) || ( product.brand_id == i.id ) ) { %><%= ' selected ' %> <% } %>><%= i.name %></option>
                         <% } %>
                     </select>
                     <% if (locals.errors && errors.brand_id) { %>
@@ -49,7 +44,7 @@
                 </div>
                 <div>
                     <label for="price">Precio:</label>
-                    <input type="number" id="price" name="price" min="0" placeholder="1800.5" step="any" value="<% if (locals.errors && errors.price) { %><%= old.price %><% } else{ %><%= product.price %><% } %>">
+                    <input type="number" id="price" name="price" min="0" placeholder="1800.5" step="any" value="<% if ( locals.errors && errors.price ) { %><%= old.price %><% } else { %><%= product.price %><% } %>">
                     <% if (locals.errors && errors.price) { %>
                         <p class="feedback"><%= errors.price.msg %> </p>
                     <% } %>

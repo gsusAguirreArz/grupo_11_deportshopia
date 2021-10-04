@@ -75,14 +75,21 @@ const controller = {
     // '/products/i/edit' - Show page to edit the product i
     edit: (req,res) => {
         const ID = req.params.id;
-        // return res.send(`Pagina para editar el producto: ${ID}`);
-        const obtainProduct = db.Product.findByPk(ID);
+        const obtainProduct = db.Product.findByPk(ID,{
+            include: [
+                {association: 'categories'}
+            ]
+        });
         const obtainCategories = db.Category.findAll();
         const obtainBrands = db.Brand.findAll();
 
         Promise.all([obtainProduct,obtainCategories,obtainBrands])
             .then( ([product,categories,brands]) => {
-                return res.render('products/edit', {product, categories, brands});
+                return res.render('products/edit', {
+                    product:product,
+                    categories:categories,
+                    brands:brands
+                });
             } )
             .catch( e => res.send(e) );
     },
@@ -92,7 +99,7 @@ const controller = {
         const errors = validationResult(req);
         const form = req.body;
         const file = req.file;
-        if ( errors.isEmpty()) {
+        if ( errors.isEmpty() ) {
             const editedProduct = {
                 name: form.name,
                 description: form.description,
@@ -115,7 +122,6 @@ const controller = {
             const obtainBrands = db.Brand.findAll();
             const obtainProduct = db.Product.findByPk(ID,{
                 include: [
-                    {association: 'brand'},
                     {association: 'categories'}
                 ]
             });
@@ -124,7 +130,7 @@ const controller = {
                 .then( ([product,categories,brands]) => {
                     return res.render('products/edit', {
                         product: product,
-                        brands :brands,
+                        brands: brands,
                         categories: categories,
                         errors:errors.mapped(),
                         old:form

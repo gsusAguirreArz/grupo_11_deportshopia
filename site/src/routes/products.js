@@ -16,12 +16,12 @@ router.get('/', productsController.index);
 router.get('/create', productsController.create);
 router.post('/create', [upload.single('image'), validateForm], productsController.store);
 
+// Show one product
+router.get('/:id/', productsController.detail);
+
 // Edit a product
 router.get('/:id/edit', productsController.edit);
 router.put('/:id/edit', [upload.single('image'), validateForm], productsController.update);
-
-// Show one product
-router.get('/:id/', productsController.detail);
 
 // Delete a product
 router.get('/:id/delete', productsController.delete);

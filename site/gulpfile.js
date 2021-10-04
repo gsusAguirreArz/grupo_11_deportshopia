@@ -68,7 +68,7 @@ async function watchFiles() {
 // Nodemon
 function startNodemon (done){
     return nodemon( {
-        script: './src/app.js',
+        script: './bin/www',
         ext: 'js ejs css',
         env: { 'NODE_ENV': 'development'},
         done: done

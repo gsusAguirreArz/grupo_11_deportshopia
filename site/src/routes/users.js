@@ -1,22 +1,9 @@
 // ------------------- Import's -------------------
-const path = require('path');
 const express = require('express');
 const usersController = require('../controllers/users');
-// const multer = require('multer');
-
-// **** Multer Config ****
-// const storage = multer.diskStorage({
-//     destination: (req,file,cb) => {
-//         let destPath = path.join(__dirname, '../../public/images/min/users');
-//         cb(null, destPath);
-//     },
-//     filename: (req,file,cb) => {
-//         let fileName = 'img-'+Date.now()+'-'+file.originalname;
-//         cb(null, fileName);
-//     },
-// });
-
-// const upload = multer({storage:storage});
+const userLoginVal = require('../middlewares/routes/validations/usersLogin');
+// const validateForm = require("../middlewares/routes/validations/usersRegister");
+// const upload = require('../middlewares/routes/uploads/users');
 
 // **** Router ****
 const router = express.Router();
@@ -28,7 +15,7 @@ router.get('/', usersController.index);
 
 // User login
 router.get('/login', usersController.login);
-router.post('/login', usersController.checkLogin);
+router.post('/login', userLoginVal ,usersController.checkLogin);
 
 // Create a user
 router.get('/register', usersController.create);
@@ -39,10 +26,11 @@ router.get('/:id', usersController.detail);
 
 // Edit a user
 router.get('/:id/edit', usersController.edit);
-router.put('/:id', usersController.update);
+router.put('/:id/edit', usersController.update);
 
 // Delete a user
-router.delete('/:id', usersController.destroy);
+router.get('/:id/delete', usersController.delete);
+router.delete('/:id/delete', usersController.destroy);
 
 // ------------------- Exports -------------------
 module.exports = router;
