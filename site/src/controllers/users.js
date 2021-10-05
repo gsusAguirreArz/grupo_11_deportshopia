@@ -35,6 +35,11 @@ const controller = {
                     }else{
                         const correct = bcrypt.compareSync(form.password, user.password);
                         if ( correct ) {
+
+                            if (form.rememberMe != undefined) {
+                                res.cookie('rememberMe', user.email, { maxAge:60000 } )
+                            }
+
                             req.session.loggedUser = user;
                             return res.send('Success!');
                         }else{
@@ -59,7 +64,14 @@ const controller = {
     // '/users/i' - Render the detail page of user i
     detail: (req,res) => {
         const ID = req.params.id;
-        res.render('users/detail');
+        db.User.findByPk(ID, {
+            include: [
+                {association: 'role'},
+                {association: 'cart'}
+            ]
+        })
+            .then( user => res.render('users/detail', {user:user}) )
+            .catch( e => res.send(e) );
     },
     // '/users/register' - Render de create new user page
     create: (req,res) => {
@@ -67,31 +79,99 @@ const controller = {
     },
     // '/users/' - Method for saving the new user info
     store: (req,res) => {
+        const errors = validationResult(req);
         const form = req.body;
-        const img = req.file;
-        res.redirect('/users/');
+        const file = req.file;
+        if ( errors.isEmpty()) {
+            const newUser = {
+                first_name: form.first_name,
+                last_name: form.last_name,
+                email: form.email,
+                password: bcrypt.hashSync(form.password, 12),
+                image: file.filename,
+                role_id: form.role_id,
+                cart_id: null
+            };
+            res.send(newUser);
+            // db.User.create(newUser, {
+            //     include: [{association: "role"}]
+            // })
+            //     .then( response => {
+            //         return res.redirect('/');
+            //     })
+            //     .catch( e => res.send(e) );
+        } else {
+            return res.render('users/create', {errors:errors.mapped(), old:form});
+        }
     },
     // '/users/i/edit' - Render the edit existing user i page
     edit: (req,res) => {
         const ID = req.params.id;
-        res.render('users/edit');
+        db.User.findByPk(ID, {
+            include: [
+                {association: 'role'},
+                {association: 'cart'}
+            ]
+        })
+            .then( user => res.render('users/edit', {user:user}) )
+            .catch( e => res.send(e) );
     },
     // '/users/i' - Method for saving the edited info of user i
     update: (req,res) => {
+        const errors = validationResult(req);
         const ID = req.params.ID;
         const form = req.body;
-        const img = req.file;
-        res.redirect('/users/');
+        const file = req.file;
+        if ( errors.isEmpty() ) {
+            const editedUser = {
+                first_name: form.first_name,
+                last_name: form.last_name,
+                email: form.email,
+                password: bcrypt.hashSync(form.password, 12),
+                image: file.filename,
+                role_id: form.role_id,
+                cart_id: null
+            };
+            res.send(editedUser);
+            // db.User.update(editedUser, {
+            //     where: {id:ID},
+            //     include: [{association: "role"}]
+            // })
+            //     .then( response => {
+            //         return res.redirect('/');
+            //     })
+            //     .catch( e => res.send(e) );
+        } else {
+            db.User.findByPk(ID, {
+                include: [
+                    {association: 'role'}
+                ]
+            })
+                .then( user => res.render('users/edit'), {
+                    user:user,
+                    errors: errors.mapped(),
+                    old: form
+                })
+                .catch( e => res.send(e) );
+        }
     },
     delete: (req,res) => {
         const ID = req.params.id;
-        return res.render('users/delete');
+        db.User.findByPk(ID)
+            .then( user => {
+                return res.render('users/delete', {user:user});
+            })
+            .catch( e => res.send(e) );
     },
     // '/users/' - Method for deleting user i from DB
     destroy: (req,res) => {
         const ID = req.params.id;
-        res.redirect('/');
-
+        res.send(`se elimino el producto con id: ${ID}`);
+        // db.Usser.destroy({
+        //     where: {id:ID}
+        // })
+        //     .then( response => res.redirect('/') )
+        //     .catch( e => res.send(e) );
     },
 };
 

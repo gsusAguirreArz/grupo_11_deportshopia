@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const rememberMe = require('./middlewares/global/rememberMe');
 
 // ------------------- APP -------------------
 const app = express();
@@ -21,6 +22,7 @@ app.use( session({
     resave: false,
     saveUninitialized: true,
 }) );
+app.use( rememberMe );
 
 // ------------------- Template Engine -------------------
 app.set('view engine', 'ejs');

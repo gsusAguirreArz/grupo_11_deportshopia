@@ -4,6 +4,7 @@ const usersController = require('../controllers/users');
 const userLoginVal = require('../middlewares/routes/validations/usersLogin');
 // const validateForm = require("../middlewares/routes/validations/usersRegister");
 // const upload = require('../middlewares/routes/uploads/users');
+const userLogged = require('../middlewares/routes/auth/userLogged');
 
 // **** Router ****
 const router = express.Router();
@@ -17,8 +18,17 @@ router.get('/', usersController.index);
 router.get('/login', usersController.login);
 router.post('/login', userLoginVal ,usersController.checkLogin);
 
+// login test
+router.get('/check', (req,res) => {
+    if (req.session.loggedUser == undefined){
+        return res.send('NO estas loggeado');
+    }else{
+        return res.send(`el usuario loggeado es: ${req.session.loggedUser.email}`);
+    }
+});
+
 // Create a user
-router.get('/register', usersController.create);
+router.get('/register', userLogged, usersController.create);
 router.post('/', usersController.store);
 
 // Show one user
