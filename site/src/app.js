@@ -30,23 +30,22 @@ app.set('views', path.join(__dirname, './views') );
 
 // ------------------- Main CODE -------------------
 
-// **** Server Settings ****
-// const PORT = process.env.PORT || 3000;
-// const template = (prt) => { return "\\*-------------------------*\\\nServer running in " + prt + " port.\nNow, you can open http://localhost:" + prt + " in your browser\n\\*-------------------------*\\"; };
-
-// app.listen(PORT, () => {
-//     console.log(template(PORT));
-// });
-
 // **** Routes Handler ****
 // Routes Import's
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
 
+// const mainRoutes = require('./routes/main');
+const apiProductsRoutes = require('./routes/api/products');
+const apiUsersRoutes = require('./routes/api/users');
+
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
+
+app.use('/api/products', apiProductsRoutes);
+app.use('/api/users', apiUsersRoutes);
 
 // **** Error Handler ****
 // Error Import's
