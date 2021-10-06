@@ -7,7 +7,16 @@ const bcrypt = require('bcryptjs');
 const controller = {
     // '/users/' - Root show all users in DB
     index: (req,res) => {
-        res.render('users/index');
+        db.User.findAll({
+            limit: 20,
+            include: [
+                {association: 'role'},
+            ]
+        })
+            .then( users => {
+                return res.render('users/index', {users:users});
+            })
+            .catch( e => res.send(e) );
     },
     // '/users/' - Method to check if user is registered
     login: (req,res) => {
@@ -67,7 +76,7 @@ const controller = {
         db.User.findByPk(ID, {
             include: [
                 {association: 'role'},
-                {association: 'cart'}
+                // {association: 'cart'}
             ]
         })
             .then( user => res.render('users/detail', {user:user}) )
@@ -89,7 +98,7 @@ const controller = {
                 email: form.email,
                 password: bcrypt.hashSync(form.password, 12),
                 image: file.filename,
-                role_id: form.role_id,
+                role_id: 2,
                 cart_id: null
             };
             res.send(newUser);
@@ -110,10 +119,10 @@ const controller = {
         db.User.findByPk(ID, {
             include: [
                 {association: 'role'},
-                {association: 'cart'}
+                // {association: 'cart'}
             ]
         })
-            .then( user => res.render('users/edit', {user:user}) )
+            .then( user => res.render('users/edit', {loggedUser: req.session.loggedUser ,user:user}) )
             .catch( e => res.send(e) );
     },
     // '/users/i' - Method for saving the edited info of user i
@@ -123,13 +132,19 @@ const controller = {
         const form = req.body;
         const file = req.file;
         if ( errors.isEmpty() ) {
+            let ROLEID;
+            if (req.session.loggedUser.role_id == 1){
+                ROLEID = Number(form.role_id);
+            } else {
+                ROLEID = 2;
+            }
             const editedUser = {
                 first_name: form.first_name,
                 last_name: form.last_name,
                 email: form.email,
                 password: bcrypt.hashSync(form.password, 12),
                 image: file.filename,
-                role_id: form.role_id,
+                role_id: ROLEID,
                 cart_id: null
             };
             res.send(editedUser);
@@ -148,6 +163,7 @@ const controller = {
                 ]
             })
                 .then( user => res.render('users/edit'), {
+                    loggedUser: req.session.loggedUser,
                     user:user,
                     errors: errors.mapped(),
                     old: form

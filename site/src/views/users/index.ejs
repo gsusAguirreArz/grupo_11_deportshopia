@@ -6,7 +6,21 @@
 
     <div class="container">
         <main>
-            <h1>Listados de los usuarios</h1>
+            <h1>Listados de Todos los usuarios</h1>
+            <p>Solo los admins tienen que tener acceso a esta parte de la pagina</p>
+            <% for (let user of users) { %> 
+                <div class="product">
+                    <a href="/users/<%= user.id %>">
+                        <img src="/images/min/users/<%= user.image %> " alt="avatar  de <%= user.first_name %>" class="image">
+                        <div class="info">
+                            <p class="name">Nombre completo: <%= `${user.first_name} ${user.last_name}` %></p>
+                            <p>Correo: <%= user.email %></p>
+                            <p>Rol: <%= user.role.title %></p>
+                        </div>
+                    </a>
+                    <a href="/users/<%= user.id %>/edit ">Edita el rol de usuario</a>
+                </div> <!--.user-->
+            <% } %> 
         </main>
     </div>
 
