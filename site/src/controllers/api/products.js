@@ -4,30 +4,63 @@ const db = require('../../database/models/index');
 
 // const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+const Products = db.Product;
+
 // ------------------- Controller CODE -------------------
 const controller = {
     // '/products/' - Root show all products in DB
     index: (req,res) => {
-        db.Product.findAll({
-            limit:20
-        })
+        Products.findAll()
             .then( products => {
-                return res.render('products/index', {products});
+                const response = {
+                    meta: {
+                        status: 200,
+                        total: products.length,
+                        url: req.originalUrl,
+                        fullUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`
+                    },
+                    data: products
+                };
+                return res.status(200).json(response);
             })
-            .catch( error => res.send(error) );
+            .catch( e => res.send(e) );
     },
     // '/products/i' - Detail show the detail of the product i
     detail: (req,res) => {
         const ID = req.params.id;
-        db.Product.findByPk(ID, {
-            include: [
-                {association: 'brand'},
-                {association: 'categories'}
-            ]
-        })
+        Products.findByPk(ID)
             .then( product => {
-                return res.render('products/detail', {product});
+                if (!product) {
+                    return res.json({msg: "No se encontro la pelicula"})
+                }
+                const response = {
+                    meta: {
+                        status: 200,
+                        url: req.originalUrl,
+                        fullUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`
+                    },
+                    data: product
+                };
+                return res.status(200).json(response);
             })
+            .catch( e => res.send(e) );
+    },
+    search: (req,res) => {
+        const keywords = req.query.keywords;
+        Products.findAll({
+            where: {
+                name: {[db.Sequelize.Op.like]:`%${keywords}%`}
+            }
+        })
+            .then( products => products.length > 0 ? res.status(200).json({
+                meta : {
+                    status: 200,
+                    total: products.length,
+                    url: req.originalUrl,
+                    fullUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`
+                },
+                data: products
+            }) : res.json({ msg : `no hubo resultados con la busqueda ${keywords}`}))
             .catch( e => res.send(e) );
     },
     // '/products/' - Method for saving the new product
@@ -35,32 +68,15 @@ const controller = {
         const errors = validationResult(req);
         const form = req.body;
         const file = req.file;
-        if ( errors.isEmpty()) {
-            const newProduct = {
-                name: form.name,
-                description: form.description,
-                price: form.price,
-                image: file.filename,
-                brand_id: form.brand_id,
-                cart_id: null
-            };
-            res.send(newProduct);
-            // db.Product.create(newProduct, {
-            //     include: [{association: "brand"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/products');
-            //     })
-            //     .catch( e => res.send(e) );
-        } else {
-            const obtainCategories = db.Category.findAll();
-            const obtainBrands = db.Brand.findAll();
-            Promise.all([obtainCategories,obtainBrands])
-                .then( ([categories,brands]) => {
-                    return res.render('products/create', {categories:categories, brands:brands, errors:errors.mapped(), old:form});
-                })
-                .catch( e => res.send(e) );
-        }
+        Products.create(form)
+            .then( response => res.json({
+                meta: {
+                    status: 200,
+                    created: "ok"
+                },
+                data: response
+            }))
+            .catch( e => res.send(e) );
     },
     // '/products/i' - Method to save changes of product i
     update: (req,res) => {
@@ -68,55 +84,36 @@ const controller = {
         const errors = validationResult(req);
         const form = req.body;
         const file = req.file;
-        if ( errors.isEmpty() ) {
-            const editedProduct = {
-                name: form.name,
-                description: form.description,
-                price: form.price,
-                image: file.filename,
-                brand_id: form.brand_id,
-                cart_id: null
-            };
-            res.send(editedProduct);
-            // db.Product.update(editedProduct, {
-            //     where: {id:ID},
-            //     include: [{association: "brand"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/products');
-            //     })
-            //     .catch( e => res.send(e) );
-        } else {
-            const obtainCategories = db.Category.findAll();
-            const obtainBrands = db.Brand.findAll();
-            const obtainProduct = db.Product.findByPk(ID,{
-                include: [
-                    {association: 'categories'}
-                ]
-            });
-    
-            Promise.all([obtainProduct,obtainCategories,obtainBrands])
-                .then( ([product,categories,brands]) => {
-                    return res.render('products/edit', {
-                        product: product,
-                        brands: brands,
-                        categories: categories,
-                        errors:errors.mapped(),
-                        old:form
-                    });
-                } )
-                .catch( e => res.send(e) );
-        }
+        Products.update( form, {
+            where: {
+                id: ID
+            }
+        })
+            .then( response => res.json({
+                meta: {
+                    status: 200,
+                    url: req.originalUrl,
+                    msg: `product with ${ID} succesfully edited`
+                },
+                data: response
+            }))
+            .catch( e => res.send(e) );
     },
     // '/products/' - Method to delete the product i from DB
     destroy: (req,res) => {
         const ID = req.params.id;
-        res.send(`se elimino el producto con id: ${ID}`);
-        // db.Product.destroy({
-        //     where: {id:ID}
-        // })
-        //     .then( response => res.redirect('/products') )
-        //     .catch( e => res.send(e) );
+        Products.destroy({
+            where: {
+                id: ID
+            }
+        })
+            .then( response => response == 1 ? res.json({
+                    response: response,
+                    msg: `producto con id ${ID} eliminado exitosamente`
+                }) : res.json({
+                    msg: `error al intentar borrar el producto con id ${ID}`
+                }) )
+            .catch( e => res.send(e) );
     },
 };
 

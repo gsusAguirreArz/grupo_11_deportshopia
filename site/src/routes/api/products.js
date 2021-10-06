@@ -11,6 +11,7 @@ const router = express.Router();
 
 // Show all products
 router.get('/', productsController.index);
+router.get('/search', productsController.search);
 
 // Create a product
 // router.get('/create', productsController.create);

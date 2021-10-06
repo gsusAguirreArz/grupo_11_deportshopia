@@ -3,147 +3,120 @@ const{validationResult} = require('express-validator');
 const db = require('../../database/models/index');
 const bcrypt = require('bcryptjs');
 
+const Users = db.User;
+
 // ------------------- Controller CODE -------------------
 const controller = {
     // '/users/' - Root show all users in DB
     index: (req,res) => {
-        res.render('users/index');
-    },
-    // validate user credentials
-    checkLogin: (req,res) => {
-        const errors = validationResult(req);
-        const form = req.body;
-        if ( errors.isEmpty() ){
-            db.User.findOne({
-                where: {
-                    email: `${form.email}`
-                }
-            })
-                .then( user => {
-                    if (user == undefined){
-                        return res.render('users/login', {
-                            errors: {
-                                email: {
-                                    msg: "No se tiene registro de este usuario"
-                                }
-                            }
-                        });
-                    }else{
-                        const correct = bcrypt.compareSync(form.password, user.password);
-                        if ( correct ) {
-
-                            if (form.rememberMe != undefined) {
-                                res.cookie('rememberMe', user.email, { maxAge:60000 } )
-                            }
-
-                            req.session.loggedUser = user;
-                            return res.send('Success!');
-                        }else{
-                            return res.render('users/login', {
-                                errors: {
-                                    password:{
-                                        msg: 'Credenciales invalidas'
-                                    }
-                                }
-                            });
-                        }
-                    }
-                } )
-                .catch( e => res.send(e) );
-        }else{
-            return res.render('users/login', {
-                errors: errors.mapped(),
-                old: form
-            });
-        }
-    },
-    // '/users/i' - Render the detail page of user i
-    detail: (req,res) => {
-        const ID = req.params.id;
-        db.User.findByPk(ID, {
+        Users.findAll({
             include: [
                 {association: 'role'},
-                {association: 'cart'}
             ]
         })
-            .then( user => res.render('users/detail', {user:user}) )
+            .then( users => {
+                const response = {
+                    meta: {
+                        status: 200,
+                        total: users.length,
+                        url: req.originalUrl,
+                        fullUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`
+                    },
+                    data: users
+                };
+                return res.status(200).json(response);
+            })
             .catch( e => res.send(e) );
     },
-    // '/users/' - Method for saving the new user info
+    // '/users/i' - Detail show the detail of the user i
+    detail: (req,res) => {
+        const ID = req.params.id;
+        Users.findByPk(ID)
+            .then( user => {
+                if (!user) {
+                    return res.json({msg: "No se encontro la pelicula"})
+                }
+                const response = {
+                    meta: {
+                        status: 200,
+                        url: req.originalUrl,
+                        fullUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`
+                    },
+                    data: user
+                };
+                return res.status(200).json(response);
+            })
+            .catch( e => res.send(e) );
+    },
+    search: (req,res) => {
+        const keywords = req.query.keywords;
+        Users.findAll({
+            where: {
+                first_name: {[db.Sequelize.Op.like]:`%${keywords}%`}
+            }
+        })
+            .then( users => users.length > 0 ? res.status(200).json({
+                meta : {
+                    status: 200,
+                    total: users.length,
+                    url: req.originalUrl,
+                    fullUrl: `${req.protocol}://${req.get('host')}${req.originalUrl}`
+                },
+                data: users
+            }) : res.json({ msg : `no hubo resultados con la busqueda ${keywords}`}))
+            .catch( e => res.send(e) );
+    },
+    // '/users/' - Method for saving the new user
     store: (req,res) => {
         const errors = validationResult(req);
         const form = req.body;
         const file = req.file;
-        if ( errors.isEmpty()) {
-            const newUser = {
-                first_name: form.first_name,
-                last_name: form.last_name,
-                email: form.email,
-                password: bcrypt.hashSync(form.password, 12),
-                image: file.filename,
-                role_id: form.role_id,
-                cart_id: null
-            };
-            res.send(newUser);
-            // db.User.create(newUser, {
-            //     include: [{association: "role"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/');
-            //     })
-            //     .catch( e => res.send(e) );
-        } else {
-            return res.render('users/create', {errors:errors.mapped(), old:form});
-        }
+        users.create(form)
+            .then( response => res.json({
+                meta: {
+                    status: 200,
+                    created: "ok"
+                },
+                data: response
+            }))
+            .catch( e => res.send(e) );
     },
-    // '/users/i' - Method for saving the edited info of user i
+    // '/users/i' - Method to save changes of user i
     update: (req,res) => {
-        const errors = validationResult(req);
         const ID = req.params.ID;
+        const errors = validationResult(req);
         const form = req.body;
         const file = req.file;
-        if ( errors.isEmpty() ) {
-            const editedUser = {
-                first_name: form.first_name,
-                last_name: form.last_name,
-                email: form.email,
-                password: bcrypt.hashSync(form.password, 12),
-                image: file.filename,
-                role_id: form.role_id,
-                cart_id: null
-            };
-            res.send(editedUser);
-            // db.User.update(editedUser, {
-            //     where: {id:ID},
-            //     include: [{association: "role"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/');
-            //     })
-            //     .catch( e => res.send(e) );
-        } else {
-            db.User.findByPk(ID, {
-                include: [
-                    {association: 'role'}
-                ]
-            })
-                .then( user => res.render('users/edit'), {
-                    user:user,
-                    errors: errors.mapped(),
-                    old: form
-                })
-                .catch( e => res.send(e) );
-        }
+        Users.update( form, {
+            where: {
+                id: ID
+            }
+        })
+            .then( response => res.json({
+                meta: {
+                    status: 200,
+                    url: req.originalUrl,
+                    msg: `user with ${ID} succesfully edited`
+                },
+                data: response
+            }))
+            .catch( e => res.send(e) );
     },
-    // '/users/' - Method for deleting user i from DB
+    // '/users/' - Method to delete the user i from DB
     destroy: (req,res) => {
         const ID = req.params.id;
-        res.send(`se elimino el producto con id: ${ID}`);
-        // db.Usser.destroy({
-        //     where: {id:ID}
-        // })
-        //     .then( response => res.redirect('/') )
-        //     .catch( e => res.send(e) );
+        Users.destroy({
+            where: {
+                id: ID
+            }
+        })
+            .then( response => response == 1 ? res.json({
+                    response: response,
+                    msg: `usuario con id ${ID} eliminado exitosamente`
+                }) : res.json({
+                    msg: `error al intentar borrar el usuario con id ${ID}`
+                }) )
+            .catch( e => res.send(e) );
     },
 };
 

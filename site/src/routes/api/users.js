@@ -13,10 +13,11 @@ const router = express.Router();
 
 // Show all users
 router.get('/', usersController.index);
+router.get('/search', usersController.search);
 
 // User login
 // router.get('/login', usersController.login);
-router.post('/login', userLoginVal ,usersController.checkLogin);
+// router.post('/login', userLoginVal ,usersController.checkLogin);
 
 // Create a user
 // router.get('/register', userLogged, usersController.create);
