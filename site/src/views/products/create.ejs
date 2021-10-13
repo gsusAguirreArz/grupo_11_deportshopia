@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <label for="description">Descripcion:</label>
-                    <textarea name="description" id="description" placeholder="nice gpu"><% if (locals.old && old.description) {%><%= locals.old && old.description %><% } %></textarea>
+                    <textarea name="description" id="description" placeholder="nice gpu"><% if (locals.old && old.description) {%><%= old.description %><% } %></textarea>
                     <% if (locals.errors && errors.description) { %>
                         <p class="feedback"><%= errors.description.msg %> </p>
                     <% } %>
