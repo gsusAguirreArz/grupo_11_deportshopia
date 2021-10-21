@@ -39,6 +39,7 @@ const usersRoutes = require('./routes/users');
 // const mainRoutes = require('./routes/main');
 const apiProductsRoutes = require('./routes/api/products');
 const apiUsersRoutes = require('./routes/api/users');
+const apiBrandsCategoriesRoutes = require('./routes/api/brandscategories');
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
@@ -46,6 +47,7 @@ app.use('/users', usersRoutes);
 
 app.use('/api/products', apiProductsRoutes);
 app.use('/api/users', apiUsersRoutes);
+app.use('/api', apiBrandsCategoriesRoutes);
 
 // **** Error Handler ****
 // Error Import's

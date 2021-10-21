@@ -1,8 +1,8 @@
 import React from 'react';
 
 import InfoBanners from '../products/InfoBanners';
-import GenresInDb from '../products/GenresInDb';
-import LastMoviesInDb from '../products/LastMoviesInDb';
+import ProdsCategoriesInDb from '../products/CategoriesInDb';
+import BestSeller from '../products/BestSellerInDb';
 
 function ContentRowTop() {
     return (
@@ -17,8 +17,8 @@ function ContentRowTop() {
 
                 {/* <!-- Content Row Last Movie in Data Base --> */}
                 <div className="row">
-                    <LastMoviesInDb />
-                    <GenresInDb />
+                    <BestSeller />
+                    <ProdsCategoriesInDb />
                 </div>
             </div>
             {/* <!--End Content Row Top--> */}

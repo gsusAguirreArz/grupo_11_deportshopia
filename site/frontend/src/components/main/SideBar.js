@@ -6,9 +6,10 @@ import SideBarItem from './SideBarItem';
 
 const array = [
 	{ icon: "search", name: "Search", href: "/search" },
-	{ icon: "folder", name: "Pages" , href: "/pages"},
-	{ icon: "chart-area", name: "Charts", href: "/charts"},
-	{ icon: "table", name: "Tables", href: "/tables" }
+	{ icon: "star", name: "Best Seller" , href: "/pages"},
+	{ icon: "chart-area", name: "Stats", href: "/charts"},
+	{ icon: "archive", name: "Products Categories", href: "/tables" },
+	{ icon: "table", name: "Users List", href: "/users"}
 
 ];
 

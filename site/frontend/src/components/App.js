@@ -3,11 +3,12 @@ import {Route, Switch} from 'react-router-dom';
 
 import SideBar from './main/SideBar';
 import ContentWrapper from './main/ContentWrapper';
-import LastProductInDb from './products/LastMoviesInDb';
+import BestSeller from './products/BestSellerInDb';
 import InfoBanners from './products/InfoBanners';
-import ProdsCategoriesInDb from './products/GenresInDb';
-import SearchProducts from './products/SearchMovies';
+import ProdsCategoriesInDb from './products/CategoriesInDb';
+import SearchProducts from './products/Search';
 import NotFound from './misc/NotFound';
+import UsersTable from './products/UsersTable';
 
 function App() {
   return (
@@ -22,9 +23,12 @@ function App() {
           </Route>
           <Route path="/charts" component={InfoBanners} />
           <Route path="/tables" component={ProdsCategoriesInDb} /> 
-          <Route path="/pages" exact={true} component={LastProductInDb} />
+          <Route path="/pages" exact={true} component={BestSeller} />
           <Route path="/search" exact>
             <SearchProducts apiKEY="5c5c6d24" />
+          </Route>
+          <Route path="/users">
+            <UsersTable />
           </Route>
           <Route component={NotFound}/> 
           {/* Not found siempre debe star al final */}

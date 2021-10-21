@@ -10,7 +10,12 @@ const Products = db.Product;
 const controller = {
     // '/products/' - Root show all products in DB
     index: (req,res) => {
-        Products.findAll()
+        Products.findAll({
+            include: [
+                {association: 'categories'},
+                {association: 'brand'},
+            ]
+        })
             .then( products => {
                 const response = {
                     meta: {
@@ -50,7 +55,10 @@ const controller = {
         Products.findAll({
             where: {
                 name: {[db.Sequelize.Op.like]:`%${keywords}%`}
-            }
+            },
+            include: [
+                {association: 'brand'},
+            ]
         })
             .then( products => products.length > 0 ? res.status(200).json({
                 meta : {

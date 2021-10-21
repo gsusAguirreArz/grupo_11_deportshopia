@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function GenreBanner(props) {
+function CategoryBanner(props) {
     return (
         <>
             <div className="col-lg-6 mb-4">
@@ -15,12 +15,12 @@ function GenreBanner(props) {
     );
 }
 
-GenreBanner.defaultProps = {
-    name: "No Genre"
+CategoryBanner.defaultProps = {
+    name: "No Category"
 };
 
-GenreBanner.propTypes = {
+CategoryBanner.propTypes = {
     name: PropTypes.string
 };
 
-export default GenreBanner;
+export default CategoryBanner;

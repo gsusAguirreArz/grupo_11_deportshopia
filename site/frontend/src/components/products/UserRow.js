@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function MovieRow(props) {
+function UserRow(props) {
     return (
         <>
             <tr>
                 <td>{props.id}</td>
-                <td>{props.title}</td>
-                <td>{props.duration}</td>
-                <td>{props.rating}</td>
-                <td>{props.awards}</td>
+                <td>{props.fn}</td>
+                <td>{props.ln}</td>
+                <td>{props.email}</td>
+                <td>{props.rt}</td>
             </tr>
         </>
     );
 }
 
-MovieRow.defaultProps = {
+UserRow.defaultProps = {
     id: 0,
     title: "Movie Name",
     duration: 0,
@@ -23,7 +23,7 @@ MovieRow.defaultProps = {
     awards: 0 
 };
 
-MovieRow.propTypes = {
+UserRow.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     duration: PropTypes.number,
@@ -31,4 +31,4 @@ MovieRow.propTypes = {
     awards: PropTypes.number 
 };
 
-export default MovieRow;
+export default UserRow;

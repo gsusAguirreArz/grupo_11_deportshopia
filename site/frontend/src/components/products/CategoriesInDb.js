@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import GenreBanner from './GenreBanner';
+import CategoryBanner from './CategoryBanner';
 
-class GenresInDb extends Component{
+class CategoriesInDb extends Component{
     constructor(props){
         super(props);
         this.state = {
-            genresList:[],
+            categoriesList:[],
             classname: "card-body fondoCaja "
         };
     }
 
     apiCall(url,handler){
-        console.log('inside apiCall');
+        // console.log('inside apiCall');
         fetch(url)
             .then( response => response.json() )
             .then( data => handler(data) )
@@ -19,23 +19,23 @@ class GenresInDb extends Component{
     }
 
     genresHandler = (data) => {
-        console.log(data.data);
+        // console.log(data.data);
         this.setState({
-            genresList: data.data
+            categoriesList: data.data
         });
     }
 
     getGenres(){
-        this.apiCall("/api/genres", this.genresHandler);
+        this.apiCall("/api/categories", this.genresHandler);
     }
 
     componentDidMount(){
-        console.log('Me monte!!');
+        // console.log('Me monte!!');
         this.getGenres();
     }
 
     componentDidUpdate(){
-        console.log('Me actualize!!');
+        // console.log('Me actualize!!');
         // alert('tengo un genero nuevo!');
     }
     cambiaColor(){
@@ -49,10 +49,10 @@ class GenresInDb extends Component{
 
         let contenido;
 
-        if ( this.state.genresList.length !== 0 ){
-            contenido = <div className="row">{ this.state.genresList.map( (genre,idx) => <GenreBanner name={genre.name} key={idx}/>) }</div>;
+        if ( this.state.categoriesList.length !== 0 ){
+            contenido = <div className="row">{ this.state.categoriesList.map( (category,idx) => <CategoryBanner name={category.name} key={idx}/>) }</div>;
         }else{
-            contenido = <div className="row"><GenreBanner/></div>;
+            contenido = <div className="row"><CategoryBanner/></div>;
         }
 
         return (
@@ -61,7 +61,7 @@ class GenresInDb extends Component{
                 <div className="col-lg-6 mb-4">						
                     <div className="card shadow mb-4">
                         <div className="card-header py-3">
-                            <h5 onMouseOver={ () => this.cambiaColor() } className="m-0 font-weight-bold text-gray-800">Genres in Data Base</h5>
+                            <h5 onMouseOver={ () => this.cambiaColor() } className="m-0 font-weight-bold text-gray-800">All categories in DB</h5>
                         </div>
                         <div className={this.state.classname}>
                             {contenido}
@@ -73,4 +73,4 @@ class GenresInDb extends Component{
     }
 }
 
-export default GenresInDb;
+export default CategoriesInDb;

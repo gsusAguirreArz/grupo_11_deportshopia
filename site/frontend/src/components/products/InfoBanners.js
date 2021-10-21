@@ -10,40 +10,72 @@ function apiCall(url, handler){
 
 function InfoBanners(){
 
-    const [products, setproducts] = useState([]);
+    const [prods, setprods] = useState([]);
+    const [users, setusers] = useState([]);
 
-    const dataHandler = data => {
-        // console.log(data);
-        setproducts(data.data);
+    const usersHandler = data => {
+        setusers(data.data);
     }
 
-    const getData = async url => {
-        await apiCall( url, dataHandler );
+    const prodsHandler = data => {
+        setprods(data.data);
+    }
+
+    const getProds = async url => {
+        await apiCall( url, prodsHandler );
+    }
+
+    const getUsers = async url => {
+        await apiCall( url, usersHandler );
     }
 	
     useEffect(() => {
-		console.log('%cMe monte!', 'color: green');
-        let URL = "/api/products";
-        getData(URL);
+		// console.log('%cMe monte!', 'color: green');
+
+        let URLs = ["/api/products" , "/api/users"];
+        getProds(URLs[0]);
+        getUsers(URLs[1]);
+
     }, [])
 	
     useEffect(() => {
-		console.log('%cMe actualice!', 'color: yellow');
-    }, [products])
+		// console.log('%cMe actualice!', 'color: yellow');
+    }, [prods, users])
 	
     useEffect(() => {
 		return () => {
-			console.log('%cMe desmonte!', 'color: red');
+			// console.log('%cMe desmonte!', 'color: red');
         };
     }, [])
+
+    let aux = [
+        {
+            name: "products", 
+            stat: prods.length, 
+            bc: "primary", 
+            icn: "cubes" 
+        },
+        {
+            name: "users",
+            stat: users.filter( item => item.role_id === 2).length,
+            bc: "success",
+            icn: "user"
+        },
+        {
+            name: "admins",
+            stat: users.filter(item => item.role_id === 1).length,
+            bc: "warning",
+            icn: "user-shield"
+        }
+    ];
 
     return (
         <>
             {/* <!-- Content Row Movies--> */}
             <div className="row">
-                <StatBanner title="Total products in DB" value={products.length} border_color="primary" icon="film"/>
-                <StatBanner title="Total awards" value={79} border_color="success" icon="award"/>
-                <StatBanner title="Actors quantity" value={49} border_color="warning" icon="user"/>
+                {
+                    aux.map( (item,idx) => <StatBanner title={item.name} value={item.stat} border_color={item.bc} icon={item.icn} key={idx} />)
+                }
             </div>
             {/* <!-- End movies in Data Base --> */}
         </>

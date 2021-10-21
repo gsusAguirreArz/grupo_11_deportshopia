@@ -3,7 +3,7 @@ import React from 'react';
 import TopBar from './TopBar';
 import ContentRowTop from './ContentRowTop';
 import Footer from './Footer';
-import ProductsTable from '../products/MoviesTable';
+import UsersTable from '../products/UsersTable';
 
 function ContentWrapper() {
     return (
@@ -16,7 +16,7 @@ function ContentWrapper() {
                     <ContentRowTop />
                 </div>
                 {/* <!-- End of MainContent --> */}
-                <ProductsTable />
+                <UsersTable />
                 <Footer />
             </div>
             {/* <!-- End of Content Wrapper --> */}
