@@ -5,6 +5,7 @@ function Logged(req, res, next) {
     if ( req.session.loggedUser == undefined) {
         return next();
     } else {
-        return res.send('Esta pagina es solo para invitados');
+        const msg = "Esta pagina es solo para invitados";
+        return res.render('errors/error', {message:msg});
     }
 }

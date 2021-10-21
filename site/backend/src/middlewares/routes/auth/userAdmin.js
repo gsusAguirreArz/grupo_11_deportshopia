@@ -5,6 +5,7 @@ function Admin(req, res, next) {
     if ( Number(req.session.loggedUser.role_id) == 1 ) {
         return next();
     } else {
-        return res.send('Esta pagina es solo para administradores');
+        const msg = "Esta pagina es solo para administradores";
+        return res.render('errors/error', {message:msg});
     }
 }

@@ -6,6 +6,8 @@ function notLogged(req, res, next) {
     if ( sessParam != undefined) {
         return next();
     } else {
-        return res.send('Esta pagina es solo para usuarios registrados');
+        const msg = "Esta pagina es solo para usuarios registrados";
+        return res.render('errors/error', {message:msg});
+        // return res.send('Esta pagina es solo para usuarios registrados');
     }
 }
