@@ -12,6 +12,7 @@ const controller = {
         Users.findAll({
             include: [
                 {association: 'role'},
+                {association: 'cart'}
             ]
         })
             .then( users => {

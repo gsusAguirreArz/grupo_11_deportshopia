@@ -26,7 +26,7 @@ function model (sequelize, DataTypes) {
     const Cart = sequelize.define(alias,cols,config);
 
     Cart.associate = models => {
-        Cart.belongsTo(models.User, {
+        Cart.hasOne(models.User, {
             as: "user",
             foreignKey: "cart_id"
         });
