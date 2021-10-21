@@ -35,6 +35,7 @@ app.set('views', path.join(__dirname, './views') );
 const mainRoutes = require('./routes/main');
 const productsRoutes = require('./routes/products');
 const usersRoutes = require('./routes/users');
+const adminDashRoutes = require('./routes/adminDash');
 
 // const mainRoutes = require('./routes/main');
 const apiProductsRoutes = require('./routes/api/products');
@@ -44,6 +45,7 @@ const apiBrandsCategoriesRoutes = require('./routes/api/brandscategories');
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
+app.use('/admin', adminDashRoutes);
 
 app.use('/api/products', apiProductsRoutes);
 app.use('/api/users', apiUsersRoutes);
