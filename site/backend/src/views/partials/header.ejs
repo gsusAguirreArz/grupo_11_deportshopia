@@ -5,13 +5,18 @@
             <h1>LaniakShop</h1>
         </a>
         <nav class="nav nav--principal">
-            <a href="#" class="link--special" >Ofertas del dia!</a>
+            <a href="/products" class="link--special" >Ofertas del dia!</a>
             <!-- MI cuenta aparece una vez loggeado -->
             <% if ( locals.logged_user && logged_user) { %> 
                 <a href="/users/<%= logged_user.id %>">Mi cuenta! </a> 
             <% } %> 
             <a href="#">Arma tu PC</a>
-            <a href="#">Favoritos</a>
+            <% if ( locals.logged_user && logged_user) { %> 
+                <a href="#">Favoritos</a>
+            <% } %> 
+            <% if ( locals.logged_user && logged_user.role_id === 1) { %> 
+                <a href="/users">Users List</a>
+            <% } %>
         </nav>
         <div class="sIsC">
             <div class="signIn">
