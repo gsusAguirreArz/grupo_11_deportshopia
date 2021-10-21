@@ -101,14 +101,11 @@ const controller = {
                 role_id: 2,
                 cart_id: null
             };
-            res.send(newUser);
-            // db.User.create(newUser, {
-            //     include: [{association: "role"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/');
-            //     })
-            //     .catch( e => res.send(e) );
+            db.User.create(newUser)
+                .then( response => {
+                    return res.redirect('/');
+                })
+                .catch( e => res.send(e) );
         } else {
             return res.render('users/create', {errors:errors.mapped(), old:form});
         }
@@ -132,11 +129,9 @@ const controller = {
         const form = req.body;
         const file = req.file;
         if ( errors.isEmpty() ) {
-            let ROLEID;
-            if (req.session.loggedUser.role_id == 1){
+            let ROLEID = 2;
+            if (req.session.loggedUser != undefined && req.session.loggedUser.role_id == 1){
                 ROLEID = Number(form.role_id);
-            } else {
-                ROLEID = 2;
             }
             const editedUser = {
                 first_name: form.first_name,
@@ -147,15 +142,14 @@ const controller = {
                 role_id: ROLEID,
                 cart_id: null
             };
-            res.send(editedUser);
-            // db.User.update(editedUser, {
-            //     where: {id:ID},
-            //     include: [{association: "role"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/');
-            //     })
-            //     .catch( e => res.send(e) );
+            // res.send(editedUser);
+            db.User.update(editedUser, {
+                where: {id:ID},
+            })
+                .then( response => {
+                    return res.redirect('/');
+                })
+                .catch( e => res.send(e) );
         } else {
             db.User.findByPk(ID, {
                 include: [
@@ -183,12 +177,12 @@ const controller = {
     // '/users/' - Method for deleting user i from DB
     destroy: (req,res) => {
         const ID = req.params.id;
-        res.send(`se elimino el producto con id: ${ID}`);
-        // db.Usser.destroy({
-        //     where: {id:ID}
-        // })
-        //     .then( response => res.redirect('/') )
-        //     .catch( e => res.send(e) );
+        // res.send(`se elimino el producto con id: ${ID}`);
+        db.User.destroy({
+            where: {id:ID}
+        })
+            .then( response => res.redirect('/') )
+            .catch( e => res.send(e) );
     },
 };
 
