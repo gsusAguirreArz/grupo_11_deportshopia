@@ -12,7 +12,7 @@ const controller = {
             limit:20
         })
             .then( products => {
-                return res.render('products/index', {products});
+                return res.render('products/index', {logged_user:req.session.loggedUser,products:products});
             })
             .catch( error => res.send(error) );
     },
@@ -26,7 +26,7 @@ const controller = {
             ]
         })
             .then( product => {
-                return res.render('products/detail', {product});
+                return res.render('products/detail', {logged_user:req.session.loggedUser,product:product});
             })
             .catch( e => res.send(e) );
     },
@@ -36,7 +36,7 @@ const controller = {
         const obtainBrands = db.Brand.findAll();
         Promise.all([obtainCategories,obtainBrands])
             .then( ([categories,brands]) => {
-                return res.render('products/create', {categories, brands});
+                return res.render('products/create', {logged_user:req.session.loggedUser,categories:categories, brands:brands});
             })
             .catch( e => res.send(e) );
     },
@@ -67,7 +67,7 @@ const controller = {
             const obtainBrands = db.Brand.findAll();
             Promise.all([obtainCategories,obtainBrands])
                 .then( ([categories,brands]) => {
-                    return res.render('products/create', {categories:categories, brands:brands, errors:errors.mapped(), old:form});
+                    return res.render('products/create', {logged_user:req.session.loggedUser,categories:categories, brands:brands, errors:errors.mapped(), old:form});
                 })
                 .catch( e => res.send(e) );
         }
@@ -86,6 +86,7 @@ const controller = {
         Promise.all([obtainProduct,obtainCategories,obtainBrands])
             .then( ([product,categories,brands]) => {
                 return res.render('products/edit', {
+                    logged_user:req.session.loggedUser,
                     product:product,
                     categories:categories,
                     brands:brands
@@ -129,6 +130,7 @@ const controller = {
             Promise.all([obtainProduct,obtainCategories,obtainBrands])
                 .then( ([product,categories,brands]) => {
                     return res.render('products/edit', {
+                        logged_user:req.session.loggedUser,
                         product: product,
                         brands: brands,
                         categories: categories,
@@ -143,7 +145,7 @@ const controller = {
         const ID = req.params.id;
         db.Product.findByPk(ID)
             .then( product => {
-                return res.render('products/delete', {product});
+                return res.render('products/delete', {logged_user:req.session.loggedUser,product:product});
             })
             .catch( e => res.send(e) );
     },

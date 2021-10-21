@@ -6,9 +6,8 @@ const db = require('../database/models/index');
 const controller = {
     // '/' - Root show Home page
     index: (req,res) => {
-        // let products = prodsModel.data();
-        
-        res.render('main/index');
+
+        res.render('main/index', {logged_user:req.session.loggedUser});
     },
     search: (req,res) => {
         const keywords = req.query.keywords;
@@ -21,7 +20,7 @@ const controller = {
         })
             .then( products => {
                 // res.send(products);
-                res.render('products/searchRes', {keywords, products});
+                res.render('products/searchRes', {logged_user:req.session.loggedUser, keywords:keywords, products:products});
             } )
             .catch( e => res.send(e) );
     }

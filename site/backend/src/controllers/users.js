@@ -14,7 +14,7 @@ const controller = {
             ]
         })
             .then( users => {
-                return res.render('users/index', {users:users});
+                return res.render('users/index', {logged_user:req.session.loggedUser,users:users});
             })
             .catch( e => res.send(e) );
     },
@@ -50,7 +50,7 @@ const controller = {
                             }
 
                             req.session.loggedUser = user;
-                            return res.send('Success!');
+                            return res.redirect('/');
                         }else{
                             return res.render('users/login', {
                                 errors: {
@@ -79,7 +79,7 @@ const controller = {
                 // {association: 'cart'}
             ]
         })
-            .then( user => res.render('users/detail', {user:user}) )
+            .then( user => res.render('users/detail', {logged_user:req.session.loggedUser,user:user}) )
             .catch( e => res.send(e) );
     },
     // '/users/register' - Render de create new user page
@@ -122,7 +122,7 @@ const controller = {
                 // {association: 'cart'}
             ]
         })
-            .then( user => res.render('users/edit', {loggedUser: req.session.loggedUser ,user:user}) )
+            .then( user => res.render('users/edit', {logged_user:req.session.loggedUser,loggedUser: req.session.loggedUser ,user:user}) )
             .catch( e => res.send(e) );
     },
     // '/users/i' - Method for saving the edited info of user i
@@ -163,6 +163,7 @@ const controller = {
                 ]
             })
                 .then( user => res.render('users/edit'), {
+                    logged_user:req.session.loggedUser,
                     loggedUser: req.session.loggedUser,
                     user:user,
                     errors: errors.mapped(),
@@ -175,7 +176,7 @@ const controller = {
         const ID = req.params.id;
         db.User.findByPk(ID)
             .then( user => {
-                return res.render('users/delete', {user:user});
+                return res.render('users/delete', {logged_user:req.session.loggedUser,user:user});
             })
             .catch( e => res.send(e) );
     },

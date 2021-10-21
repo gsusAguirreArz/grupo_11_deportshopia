@@ -7,7 +7,9 @@
         <nav class="nav nav--principal">
             <a href="#" class="link--special" >Ofertas del dia!</a>
             <!-- MI cuenta aparece una vez loggeado -->
-            <a href="#">Mi cuenta! </a> 
+            <% if ( locals.logged_user && logged_user) { %> 
+                <a href="/users/<%= logged_user.id %>">Mi cuenta! </a> 
+            <% } %> 
             <a href="#">Arma tu PC</a>
             <a href="#">Favoritos</a>
         </nav>
