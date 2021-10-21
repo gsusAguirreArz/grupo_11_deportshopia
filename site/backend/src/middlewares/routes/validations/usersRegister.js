@@ -8,10 +8,10 @@ const validateForm = [
         .notEmpty().withMessage("Agrega apellido valido").bail()
         .matches(/^[A-Za-z0-9 '!&]+$/).withMessage('Debes usar caracteres alfanumericos').bail(),
     check("email")
-        .notEmpty().withMessage("ELige una marca").bail()
+        .notEmpty().withMessage("Debes ingresar tu correo!").bail()
         .isEmail().withMessage('Ingresa un correo valido!').bail(),
     check("password")
-        .notEmpty().withMessage("Agrega el precio de tu producto").bail()
+        .notEmpty().withMessage("Debes ingresar una contraseña").bail()
         .isLength({min:8}).withMessage('La contrasena debe tener minimo 8 chars').bail()
 ];
 

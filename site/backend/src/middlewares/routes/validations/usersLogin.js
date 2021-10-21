@@ -6,7 +6,6 @@ const validateForm = [
         .isEmail().withMessage('Ingresa un correo valido!'),
     check("password")
         .notEmpty().withMessage('Ingresa tu contrasena!')
-        .isLength({min:8}).withMessage('La contrasena debe tener minimo 8 chars')
 ];
 // function validateForm(req,res,next) {}
 
