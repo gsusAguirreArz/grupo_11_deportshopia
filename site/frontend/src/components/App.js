@@ -21,6 +21,10 @@ function App() {
           <Route exact path="/">
             <ContentWrapper />
           </Route>
+          <Route exact path="/home" component={ () => {
+            window.location.href = "http://localhost:8080/";
+            return null;
+          }}/>
           <Route path="/charts" component={InfoBanners} />
           <Route path="/tables" component={ProdsCategoriesInDb} /> 
           <Route path="/pages" exact={true} component={BestSeller} />
