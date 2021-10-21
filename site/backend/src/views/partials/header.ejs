@@ -5,7 +5,7 @@
             <h1>LaniakShop</h1>
         </a>
         <nav class="nav nav--principal">
-            <a href="/products" class="link--special" >Ofertas del dia!</a>
+            <a href="/products" class="link--special" >Productos!</a>
             <!-- MI cuenta aparece una vez loggeado -->
             <% if ( locals.logged_user && logged_user) { %> 
                 <a href="/users/<%= logged_user.id %>">Mi cuenta! </a> 
@@ -16,6 +16,7 @@
             <% } %> 
             <% if ( locals.logged_user && logged_user.role_id === 1) { %> 
                 <a href="/users">Users List</a>
+                <a href="/products/create">Add product</a>
             <% } %>
         </nav>
         <div class="sIsC">
@@ -52,7 +53,9 @@
             </form>
         </div>
         <nav class="nav nav--secondary">
-            <a href="#">Help center</a>
+            <% if ( locals.logged_user && logged_user) { %> 
+                <a href="/users/logout">Log out</a>
+            <% } %> 
             <a href="#">Region</a>
         </nav>
     </div>

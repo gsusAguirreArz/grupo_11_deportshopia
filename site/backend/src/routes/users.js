@@ -20,6 +20,8 @@ router.get('/', [userNotLogged,userIsAdmin], usersController.index);
 router.get('/login', usersController.login);
 router.post('/login', userLoginVal ,usersController.checkLogin);
 
+router.get('/logout',userNotLogged,usersController.logout);
+
 // login test
 router.get('/check', (req,res) => {
     if (req.session.loggedUser == undefined){

@@ -70,6 +70,10 @@ const controller = {
             });
         }
     },
+    logout: (req,res) => {
+        req.session.loggedUser = undefined;
+        return res.redirect('/');
+    },
     // '/users/i' - Render the detail page of user i
     detail: (req,res) => {
         const ID = req.params.id;
