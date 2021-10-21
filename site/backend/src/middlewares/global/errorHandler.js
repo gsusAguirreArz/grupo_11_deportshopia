@@ -6,7 +6,7 @@ function errorHandler(err, req,res,next) {
     
     // render the error page
     res.status(err.status || 500);
-    res.render('errors/error');
+    res.render('errors/error', {logged_user:req.session.loggedUser});
     // res.send(err);
 }
 
