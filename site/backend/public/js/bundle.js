@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-    scrollNav();
+    // scrollNav();
 
     // fijar barra de navegacion
     navegacionFija();
