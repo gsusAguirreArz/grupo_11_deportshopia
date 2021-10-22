@@ -5,56 +5,53 @@
     <%- include('../partials/header') %>
 
     <div class="container">
-        <main>
-            <h1>Formulario para la edicion del usuario: <%= `${user.first_name} ${user.last_name}` %></h1>
-            <form action="/users/<%= user.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div>
-                    <label for="first_name">Nombre:</label>
-                    <input type="text" id="first_name" name="first_name" placeholder="Ej. Jose de jesus" value="<% if ( locals.errors && errors.first_name) { %><%= old.first_name %><% } else { %><%= user.first_name %><% } %>">
-                    <% if (locals.errors && errors.first_name) { %>
-                        <p class="feedback"><%= errors.first_name.msg %> </p>
-                    <% } %>
+        <div class="registerContainer">
+            <div class="register">
+                <div class="register-classic">
+                    <h1>Formulario para la edicion del usuario: <%= `${user.first_name} ${user.last_name}` %></h1>
+                    <form class="form" action="/users/<%= user.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <fieldset class="text">
+                            <input type="text" id="first_name" name="first_name" placeholder="Nombre:" value="<% if ( locals.errors && errors.first_name) { %><%= old.first_name %><% } else { %><%= user.first_name %><% } %>">
+                            <% if (locals.errors && errors.first_name) { %>
+                                <p class="feedback"><%= errors.first_name.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <fieldset class="text">
+                            <input type="text" id="last_name" name="last_name" placeholder="Apellido:" value="<% if ( locals.errors && errors.last_name) { %> <%= old.last_name %> <% } else { %><%= user.last_name %><% } %>">
+                            <% if (locals.errors && errors.last_name) { %>
+                                <p class="feedback"><%= errors.last_name.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <fieldset class="email">
+                            <input type="email" id="email" name="email" placeholder="Correo electronico:" value="<% if ( locals.errors && errors.email) { %> <%= old.email %> <% } else { %><%= user.email %><% } %>">
+                            <% if (locals.errors && errors.email) { %>
+                                <p class="feedback"><%= errors.email.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <fieldset class="password">
+                            <input type="password" name="password" id="password" placeholder="Contrasena:">
+                            <% if (locals.errors && errors.password) { %>
+                                <p class="feedback"><%= errors.password.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <fieldset class="file">
+                            <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
+                        </fieldset>
+                        <div>
+                            <% if ( loggedUser != undefined && loggedUser.role_id == 1 ) { %>
+                                <label for="role_id">Categoria:</label>
+                                <select name="role_id" id="role_id">
+                                    <option value="NaN" selected disabled>--Selecciona--</option>
+                                    <option value="1">admin</option>
+                                    <option value="2">invitado</option>
+                                </select>
+                            <% } %>  
+                        </div>
+                        <button type="submit" class="btn">Guardar</button>
+                    </form>
                 </div>
-                <div>
-                    <label for="last_name">Apellido:</label>
-                    <input type="text" id="last_name" name="last_name" placeholder="Ej. Aguirre Arzate" value="<% if ( locals.errors && errors.last_name) { %> <%= old.last_name %> <% } else { %><%= user.last_name %><% } %>">
-                    <% if (locals.errors && errors.last_name) { %>
-                        <p class="feedback"><%= errors.last_name.msg %> </p>
-                    <% } %>
-                </div>
-                <div>
-                    <label for="email">Correo electronico:</label>
-                    <input type="email" id="email" name="email" placeholder="Ej. jaguirre@email.com" value="<% if ( locals.errors && errors.email) { %> <%= old.email %> <% } else { %><%= user.email %><% } %>">
-                    <% if (locals.errors && errors.email) { %>
-                        <p class="feedback"><%= errors.email.msg %> </p>
-                    <% } %>
-                </div>
-                <div>
-                    <label for="password">Contrasena:</label>
-                    <input type="password" name="password" id="password">
-                    <% if (locals.errors && errors.password) { %>
-                        <p class="feedback"><%= errors.password.msg %> </p>
-                    <% } %>
-                </div>
-                <% if ( loggedUser != undefined && loggedUser.role_id == 1 ) { %>
-                    <label for="role_id">Categoria:</label>
-                    <select name="role_id" id="role_id">
-                        <option value="NaN" selected disabled>--Selecciona--</option>
-                        <option value="1">admin</option>
-                        <option value="2">invitado</option>
-                    </select>
-                <% } %>  
-                <div>
-                </div>
-                <div>
-                    <label for="image">Avatar:</label>
-                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
-                </div>
-                <div>
-                    <button type="submit">Guardar</button>
-                </div>
-            </form>
-        </main>
+            </div>
+        </div>
     </div>
 
     <%- include('../partials/footer') %>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-// import noPoster from '../assets/images/capamerica.png';
+import defaultProduct from '../../assets/images/tuf3090.jpg';
 
 function apiCall(url, handler) {
 	fetch(url)
@@ -85,9 +85,9 @@ function SearchProds(props) {
 												<div className="text-center">
 													<img 
 														className="img-fluid px-3 px-sm-4 mt-3 mb-4" 
-														src={prod.image}
+														src={defaultProduct}
 														alt={prod.name} 
-														style={{ width: '90%', height: '400px', objectFit: 'cover' }} 
+														style={{ width: '90%', height: '300px' }} 
 													/>
 												</div>
 												<p>{prod.brand.name}</p>

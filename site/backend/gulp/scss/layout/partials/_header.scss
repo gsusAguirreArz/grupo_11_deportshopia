@@ -49,8 +49,11 @@
         input[type="search"]{
             outline: 0; //remove it
             width:100%;
-            background: $gray;
+            color: hsl(0,0,20);
+            background: $white;
             border-radius: $brad;
+            border: 1px solid hsla(0, 0, 0, 0.3);
+            font-size: 14px;
             appearance: none;
             transition: all .3s cubic-bezier(0, 0, 0.43, 1.49);
             transition-property: width, border-radius;

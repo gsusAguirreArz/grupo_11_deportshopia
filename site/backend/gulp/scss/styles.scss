@@ -7,7 +7,9 @@
 
 @import 'layout/partials/header';
 @import 'layout/partials/footer';
+
 @import 'layout/main/index';
+@import 'layout/main/errors';
 
 @import 'layout/products/index';
 @import 'layout/products/detail';
@@ -15,3 +17,4 @@
 
 @import 'layout/users/login';
 @import 'layout/users/create';
+@import 'layout/users/detail';

@@ -1,13 +1,53 @@
-.createProductForm {
-    border: 3px solid #b60808;
-    height: 105vh;
-    width: 70vw;
-    margin-left: 230px;
-    padding: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-
-    align-items: center;
+.createProductContainer{
+    height: 95vh;
+    position: relative;
+}
+.newProd{
+    position: absolute;
+    top: 45rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 800px;
+    background: hsl(0, 0, 100);
+    border-radius: 10px;
+    box-shadow: 0 3px 25px hsla(0, 0, 0, 0.2);
+    overflow: hidden;
     display: flex;
-    justify-content: center;
+}
+.newProd-classic{
+    width: 100%;
+    padding: 30px 50px;
+
+    h1 {
+        font-size: 30px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 3px hsla(0, 0, 0, 0.1);
+    }
+
+    fieldset::after {
+        content: '\f007';
+        font-family: FontAwesome;
+        position: absolute;
+        right: 15px;
+        top: 17px;
+        z-index: 2;
+        width: 20px;
+        color: hsla(0, 0, 0, .2);
+        text-align: center;
+    }
+  
+    fieldset.text::after {
+        content: '\e1bf';
+    }
+
+    fieldset.digit::after {
+        content: '\f155';
+    }
+  
+    fieldset.file::after {
+        content: '\f03e';
+    }
+
 }

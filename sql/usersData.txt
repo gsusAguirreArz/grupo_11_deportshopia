@@ -1,5 +1,5 @@
-(1, NULL, NULL, 'Jose de Jesus Daniel', 'Aguirre Arzate', 'jaguirre@laniak.edu', 'd23YvLxYk3', 'user_1.jpg', NULL, 1),
-(2, NULL, NULL, 'Alejandro', 'Ucan', 'aucan@laniak.gd', 'GP91GL', 'user_2.jpg', NULL, 1),
+(1, NULL, NULL, 'Jesus', 'Aguirre', 'jaguirre@laniak.com', 'd23YvLxYk3', 'user_1.jpg', NULL, 1),
+(2, NULL, NULL, 'Jose', 'Arzate', 'jarzate@laniak.gd', 'GP91GL', 'user_2.jpg', NULL, 1),
 (3, NULL, NULL, 'Ermengarde', 'Rubra', 'erubra2@time.com', 'FultVcN76yca', 'user_3.jpg', NULL, 2),
 (4, NULL, NULL, 'Lenette', 'Tomowicz', 'ltomowicz3@networkadvertising.org', 'TMoSYck', 'user_4.jpg', NULL, 2),
 (5, NULL, NULL, 'Walden', 'Heindrick', 'wheindrick4@plala.or.jp', 'drKLYzk2r8F', 'user_5.jpg', NULL, 2),

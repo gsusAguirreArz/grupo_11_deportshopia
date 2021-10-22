@@ -3,38 +3,42 @@
     <%- include('../partials/head', {title: "Login"}) %>
 <body>
     <%- include('../partials/header') %>
-
     <div class="container">
-        <main class="loginForm">
-            <h1>Formulario de Log In</h1>
-            <form action="/users/login" method="POST">
-                <div>
-                    <label for="email">Ingresa tu correo:</label>
-                    <input type="email" name="email" id="email">
-                    <% if (locals.errors && errors.email) { %>
-                        <p class="feedback"><%= errors.email.msg %> </p>
-                    <% } %>
+        <div class="signupContainer">
+            <div class="signup">
+                <div class="signup-connect">
+                    <h1>Crea tu cuenta</h1>
+                    <a href="#" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i> Ingresa con Facebook</a>
+                    <a href="#" class="btn btn-social btn-twitter"><i class="fa fa-linkedin"></i> Ingresa con Linkedin</a>
+                    <a href="#" class="btn btn-social btn-google"><i class="fa fa-google"></i> Ingresa con Google</a>
+                    <a href="/users/register" class="btn btn-social btn-linkedin"><i class="fa fa-envelope"></i> Registrate con tu correo</a>
                 </div>
-                <div>
-                    <label for="password">Ingresa tu contrasena:</label>
-                    <input type="password" name="password" id="password">
-                    <% if (locals.errors && errors.password) { %>
-                        <p class="feedback"><%= errors.password.msg %> </p>
-                    <% } %>
+                <div class="signup-classic">
+                    <h2>Sign up</h2>
+                    <form class="form" action="/users/login" method="POST">
+                        <fieldset class="email">
+                            <input type="email" name="email" id="email" placeholder="email">
+                            <% if (locals.errors && errors.email) { %>
+                                <p class="feedback"><%= errors.email.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <fieldset class="password">
+                            <input type="password" name="password" id="password" placeholder="password">
+                            <% if (locals.errors && errors.password) { %>
+                                <p class="feedback"><%= errors.password.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <div>
+                            <input type="checkbox" name="rememberMe" id="rememberMe">
+                            <label for="rememberMe">Rememeber me</label>
+                        </div>
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
                 </div>
-                <div>
-                    <input type="checkbox" name="rememberMe" id="rememberMe">
-                    <label for="rememberMe">Rememeber me</label>
-                </div>
-                <div>
-                    <button type="submit">Enviar</button>
-                </div>
-                <div>
-                    <a href="/users/register">Registrate!</a>
-                </div>
-            </form>
-        </main>
+            </div>
+        </div>
     </div>
+
 
     <%- include('../partials/footer') %>
 </body>

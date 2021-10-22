@@ -35,7 +35,7 @@
                 </div>
                 <div class="detailsProduct">
                     <div>
-                        <img src="/images/min/products/<%= product.image %>" alt="product image">
+                        <img loading="lazy" src="/images/min/products/<%= product.image %>" onerror="this.onerror=null; this.src='/images/min/products/default.jpg'" alt="imagen de <%= product.name %>">
                     </div>
                     <div>
                         <a href="/products/<%= product.id %>/edit">

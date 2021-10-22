@@ -17,7 +17,7 @@ function SideBar() {
     return (
 		<>
 			{/* <!-- Sidebar --> */}
-			<ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+			<ul className="navbar-nav bg-info  sidebar sidebar-dark accordion " id="accordionSidebar">
 
 				{/* <!-- Sidebar - Brand --> */}
 				<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">

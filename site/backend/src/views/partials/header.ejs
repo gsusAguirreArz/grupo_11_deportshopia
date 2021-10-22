@@ -11,10 +11,11 @@
                 <a href="/users/<%= logged_user.id %>">Mi cuenta! </a> 
             <% } %> 
             <a href="#">Arma tu PC</a>
-            <% if ( locals.logged_user && logged_user) { %> 
+            <% if ( locals.logged_user && logged_user.role_id == 2) { %> 
                 <a href="#">Favoritos</a>
             <% } %> 
             <% if ( locals.logged_user && logged_user.role_id === 1) { %> 
+                <a href="/admin">AdminDash</a>
                 <a href="/users">Users List</a>
                 <a href="/products/create">Add product</a>
             <% } %>

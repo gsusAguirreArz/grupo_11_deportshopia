@@ -5,59 +5,57 @@
     <%- include('../partials/header') %>
 
     <div class="container">
-        <main class="createProductForm">
-        <h1>Formulario de creacion de un producto</h1>
-            <form action="/products/create" method="POST" enctype="multipart/form-data">
-                <div>
-                    <label for="name">Nombre del producto:</label>
-                    <input type="text" id="name" name="name" placeholder="Eg. GTX 3090" value="<% if (locals.old && old.name) { %><%= old.name %><% } %>"> 
-                    <% if (locals.errors && errors.name) { %>
-                        <p class="feedback"><%= errors.name.msg %> </p>
-                    <% } %>
+        <div class="createProductContainer">
+            <div class="newProd">
+                <div class="newProd-classic">
+                    <h1>Formulario de creacion de un producto</h1>
+                    <form class="form" action="/products/create" method="POST" enctype="multipart/form-data">
+                        <fieldset class="text">
+                            <input type="text" id="name" name="name" placeholder="Product name:" value="<% if (locals.old && old.name) { %><%= old.name %><% } %>"> 
+                            <% if (locals.errors && errors.name) { %>
+                                <p class="feedback"><%= errors.name.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <fieldset class="text">
+                            <input type="text" name="description" id="description" placeholder="Product description:" value="<% if (locals.old && old.description) {%><%= old.description %><% } %>" >
+                            <% if (locals.errors && errors.description) { %>
+                                <p class="feedback"><%= errors.description.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <fieldset class="digit">
+                            <input type="number" id="price" name="price" min="0" placeholder="Product price:" step="any" value="<% if (locals.old && old.price) {%><%= olf.price %><% } %>">
+                            <% if (locals.errors && errors.price) { %>
+                                <p class="feedback"><%= errors.price.msg %> </p>
+                            <% } %>
+                        </fieldset>
+                        <div>
+                            <label>Categorias:</label>
+                            <% for (let i of categories) { %>
+                                <label for="<%= i.name %>"><%= i.name %></label>
+                                <input type="checkbox" name="categories_ids" value="<%= i.id %>" id="<%= i.name %>">
+                                <br/>
+                                <% } %>  
+                        </div>
+                        <div>
+                            <label for="brand">Selecciona la marca:</label>
+                            <select name="brand_id" id="brand">
+                            <option value="NaN" selected disabled>--Selecciona--</option>
+                                <% for (let i of brands) { %>
+                                    <option value="<%= i.id %>" <% if (locals.errors && old.brand_id == i.id) { %><%= ' selected' %><% } %> > <%= i.name %></option>
+                                <% } %> 
+                                    </select>
+                                <% if (locals.errors && errors.brand_id) { %>
+                                    <p class="feedback"><%= errors.brand_id.msg %> </p>
+                                <% } %>
+                        </div>
+                        <fieldset class="file">
+                            <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
+                        </fieldset>
+                        <button type="submit" class="btn">Guardar</button>
+                    </form>
                 </div>
-                <div>
-                    <label for="description">Descripcion:</label>
-                    <textarea name="description" id="description" placeholder="nice gpu"><% if (locals.old && old.description) {%><%= old.description %><% } %></textarea>
-                    <% if (locals.errors && errors.description) { %>
-                        <p class="feedback"><%= errors.description.msg %> </p>
-                    <% } %>
-                </div>
-                <div>
-                    <label>Categorias:</label>
-                    <% for (let i of categories) { %>
-                        <label for="<%= i.name %>"><%= i.name %></label>
-                        <input type="checkbox" name="categories_ids" value="<%= i.id %>" id="<%= i.name %>">
-                        <br/>
-                    <% } %>  
-                </div>
-                <div>
-                    <label for="brand">Selecciona la marca:</label>
-                    <select name="brand_id" id="brand">
-                        <option value="NaN" selected disabled>--Selecciona--</option>
-                        <% for (let i of brands) { %>
-                            <option value="<%= i.id %>" <% if (locals.errors && old.brand_id == i.id) { %><%= ' selected' %><% } %> > <%= i.name %></option>
-                        <% } %> 
-                    </select>
-                    <% if (locals.errors && errors.brand_id) { %>
-                        <p class="feedback"><%= errors.brand_id.msg %> </p>
-                    <% } %>
-                </div>
-                <div>
-                    <label for="price">Precio:</label>
-                    <input type="number" id="price" name="price" min="0" placeholder="1800.5" step="any" value="<% if (locals.old && old.price) {%><%= olf.price %><% } %>">
-                    <% if (locals.errors && errors.price) { %>
-                        <p class="feedback"><%= errors.price.msg %> </p>
-                    <% } %>
-                </div>
-                <div>
-                    <label for="image">Imagen del producto:</label>
-                    <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
-                </div>
-                <div>
-                    <button type="submit">Guardar</button>
-                </div>
-            </form>
-        </main>
+            </div>
+        </div>
     </div>
 
     <%- include('../partials/footer') %>
