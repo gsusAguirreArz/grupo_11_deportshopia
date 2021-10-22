@@ -35,6 +35,7 @@ const controller = {
                 .then( user => {
                     if (user == undefined){
                         return res.render('users/login', {
+                            logged_user:req.session.loggedUser,
                             errors: {
                                 email: {
                                     msg: "No se tiene registro de este usuario"
@@ -53,6 +54,7 @@ const controller = {
                             return res.redirect('/');
                         }else{
                             return res.render('users/login', {
+                                logged_user:req.session.loggedUser,
                                 errors: {
                                     password:{
                                         msg: 'Credenciales invalidas'
@@ -65,6 +67,7 @@ const controller = {
                 .catch( e => res.send(e) );
         }else{
             return res.render('users/login', {
+                logged_user:req.session.loggedUser,
                 errors: errors.mapped(),
                 old: form
             });
@@ -88,7 +91,7 @@ const controller = {
     },
     // '/users/register' - Render de create new user page
     create: (req,res) => {
-        res.render('users/create');
+        res.render('users/create',{logged_user:req.session.loggedUser});
     },
     // '/users/' - Method for saving the new user info
     store: (req,res) => {
@@ -111,7 +114,7 @@ const controller = {
                 })
                 .catch( e => res.send(e) );
         } else {
-            return res.render('users/create', {errors:errors.mapped(), old:form});
+            return res.render('users/create', {logged_user:req.session.loggedUser, errors:errors.mapped(), old:form});
         }
     },
     // '/users/i/edit' - Render the edit existing user i page
@@ -160,13 +163,13 @@ const controller = {
                     {association: 'role'}
                 ]
             })
-                .then( user => res.render('users/edit'), {
+                .then( user => res.render('users/edit', {
                     logged_user:req.session.loggedUser,
                     loggedUser: req.session.loggedUser,
                     user:user,
                     errors: errors.mapped(),
                     old: form
-                })
+                }) )
                 .catch( e => res.send(e) );
         }
     },

@@ -17,9 +17,9 @@
                             <div class="productImage">
                                 <a href="/users/<%= users[i].id %>">
                                     <% if (i % 2 == 0) { %>
-                                        <img src="/images/min/users/default-f.jpeg" alt="avatar  de <%= users[i].first_name %>">
+                                        <img loading="lazy" src="/images/min/users/<%= users[i].image %>" onerror="this.onerror=null; this.src='/images/min/users/default-f.jpeg'" alt="avatar  de <%= users[i].first_name %>">
                                     <% } else{ %> 
-                                        <img src="/images/min/users/default-m.jpeg" alt="avatar  de <%= users[i].first_name %>">
+                                        <img loading="lazy" src="/images/min/users/<%= users[i].image %>" onerror="this.onerror=null; this.src='/images/min/users/default-m.jpeg'" alt="avatar  de <%= users[i].first_name %>">
                                     <% } %> 
                                 </a>
                             </div>

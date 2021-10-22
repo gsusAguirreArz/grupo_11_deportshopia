@@ -11,7 +11,7 @@
                     <div class="contenedor contenido-video">
                         <h2>
                             Las mejores ofertas
-                            <span>CDMX</span>
+                            <span>Ubicados en:  CDMX</span>
                         </h2>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                         <article class="product">
                             <div class="productImage">
                                 <a href="/products/<%= product.id %>">
-                                    <img src="/images/min/products/default.jpg " alt="imagen de <%= product.name %>">
+                                    <img loading="lazy" src="/images/min/products/<%= product.image %>" onerror="this.onerror=null; this.src='/images/min/products/default.jpg'" alt="imagen de <%= product.name %>">
                                 </a>
                             </div>
                             <div class="productInfo">
@@ -51,6 +51,5 @@
     </div>
 
     <%- include('../partials/footer') %>
-    <script src="/js/bundle.js"></script>
 </body>
 </html>

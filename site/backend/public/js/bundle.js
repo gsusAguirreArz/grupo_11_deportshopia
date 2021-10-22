@@ -21,7 +21,7 @@ function navegacionFija(){
     });
 
     // Elemento a observar
-    observer.observe(document.querySelector('.video'));
+    observer.observe(document.querySelector('.sectionTitle'));
 }
 
 function scrollNav(){

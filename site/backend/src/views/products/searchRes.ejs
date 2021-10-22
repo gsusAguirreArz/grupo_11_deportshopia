@@ -6,21 +6,39 @@
 
     <div class="container">
         <main>
-            <h1>Resultados de la busqueda: <%= keywords %> </h1>
-            <% if (products.length == 0) { %>
-                <p>No hubo resultados de tu busqueda</p>
-            <% } %>  
-            <% for (let product of products) { %> 
-                <div class="product">
-                    <a href="/products/<%= product.id %>">
-                        <img src="/images/min/products/<%= product.image %> " alt="imagen de <%= product.name %>" class="image">
-                        <div class="info">
-                            <p class="name"><%= product.name %></p>
-                            <p class="price">$<%= product.price %></p>
-                        </div>
-                    </a>
-                </div> <!--.product-->
-            <% } %> 
+            <div class="productSection">
+                <div class="sectionTitle">
+                    <h1>Resultados de la busqueda: <%= keywords %> </h1>
+                    <% if (products.length == 0) { %>
+                        <p>No hubo resultados de tu busqueda</p>
+                    <% } %>  
+                </div>
+                <section class="products">
+                    <% for (let product of products) { %> 
+                        <article class="product">
+                            <div class="productImage">
+                                <a href="/products/<%= product.id %>">
+                                    <img loading="lazy" src="/images/min/products/<%= product.image %>" onerror="this.onerror=null; this.src='/images/min/products/default.jpg'" alt="imagen de <%= product.name %>">
+                                </a>
+                            </div>
+                            <div class="productInfo">
+                                <div class="truckButton">
+                                    <div class="truckIcon">
+                                        <i class="fas fa-truck"></i>
+                                    </div>
+                                </div>
+                                <div class="precio">
+                                    <p>$<%= product.price %></p>
+                                </div>
+                                <div class="descripcion">
+                                    <p><%= product.name %></p>
+                                </div>
+                            </div>
+                        </article><!--.product-->
+                    <% } %> 
+                    
+                </section>
+            </div>
         </main>
     </div>
 
