@@ -11,32 +11,34 @@
                     <h1>Formulario para la edicion del usuario: <%= `${user.first_name} ${user.last_name}` %></h1>
                     <form class="form" action="/users/<%= user.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                         <fieldset class="text">
-                            <input type="text" id="first_name" name="first_name" placeholder="Nombre:" value="<% if ( locals.errors && errors.first_name) { %><%= old.first_name %><% } else { %><%= user.first_name %><% } %>">
+                            <input type="text" id="first_name" name="first_name" placeholder="Nombre:" value="<% if ( locals.errors && errors.first_name) { %><%= old.first_name %><% } else { %><%= user.first_name %><% } %>" <% if (locals.logged_user != undefined && logged_user.role_id == 1 && logged_user.id != user.id) { %><%= "  disabled " %><% } %> <% if (logged_user.id != user.id) { %><%= "  disabled " %><% } %>  >
                             <% if (locals.errors && errors.first_name) { %>
                                 <p class="feedback"><%= errors.first_name.msg %> </p>
                             <% } %>
                         </fieldset>
                         <fieldset class="text">
-                            <input type="text" id="last_name" name="last_name" placeholder="Apellido:" value="<% if ( locals.errors && errors.last_name) { %> <%= old.last_name %> <% } else { %><%= user.last_name %><% } %>">
+                            <input type="text" id="last_name" name="last_name" placeholder="Apellido:" value="<% if ( locals.errors && errors.last_name) { %> <%= old.last_name %> <% } else { %><%= user.last_name %><% } %>" <% if (locals.logged_user != undefined && logged_user.role_id == 1 && logged_user.id != user.id) { %><%= "  disabled " %><% } %><% if (logged_user.id != user.id) { %><%= "  disabled " %><% } %> >
                             <% if (locals.errors && errors.last_name) { %>
                                 <p class="feedback"><%= errors.last_name.msg %> </p>
                             <% } %>
                         </fieldset>
-                        <fieldset class="email">
-                            <input type="email" id="email" name="email" placeholder="Correo electronico:" value="<% if ( locals.errors && errors.email) { %> <%= old.email %> <% } else { %><%= user.email %><% } %>">
-                            <% if (locals.errors && errors.email) { %>
-                                <p class="feedback"><%= errors.email.msg %> </p>
-                            <% } %>
-                        </fieldset>
-                        <fieldset class="password">
-                            <input type="password" name="password" id="password" placeholder="Contrasena:">
-                            <% if (locals.errors && errors.password) { %>
-                                <p class="feedback"><%= errors.password.msg %> </p>
-                            <% } %>
-                        </fieldset>
-                        <fieldset class="file">
-                            <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
-                        </fieldset>
+                        <% if (logged_user.id == user.id ) { %>
+                            <fieldset class="email">
+                                <input type="email" id="email" name="email" placeholder="Correo electronico:" value="<% if ( locals.errors && errors.email) { %> <%= old.email %> <% } else { %>lo<%= user.email %><% } %>" <% if (locals.logged_user != undefined && logged_user.role_id == 1 && logged_user.id != user.id) { %><%= "  disabled " %><% } %><% if (logged_user.id != user.id) { %><%= "  disabled " %><% } %> >
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="feedback"><%= errors.email.msg %> </p>
+                                <% } %>
+                            </fieldset>
+                            <fieldset class="password">
+                                <input type="password" name="password" id="password" placeholder="Contrasena:" <% if (locals.logged_user != undefined && logged_user.role_id == 1 && logged_user.id != user.id) { %><%= "  disabled " %><% } %><% if (logged_user.id != user.id) { %><%= "  disabled " %><% } %> >
+                                <% if (locals.errors && errors.password) { %>
+                                    <p class="feedback"><%= errors.password.msg %> </p>
+                                <% } %>
+                            </fieldset>
+                            <fieldset class="file">
+                                <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*" <% if (locals.logged_user != undefined && logged_user.role_id == 1 && logged_user.id != user.id) { %><%= "  disabled " %><% } %><% if (logged_user.id != user.id) { %><%= "  disabled " %><% } %> >
+                            </fieldset>
+                        <% } %>  
                         <div>
                             <% if ( logged_user != undefined && logged_user.role_id == 1 ) { %>
                                 <label for="role_id">Categoria:</label>

@@ -5,13 +5,18 @@
     <%- include('../partials/header') %>
 
     <div class="container">
-        <main>
-            <h2>Desea eliminar el producto: <%= product.name %> </h2>
-            <form action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
-                <button type="submit">Eliminar</button>
-            </form>
-        </main>
+        <div class="cardContainer">
+            <div class="card">
+                <div class="register-classic">
+                    <h1>Desea eliminar el producto: <%= product.name %> </h1>
+                    <form class="form" action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
+                        <button type="submit" class="btn">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    
     <%- include('../partials/footer') %>
 </body>
 </html>
