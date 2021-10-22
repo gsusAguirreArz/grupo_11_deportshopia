@@ -6,36 +6,44 @@
 
     <div class="container">
         <main>
-            <div class="stillBanner">
-                <img src="/images/stills/setup_still.jpg" alt="home banner">
+            <div class="video">
+                <div class="overlay">
+                    <div class="contenedor contenido-video">
+                        <h2>
+                            Las mejores ofertas
+                            <span>CDMX</span>
+                        </h2>
+                    </div>
+                </div>
+                <img src="/images/min/stills/setup_still.jpg" alt="image banner">
             </div>
             <div class="productSection">
                 <div class="sectionTitle">
                     <h2>Productos mas vendidos!</h2>
                 </div>
                 <section class="products">
-
-                    <article class="product">
-                        <div class="productImage">
-                            <img src="/images/products/img-cafetera-moulinex.jpg" alt="prod image">
-                        </div>
-                        <div class="productInfo">
-                            <div class="truckButton">
-                                <div class="truckIcon">
-                                    <i class="fas fa-truck"></i>
+                    <% for (let product of products) { %> 
+                        <article class="product">
+                            <div class="productImage">
+                                <a href="/products/<%= product.id %>">
+                                    <img src="/images/min/products/default.jpg " alt="imagen de <%= product.name %>">
+                                </a>
+                            </div>
+                            <div class="productInfo">
+                                <div class="truckButton">
+                                    <div class="truckIcon">
+                                        <i class="fas fa-truck"></i>
+                                    </div>
+                                </div>
+                                <div class="precio">
+                                    <p>$<%= product.price %></p>
+                                </div>
+                                <div class="descripcion">
+                                    <p><%= product.name %></p>
                                 </div>
                             </div>
-                            <div class="precio">
-                                <p>$6.770</p>
-                            </div>
-                            <div class="descuento">
-                                <p>40% OFF</p>
-                            </div>
-                            <div class="descripcion">
-                                <p>Cafetera Moulinex</p>
-                            </div>
-                        </div>
-                    </article>
+                        </article><!--.product-->
+                    <% } %> 
                     
                 </section>
             </div>

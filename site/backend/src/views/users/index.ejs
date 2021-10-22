@@ -12,11 +12,15 @@
                     <p>Solo los admins tienen que tener acceso a esta parte de la pagina</p>
                 </div>
                 <section class="products">
-                    <% for (let user of users) { %>
+                    <% for (let i = 0; i < users.length; i++) { %> 
                         <article class="product">
                             <div class="productImage">
-                                <a href="/users/<%= user.id %>"></a>
-                                    <img src="/images/users/<%= user.image %>" alt="avatar  de <%= user.first_name %>">
+                                <a href="/users/<%= users[i].id %>">
+                                    <% if (i % 2 == 0) { %>
+                                        <img src="/images/min/users/default-f.jpeg" alt="avatar  de <%= users[i].first_name %>">
+                                    <% } else{ %> 
+                                        <img src="/images/min/users/default-m.jpeg" alt="avatar  de <%= users[i].first_name %>">
+                                    <% } %> 
                                 </a>
                             </div>
                             <div class="productInfo">
@@ -26,20 +30,21 @@
                                     </div>
                                 </div>
                                 <div class="precio">
-                                    <p><%= user.email %></p>
+                                    <p><%= users[i].email %></p>
                                 </div>
                                 <div class="descuento">
-                                    <p><%= user.role.title %></p>
+                                    <p><%= users[i].role.title %></p>
                                 </div>
                                 <div class="descripcion">
-                                    <p><%= `${user.first_name} ${user.last_name}`%></p>
+                                    <p><%= `${users[i].first_name} ${users[i].last_name}`%></p>
                                 </div>
                                 <% if ( locals.logged_user && logged_user.role_id === 1) { %> 
-                                    <a href="/users/<%= user.id %>/edit ">Edita el rol de usuario</a>
+                                    <a href="/users/<%= users[i].id %>/edit ">Edita el rol de usuario</a>
                                 <% } %>
                             </div>
                         </article><!--.user-->
                     <% } %> 
+                    
                     
                 </section>
             </div>

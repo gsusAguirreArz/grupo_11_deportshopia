@@ -10,6 +10,7 @@ let data = {
     email: ''
 };
 
+
 first_name.addEventListener('input', readText);
 last_name.addEventListener('input', readText);
 email.addEventListener('input', readText);

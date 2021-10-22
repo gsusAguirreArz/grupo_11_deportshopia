@@ -54,14 +54,14 @@ const controller = {
                 brand_id: form.brand_id,
                 cart_id: null
             };
-            res.send(newProduct);
-            // db.Product.create(newProduct, {
-            //     include: [{association: "brand"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/products');
-            //     })
-            //     .catch( e => res.send(e) );
+            // res.send(newProduct);
+            db.Product.create(newProduct, {
+                include: [{association: "brand"}]
+            })
+                .then( response => {
+                    return res.redirect('/products');
+                })
+                .catch( e => res.send(e) );
         } else {
             const obtainCategories = db.Category.findAll();
             const obtainBrands = db.Brand.findAll();
@@ -109,15 +109,15 @@ const controller = {
                 brand_id: form.brand_id,
                 cart_id: null
             };
-            res.send(editedProduct);
-            // db.Product.update(editedProduct, {
-            //     where: {id:ID},
-            //     include: [{association: "brand"}]
-            // })
-            //     .then( response => {
-            //         return res.redirect('/products');
-            //     })
-            //     .catch( e => res.send(e) );
+            // res.send(editedProduct);
+            db.Product.update(editedProduct, {
+                where: {id:ID},
+                include: [{association: "brand"}]
+            })
+                .then( response => {
+                    return res.redirect('/products');
+                })
+                .catch( e => res.send(e) );
         } else {
             const obtainCategories = db.Category.findAll();
             const obtainBrands = db.Brand.findAll();
@@ -152,12 +152,12 @@ const controller = {
     // '/products/' - Method to delete the product i from DB
     destroy: (req,res) => {
         const ID = req.params.id;
-        res.send(`se elimino el producto con id: ${ID}`);
-        // db.Product.destroy({
-        //     where: {id:ID}
-        // })
-        //     .then( response => res.redirect('/products') )
-        //     .catch( e => res.send(e) );
+        // res.send(`se elimino el producto con id: ${ID}`);
+        db.Product.destroy({
+            where: {id:ID}
+        })
+            .then( response => res.redirect('/products') )
+            .catch( e => res.send(e) );
     },
 };
 

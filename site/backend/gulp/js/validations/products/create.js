@@ -15,7 +15,9 @@ let data = {
     name:'',
     description:'',
     price: ''
-};
+}; 
+
+
 
 name.addEventListener('input', readText);
 description.addEventListener('input', readText);

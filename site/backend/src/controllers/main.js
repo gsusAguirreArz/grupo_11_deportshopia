@@ -6,8 +6,15 @@ const db = require('../database/models/index');
 const controller = {
     // '/' - Root show Home page
     index: (req,res) => {
+        db.Product.findAll({
+            limit:8
+        })
+            .then( products => {
+                // res.send(products);
+                res.render('main/index', {logged_user:req.session.loggedUser, products:products});
+            } )
+            .catch( e => res.send(e) );
 
-        res.render('main/index', {logged_user:req.session.loggedUser});
     },
     search: (req,res) => {
         const keywords = req.query.keywords;
