@@ -40,12 +40,12 @@
                             <div class = "purchase-info">
                                 <% if ( (logged_user != undefined && logged_user.id == user.id) || (logged_user != undefined && logged_user.role_id == 1) ) { %>
                                     <form class="form" action="/users/<%= user.id %>/edit" method="GET">
-                                        <button type="submit" class="btn">
+                                        <button type="submit" class="btn btn-blue">
                                             Editar <i class="fas fa-edit"></i> 
                                         </button>
                                     </form>
                                     <form class="form" action="/users/<%= user.id %>/delete" method="GET">
-                                        <button type="submit" class="btn">
+                                        <button type="submit" class="btn btn-red">
                                             Eliminar <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </form>

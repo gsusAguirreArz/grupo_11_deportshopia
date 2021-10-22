@@ -61,7 +61,7 @@
                             </div>
                             <div class = "product-price">
                                 <p class = "last-price">Precio: <span>$<%= product.price %></span></p>
-                                <p class = "new-price">Precio con descuento: <span>$<%= product.price * (1-0.05) %> (5%)</span></p>
+                                <p class = "new-price">Precio con descuento: <span>$<%= Math.round(product.price * (1-0.05) ).toFixed(2) %> (5%)</span></p>
                             </div>
                             <div class = "product-detail">
                                 <h2>Descripción: </h2>
@@ -82,7 +82,7 @@
                             <div class = "purchase-info">
                                 <input type = "number" min = "0" value = "1">
                                 <form class="form" method="GET">
-                                    <button type="submit" class="btn">
+                                    <button type="submit" class="btn btn-blue">
                                         Agregar al carrito <i class = "fas fa-shopping-cart"></i> 
                                     </button>
                                 </form>
@@ -93,7 +93,7 @@
                                         </button>
                                     </form>
                                     <form class="form" action="/products/<%= product.id %>/delete" method="GET">
-                                        <button type="submit" class="btn">
+                                        <button type="submit" class="btn btn-red">
                                             Eliminar <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </form>
