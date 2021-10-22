@@ -1,0 +1,191 @@
+.detailContainer{
+    width: 100%;
+    height: auto;
+    padding: 5rem 2rem;
+}
+.detail{
+    width: 100%;
+    background: hsl(0, 0, 100);
+    border-radius: 10px;
+    box-shadow: 0 3px 25px hsla(0, 0, 0, 0.2);
+}
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .img-display{
+        overflow: hidden;
+    }
+    .img-showcase{
+        display: flex;
+        width: 100%;
+        transition: all 0.5s ease;
+    }
+    .img-showcase img{
+        min-width: 100%;
+    }
+    .img-select{
+        display: flex;
+    }
+    .img-item{
+        margin: 0.3rem;
+    }
+    .img-item:nth-child(1),
+    .img-item:nth-child(2),
+    .img-item:nth-child(3){
+        margin-right: 0;
+    }
+    .img-item:hover{
+        opacity: 0.8;
+    }
+    .product-content{
+        padding: 2rem 1rem;
+    }
+    .product-title{
+        // font-size: 3rem;
+        // text-transform: capitalize;
+        font-weight: $bold;
+        position: relative;
+        color: $black;
+        margin: 1rem 0;
+
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            width: 80px;
+            background: #12263a;
+        }
+    }
+    .product-rating{
+        color: #ffc107;
+    }
+    .product-rating span{
+        font-weight: $bold;
+        color: #252525;
+    }
+    .product-price{
+        margin: 1rem 0;
+        // font-size: 1rem;
+        font-weight: $bold;
+    }
+    .product-price span{
+        font-weight: $bold;
+    }
+    .last-price span{
+        color: #f64749;
+        text-decoration: line-through;
+    }
+    .new-price span{
+        color: #256eff;
+    }
+    .product-detail h2{
+        // text-transform: capitalize;
+        color: $black;
+        padding-bottom: 0.6rem;
+
+        p{
+            padding: 0.3rem;
+            opacity: 0.8;
+        }
+
+        ul{
+            margin: 1rem 0;
+            // font-size: 0.9rem;
+
+            li{
+                margin: 0;
+                list-style: none;
+                background: url(shoes_images/checked.png) left center no-repeat;
+                background-size: 18px;
+                padding-left: 1.7rem;
+                margin: 0.4rem 0;
+                font-weight: $bold;
+                opacity: 0.9;
+
+                span{
+                    font-weight: $regular;
+                    color: $secon;
+                }
+            }
+        }
+    }
+    .purchase-info{
+        margin: 1.5rem 0;
+
+        // .btn:first-of-type{
+        //     background: #256eff;
+        // }
+
+        // .btn:first-of-type{
+        //     background: #f64749;
+        // }
+
+        // form .btn{
+
+        //     &:first-of-type{
+        //         background: #256eff;
+        //     }
+        //     &:last-of-type{
+        //         background: #f64749;
+        //     }
+
+        // }
+    }
+    .social-links{
+        display: flex;
+        align-items: center;
+
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            color: #000;
+            border: 1px solid #000;
+            margin: 0 0.2rem;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: all 0.5s ease;
+
+            &:hover{
+                background: #000;
+                border-color: transparent;
+                color: #fff;
+            }
+        }
+
+
+    }
+}
+
+@include tablet{
+    .card-wrapper{
+        // height: auto;
+        padding: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card-inner{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.5rem;
+        }
+
+        .product-imgs{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-content{
+            padding-top: 0;
+        }
+    }
+}

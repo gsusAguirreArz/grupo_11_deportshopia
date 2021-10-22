@@ -5,8 +5,8 @@
     <%- include('../partials/header') %>
 
     <div class="container">
-        <div class="registerContainer">
-            <div class="register">
+        <div class="cardContainer">
+            <div class="card">
                 <div class="register-classic">
                     <h1>Formulario para la edicion del usuario: <%= `${user.first_name} ${user.last_name}` %></h1>
                     <form class="form" action="/users/<%= user.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -38,7 +38,7 @@
                             <input type="file" name="image" id="image" accept=".jpg, .png, .jpeg, .bmp, .tiff, .tif|image/*">
                         </fieldset>
                         <div>
-                            <% if ( loggedUser != undefined && loggedUser.role_id == 1 ) { %>
+                            <% if ( logged_user != undefined && logged_user.role_id == 1 ) { %>
                                 <label for="role_id">Categoria:</label>
                                 <select name="role_id" id="role_id">
                                     <option value="NaN" selected disabled>--Selecciona--</option>

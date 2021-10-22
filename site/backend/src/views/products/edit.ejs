@@ -5,8 +5,8 @@
     <%- include('../partials/header') %>
 
     <div class="container">
-        <div class="createProductContainer">
-            <div class="newProd">
+        <div class="cardContainer">
+            <div class="card">
                 <div class="newProd-classic">
                     <h1>Formulario de edicion del producto: <%= product.name %> </h1>
                     <form class="form" action="/products/<%= product.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
