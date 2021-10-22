@@ -20,7 +20,7 @@ const controller = {
     },
     // '/users/' - Method to check if user is registered
     login: (req,res) => {
-        res.render('users/login');
+        res.render('users/login', {logged_user:req.session.loggedUser});
     },
     // validate user credentials
     checkLogin: (req,res) => {

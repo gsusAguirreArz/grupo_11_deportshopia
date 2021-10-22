@@ -17,7 +17,7 @@ const router = express.Router();
 router.get('/', [userNotLogged,userIsAdmin], usersController.index);
 
 // User login
-router.get('/login', usersController.login);
+router.get('/login',userLogged, usersController.login);
 router.post('/login', userLoginVal ,usersController.checkLogin);
 
 router.get('/logout',userNotLogged,usersController.logout);
