@@ -8,11 +8,20 @@ const db = require('../database/models/index');
 const controller = {
     // '/products/' - Root show all products in DB
     index: (req,res) => {
+        let [numPage, totalProds, totalPages] = [1,0,1];
+
+        if ( req.query.page ){
+            numPage = Number(req.query.page);
+        }
         db.Product.findAll({
-            limit:20
+            limit:20,
+            offset: (numPage-1)*20
         })
             .then( products => {
-                return res.render('products/index', {logged_user:req.session.loggedUser,products:products});
+                // totalProds = products.length;
+                totalProds = 200;
+                totalPages = Math.ceil( totalProds / 20 );
+                return res.render('products/index', {logged_user:req.session.loggedUser,products:products, paginat: {totalPages:totalPages, string:"products", numPage:numPage} });
             })
             .catch( error => res.send(error) );
     },

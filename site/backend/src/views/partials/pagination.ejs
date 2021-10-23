@@ -1,0 +1,15 @@
+<div id="pagin-app" class="pagcontainer">  
+    <ul class="page">
+        <li class="page__btn" id="btn_prev"><span class="material-icons"><i class="fas fa-arrow-left"></i></span></li>
+        <% for ( let i = 1; i <= paginat.totalPages; i++ ) { %>
+            <li class="page__numbers <% if ( paginat.numPage == i) { %><%= "  active " %><% } %>">
+                <a href="/<%= paginat.string %>?page=<%= i %>">
+                    <%= i %>
+                </a>
+            </li>
+        <% } %>  
+        <!-- <li class="page__dots">...</li> -->
+
+        <li class="page__btn" id="btn_next"><span class="material-icons"><i class="fas fa-arrow-right"></i></span></li>
+        </ul>
+</div>

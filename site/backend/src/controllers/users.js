@@ -7,14 +7,23 @@ const bcrypt = require('bcryptjs');
 const controller = {
     // '/users/' - Root show all users in DB
     index: (req,res) => {
+        let [numPage, totalUsers, totalPages] = [1,0,1];
+
+        if ( req.query.page ){
+            numPage = Number(req.query.page);
+        }
+
         db.User.findAll({
             limit: 20,
             include: [
                 {association: 'role'},
-            ]
+            ],
+            offset: (numPage-1)*20
         })
             .then( users => {
-                return res.render('users/index', {logged_user:req.session.loggedUser,users:users});
+                totalUsers = users.length;
+                totalPages = Math.ceil( totalUsers / 20 );
+                return res.render('users/index', {logged_user:req.session.loggedUser,users:users, paginat: {totalPages:totalPages, string:"products", numPage:numPage} });
             })
             .catch( e => res.send(e) );
     },
