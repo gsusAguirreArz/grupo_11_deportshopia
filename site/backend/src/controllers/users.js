@@ -13,19 +13,21 @@ const controller = {
             numPage = Number(req.query.page);
         }
 
-        db.User.findAll({
+        let auxPromise = db.User.findAll();
+        let mainPromise = db.User.findAll({
             limit: 20,
             include: [
                 {association: 'role'},
             ],
             offset: (numPage-1)*20
-        })
-            .then( users => {
-                totalUsers = users.length;
+        });
+        Promise.all([auxPromise, mainPromise])
+            .then( ([urs, users]) => {
+                totalUsers = urs.length;
                 totalPages = Math.ceil( totalUsers / 20 );
-                return res.render('users/index', {logged_user:req.session.loggedUser,users:users, paginat: {totalPages:totalPages, string:"products", numPage:numPage} });
+                return res.render('users/index',{logged_user:req.session.loggedUser,users:users, paginat: {totalPages:totalPages, string:"users", numPage:numPage} });
             })
-            .catch( e => res.send(e) );
+            .catch( error => res.send(error) );
     },
     // '/users/' - Method to check if user is registered
     login: (req,res) => {

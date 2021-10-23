@@ -13,13 +13,15 @@ const controller = {
         if ( req.query.page ){
             numPage = Number(req.query.page);
         }
-        db.Product.findAll({
+
+        let auxPromise = db.Product.findAll();
+        let mainPromise = db.Product.findAll({
             limit:20,
             offset: (numPage-1)*20
-        })
-            .then( products => {
-                // totalProds = products.length;
-                totalProds = 200;
+        });
+        Promise.all([auxPromise, mainPromise])
+            .then( ([pds, products]) => {
+                totalProds = pds.length;
                 totalPages = Math.ceil( totalProds / 20 );
                 return res.render('products/index', {logged_user:req.session.loggedUser,products:products, paginat: {totalPages:totalPages, string:"products", numPage:numPage} });
             })

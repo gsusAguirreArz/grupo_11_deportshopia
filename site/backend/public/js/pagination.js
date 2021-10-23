@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function(){
         currentPage = getQueryParam('page');
     }
 
-    let btnPrev = document.getElementById("btn_prev");
-    let btnNext = document.getElementById("btn_next");
+    let btnPrev = document.querySelector("#btn_prev");
+    let btnNext = document.querySelector("#btn_next");
 
+    
     let STRING = "products";
 
     btnPrev.addEventListener('mouseover', function(e) {
@@ -20,29 +21,29 @@ document.addEventListener('DOMContentLoaded', function(){
         btnNext.classList.add('active');
     } );
 
-    btnPrev.addEventListener('click', function(e) {
-        e.preventDefault();
-        prevPage(STRING);
+    btnPrev.addEventListener('click', function() {
+        console.log("clickeaste flecha izquierda");
+        prevPage(currentPage,STRING);
     } );
 
     btnNext.addEventListener('click', function(e) {
-        e.preventDefault();
-        nextPage(STRING);
+        console.log("clickeaste flecha derecha");
+        nextPage(currentPage,STRING);
     } );
 
 });
 
-function prevPage(string) {
+function prevPage(current_page, string) {
     // function that manages the previous page
     if ( current_page > 1 ){
         current_page--;
-        changePage(current_page, string);
+        return changePage(current_page, string);
     }
 }
 
-function nextPage(string) {
+function nextPage(current_page, string) {
     // function that manages the next page
-    if ( current_page > numPages() ){
+    if ( current_page < numPages() ){
         current_page++;
         changePage(current_page, string);
     }
@@ -51,21 +52,18 @@ function nextPage(string) {
 function changePage(pageNum, string) {
     // logic to change page
     let URL = `http://localhost:8080/${string}?page=${pageNum}`;
+    // console.log(URL);
     window.location.assign(URL);
 
 }
 
 function numPages(){
     // add logic to get all the total pages with respect the current products
-    let lastPageNum = 1;
-
-    if ( lastPage ){
-        let lastPage = document.getElementById("last_page");
-        lastPageNum = Number(lastPage.innerText);
+    let lastPage = 1;
+    if ( document.querySelector("#last_page") ){
+        lastPage = Number(document.querySelector("#last_page").innerText);
     }
-
-    // let totalPages = 10;
-    return lastPageNum;
+    return lastPage;
 }
 
 function getQueryParam(param) {
