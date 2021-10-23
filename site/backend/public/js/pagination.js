@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let btnPrev = document.querySelector("#btn_prev");
     let btnNext = document.querySelector("#btn_next");
-
     
-    let STRING = "products";
+    let STRING = location.pathname;
+    // console.log(STRING);
 
     btnPrev.addEventListener('mouseover', function(e) {
         e.preventDefault();
@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function(){
     } );
 
     btnPrev.addEventListener('click', function() {
-        console.log("clickeaste flecha izquierda");
+        // console.log("clickeaste flecha izquierda");
         prevPage(currentPage,STRING);
     } );
 
     btnNext.addEventListener('click', function(e) {
-        console.log("clickeaste flecha derecha");
+        // console.log("clickeaste flecha derecha");
         nextPage(currentPage,STRING);
     } );
 
@@ -51,7 +51,7 @@ function nextPage(current_page, string) {
 
 function changePage(pageNum, string) {
     // logic to change page
-    let URL = `http://localhost:8080/${string}?page=${pageNum}`;
+    let URL = `http://localhost:8080${string}?page=${pageNum}`;
     // console.log(URL);
     window.location.assign(URL);
 
