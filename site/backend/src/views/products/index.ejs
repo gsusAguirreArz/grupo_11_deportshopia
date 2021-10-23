@@ -5,46 +5,48 @@
     <%- include('../partials/header') %>
 
     <div class="container">
-        <main>
-            <div class="productSection">
-                <div class="sectionTitle">
-                    <h1>Listado de todos los productos:</h1>
-                </div>
-                <section class="products">
-                    <% for (let product of products) { %> 
-                        <article class="product">
-                            <div class="productImage">
-                                <a href="/products/<%= product.id %>">
+        <section class="sect-p">
+            <div class="sect-title sectionTitle">
+                <h2>Listado de todos los productos:</h2>
+            </div>
+            <div class="sect-content">
+                <% for ( let product of products ) { %>
+                    <article class="prods">
+                        <div class="prodBox">
+                            <a href="/products/<%= product.id %>">
+                                <div class="img-container">
+                                <div class="img-inner">
+                                    <div class="inner-skew">
                                     <img loading="lazy" src="/images/min/products/<%= product.image %>" onerror="this.onerror=null; this.src='/images/min/products/default.jpg'" alt="imagen de <%= product.name %>">
-                                </a>
-                            </div>
-                            <div class="productInfo">
-                                <div class="precio">
-                                    <p>$<%= product.price %></p>
+                                    </div>
                                 </div>
-                                <div class="descripcion">
-                                    <p><%= product.name %></p>
                                 </div>
-                            </div>
-                        </article><!--.product-->
-                    <% } %> 
-                    
-                </section>
+                                <div class="text-container">
+                                <h3>$<%= product.price %></h3>
+                                <div>
+                                    <%= product.name %>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                <% } %> 
             </div>
+        </section>
 
-            <div class="center">
-                <div class="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#">1</a>
-                    <a href="#" class="active">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
-                </div>
-            </div>
-        </main>
+        <div id="pagin-app" class="pagcontainer">  
+            <ul class="page">
+                <li class="page__btn"><span class="material-icons"><i class="fas fa-arrow-left"></i></span></li>
+                <li class="page__numbers"> 1</li>
+                <li class="page__numbers active">2</li>
+                <li class="page__numbers">3</li>
+                <li class="page__numbers">4</li>
+                <li class="page__numbers">5</li>
+                <li class="page__numbers">6</li>
+                <li class="page__dots">...</li>
+                <li class="page__numbers"> 10</li>
+                <li class="page__btn"><span class="material-icons"><i class="fas fa-arrow-right"></i></span></li>
+                </ul>
+        </div>
 
     </div>
 

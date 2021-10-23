@@ -5,44 +5,45 @@
     <%- include('../partials/header') %>
 
     <div class="container">
-        <main>
-            <div class="video">
-                <div class="overlay">
-                    <div class="contenedor contenido-video">
-                        <h2>
-                            Las mejores ofertas
-                            <span>Ubicados en:  CDMX</span>
-                        </h2>
-                    </div>
+        <div class="video">
+            <div class="overlay">
+                <div class="contenedor contenido-video">
+                    <h2>
+                        Las mejores ofertas
+                        <span>Ubicados en:  CDMX</span>
+                    </h2>
                 </div>
-                <img src="/images/min/stills/setup_still.jpg" alt="image banner">
             </div>
-            <div class="productSection">
-                <div class="sectionTitle">
-                    <h2>Productos mas vendidos!</h2>
-                </div>
-                <section class="products">
-                    <% for (let product of products) { %> 
-                        <article class="product">
-                            <div class="productImage">
-                                <a href="/products/<%= product.id %>">
+            <img src="/images/min/stills/setup_still.jpg" alt="image banner">
+        </div>
+        
+        <section class="sect-p">
+            <div class="sect-title sectionTitle">
+                <h2>Productos mas vendidos!</h2>
+            </div>
+            <div class="sect-content">
+                <% for ( let product of products ) { %>
+                    <article class="prods">
+                        <div class="prodBox">
+                            <a href="/products/<%= product.id %>">
+                                <div class="img-container">
+                                <div class="img-inner">
+                                    <div class="inner-skew">
                                     <img loading="lazy" src="/images/min/products/<%= product.image %>" onerror="this.onerror=null; this.src='/images/min/products/default.jpg'" alt="imagen de <%= product.name %>">
-                                </a>
-                            </div>
-                            <div class="productInfo">
-                                <div class="precio">
-                                    <p>$<%= product.price %></p>
+                                    </div>
                                 </div>
-                                <div class="descripcion">
-                                    <p><%= product.name %></p>
                                 </div>
-                            </div>
-                        </article><!--.product-->
-                    <% } %> 
-                    
-                </section>
+                                <div class="text-container">
+                                <h3>$<%= product.price %></h3>
+                                <div>
+                                    <%= product.name %>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                <% } %> 
             </div>
-        </main>
+        </section>
     </div>
 
     <%- include('../partials/footer') %>
