@@ -56,6 +56,7 @@ const controller = {
         const errors = validationResult(req);
         const form = req.body;
         const file = req.file;
+        // return res.send( form );
         if ( errors.isEmpty()) {
             const newProduct = {
                 name: form.name,

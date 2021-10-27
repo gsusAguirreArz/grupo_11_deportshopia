@@ -15,7 +15,8 @@ function checkFileTYpe(file,cb) {
 // **** Multer Config ****
 const storage = multer.diskStorage({
     destination: (req,file,cb) => {
-        let destPath = path.join(__dirname, '../../../../gulp/media/images/users');
+        // let destPath = path.join(__dirname, '../../../../gulp/media/images/users');
+        let destPath = path.join(__dirname, '../../../../public/images/min/users');
         cb(null, destPath);
     },
     filename: (req,file,cb) => {
